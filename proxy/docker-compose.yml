@@ -1,6 +1,7 @@
 services:
   kivest-proxy:
-    build: .
+    build:
+      context: https://github.com/FlazeIGuess/kivest-status.git#main:proxy
     container_name: kivest-proxy
     restart: unless-stopped
     ports:
