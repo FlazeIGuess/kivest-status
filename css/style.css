@@ -103,11 +103,11 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: var(--nav-bg);
-  backdrop-filter: blur(32px) saturate(1.4);
-  -webkit-backdrop-filter: blur(32px) saturate(1.4);
-  border: 1px solid var(--border);
-  border-radius: 100px;
+  background: rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(24px) saturate(1.8);
+  -webkit-backdrop-filter: blur(24px) saturate(1.8);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 16px;
   transition: background 0.3s, border-color 0.3s;
   pointer-events: auto;
 }
