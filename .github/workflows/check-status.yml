@@ -1,13 +1,14 @@
 name: Check Model Status
 
 on:
-  schedule:
-    # Run every 20 minutes on offset minutes to reduce dropped schedule events.
-    - cron: '7,27,47 * * * *'
   workflow_dispatch:
 
 permissions:
   contents: write
+
+concurrency:
+  group: check-model-status
+  cancel-in-progress: false
 
 jobs:
   check-status:
