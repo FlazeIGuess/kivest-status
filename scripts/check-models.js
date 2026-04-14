@@ -202,9 +202,19 @@ async function testModel(modelId) {
       choice?.message?.reasoning_content ||
       choice?.message?.reasoning
     );
-    const hasReasoningTokens = (body?.usage?.reasoning_tokens || 0) > 0;
+    // Check content_blocks for thinking (e.g. Gemini)
+    const contentBlocks = choice?.message?.content_blocks || [];
+    const thinkingBlock = contentBlocks.find(b => b.type === 'thinking');
+    const hasThinkingBlock = !!thinkingBlock;
+    // Check multiple locations for reasoning tokens
+    const hasReasoningTokens = (body?.usage?.reasoning_tokens || 0) > 0
+      || (body?.usage?.completion_tokens_details?.reasoning_tokens || 0) > 0;
     const responseText = (choice?.message?.content || '').trim();
-    const reasoningText = (choice?.message?.reasoning_content || choice?.message?.reasoning || '').trim();
+    const reasoningText = (
+      choice?.message?.reasoning_content ||
+      choice?.message?.reasoning ||
+      (thinkingBlock?.thinking || '')
+    ).trim();
 
     // If the model only returned reasoning content but no main content,
     // use a truncated version of the reasoning as the display response.
@@ -217,7 +227,7 @@ async function testModel(modelId) {
       status: 'operational',
       responseTime: elapsed,
       isPaidOnly: false,
-      supportsReasoning: hasReasoningContent || hasReasoningTokens,
+      supportsReasoning: hasReasoningContent || hasReasoningTokens || hasThinkingBlock,
       response: displayResponse,
       reasoningContent: reasoningText || null,
       rawResponse: body,

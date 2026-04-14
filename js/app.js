@@ -301,8 +301,8 @@ function renderModelCard(model) {
         ${badges.join('')}
       </div>
       ${responseHTML}
-      ${timelineHTML}
-      ${model.uptime != null ? `
+      ${model.isPaidOnly ? '' : timelineHTML}
+      ${model.uptime != null && !model.isPaidOnly ? `
         <div class="uptime-bar-container">
           <div class="uptime-bar-label">
             <span class="uptime-bar-text">24h Uptime</span>
