@@ -41,7 +41,9 @@ const server = http.createServer((req, res) => {
   const targetUrl = new URL(urlPath, TARGET);
 
   // Forward only safe headers, strip proxy token
-  const headers = {};
+  const headers = {
+    'user-agent': 'Mozilla/5.0 (compatible; status-monitor/1.0)',
+  };
   if (req.headers['content-type']) headers['content-type'] = req.headers['content-type'];
   if (req.headers['authorization']) headers['authorization'] = req.headers['authorization'];
 
