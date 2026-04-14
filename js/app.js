@@ -40,6 +40,8 @@ let activeStatusFilter = null;
 let filterReasoning = false;
 let searchQuery = '';
 let autoRefreshInterval = null;
+const UPTIME_WINDOW_MS = 24 * 60 * 60 * 1000;
+const TIMELINE_SEGMENTS = 48;
 
 // === DOM refs ===
 const $grid = document.getElementById('model-grid');
@@ -92,25 +94,101 @@ function statusLabel(status) {
   }
 }
 
-function getModels() {
-  if (!statusData?.models) return [];
-  const models = Object.values(statusData.models);
+function getSortedHistoryEntries() {
+  if (!Array.isArray(historyData)) return [];
 
-  // Correct model status from history if history has more recent data
-  if (historyData && historyData.length > 0) {
-    const latestEntry = historyData[historyData.length - 1];
-    const latestTime = new Date(latestEntry.timestamp).getTime();
-    for (const model of models) {
-      const modelTime = model.lastChecked ? new Date(model.lastChecked).getTime() : 0;
-      if (latestEntry.statuses?.[model.id] && latestTime > modelTime) {
-        model.status = latestEntry.statuses[model.id].status;
-        model.responseTime = latestEntry.statuses[model.id].responseTime;
-        model.lastChecked = latestEntry.timestamp;
+  return [...historyData]
+    .filter(entry => entry && entry.timestamp && entry.statuses)
+    .sort((a, b) => new Date(a.timestamp).getTime() - new Date(b.timestamp).getTime());
+}
+
+function buildHistoryIndex() {
+  const historyIndex = new Map();
+
+  for (const entry of getSortedHistoryEntries()) {
+    for (const [modelId, snapshot] of Object.entries(entry.statuses || {})) {
+      if (!historyIndex.has(modelId)) {
+        historyIndex.set(modelId, []);
       }
+
+      historyIndex.get(modelId).push({
+        timestamp: entry.timestamp,
+        status: snapshot.status || 'unknown',
+        responseTime: snapshot.responseTime ?? null
+      });
     }
   }
 
-  return models;
+  return historyIndex;
+}
+
+function calculateUptime(history) {
+  if (!history.length) return null;
+
+  const operationalChecks = history.filter(entry => entry.status === 'operational').length;
+  return parseFloat(((operationalChecks / history.length) * 100).toFixed(1));
+}
+
+function getModels() {
+  const statusModels = statusData?.models || {};
+  const historyIndex = buildHistoryIndex();
+  const modelIds = new Set([
+    ...Object.keys(statusModels),
+    ...historyIndex.keys()
+  ]);
+  const now = Date.now();
+
+  return [...modelIds].map(modelId => {
+    const baseModel = statusModels[modelId] || {
+      id: modelId,
+      ownedBy: 'unknown',
+      status: 'unknown',
+      responseTime: null,
+      supportsReasoning: false,
+      isPaidOnly: false,
+      response: null,
+      reasoningContent: null,
+      rawResponse: null,
+      error: null,
+      lastChecked: null,
+      uptime: null,
+      totalChecks: null
+    };
+
+    const fullHistory = historyIndex.get(modelId) || [];
+    const latestHistory = fullHistory[fullHistory.length - 1] || null;
+    const uptimeHistory = fullHistory.filter(entry => {
+      const timestamp = new Date(entry.timestamp).getTime();
+      return Number.isFinite(timestamp) && now - timestamp <= UPTIME_WINDOW_MS;
+    });
+    const timelineHistory = fullHistory.slice(-TIMELINE_SEGMENTS);
+
+    const statusCheckedAt = baseModel.lastChecked ? new Date(baseModel.lastChecked).getTime() : 0;
+    const historyCheckedAt = latestHistory ? new Date(latestHistory.timestamp).getTime() : 0;
+    const useLiveStatus = statusCheckedAt > historyCheckedAt;
+
+    const effectiveStatus = useLiveStatus || !latestHistory
+      ? (baseModel.status || 'unknown')
+      : latestHistory.status;
+    const effectiveResponseTime = useLiveStatus || !latestHistory
+      ? (baseModel.responseTime ?? null)
+      : (latestHistory.responseTime ?? null);
+    const effectiveLastChecked = useLiveStatus || !latestHistory
+      ? (baseModel.lastChecked || null)
+      : latestHistory.timestamp;
+    const calculatedUptime = calculateUptime(uptimeHistory);
+
+    return {
+      ...baseModel,
+      status: effectiveStatus,
+      responseTime: effectiveResponseTime,
+      lastChecked: effectiveLastChecked,
+      isPaidOnly: effectiveStatus === 'paid_only',
+      uptime: calculatedUptime ?? (fullHistory.length === 0 ? (baseModel.uptime ?? null) : null),
+      totalChecks: uptimeHistory.length || (fullHistory.length === 0 ? (baseModel.totalChecks ?? null) : null),
+      timelineHistory
+    };
+  });
 }
 
 function getFilteredModels() {
@@ -151,20 +229,6 @@ function getFilteredModels() {
   return models;
 }
 
-function getModelHistory(modelId) {
-  if (!historyData) return [];
-  const entries = [];
-  for (const entry of historyData) {
-    if (entry.statuses?.[modelId]) {
-      entries.push({
-        timestamp: entry.timestamp,
-        ...entry.statuses[modelId]
-      });
-    }
-  }
-  return entries.slice(-48); // Last 48 entries for the timeline
-}
-
 function renderSummary() {
   const models = getModels();
   if (models.length === 0) {
@@ -185,8 +249,8 @@ function renderSummary() {
   const total = models.length;
   const onlinePercent = ((operational / total) * 100).toFixed(1);
 
-  // Average uptime
-  const uptimes = models.filter(m => m.uptime != null).map(m => m.uptime);
+  const uptimeModels = models.filter(m => !m.isPaidOnly && m.uptime != null);
+  const uptimes = uptimeModels.map(m => m.uptime);
   const avgUptime = uptimes.length > 0
     ? (uptimes.reduce((a, b) => a + b, 0) / uptimes.length).toFixed(1)
     : '-';
@@ -214,24 +278,25 @@ function renderSummary() {
   $statUptime.textContent = avgUptime !== '-' ? avgUptime + '%' : '-';
   $statTotal.textContent = total;
 
-  // Last updated
-  if (statusData?.lastRun) {
+  const latestCheckedAt = models.reduce((latest, model) => {
+    if (!model.lastChecked) return latest;
+    const timestamp = new Date(model.lastChecked).getTime();
+    return Number.isFinite(timestamp) && timestamp > latest ? timestamp : latest;
+  }, 0);
+
+  if (latestCheckedAt > 0) {
+    $lastUpdated.textContent = `Last checked: ${timeAgo(new Date(latestCheckedAt).toISOString())}`;
+  } else if (statusData?.lastRun) {
     $lastUpdated.textContent = `Last checked: ${timeAgo(statusData.lastRun)}`;
   }
 }
 
 function renderModelCard(model) {
-  const history = getModelHistory(model.id);
+  const history = model.timelineHistory || [];
   const icon = getModelIcon(model.id, model.ownedBy);
-
-  // Calculate uptime from history if not provided by server
-  let uptime = model.uptime;
-  if (uptime == null && history.length > 0) {
-    const opCount = history.filter(h => h.status === 'operational').length;
-    uptime = parseFloat(((opCount / history.length) * 100).toFixed(1));
-  }
-
-  const uptimeClass = uptime >= 95 ? 'high' : uptime >= 80 ? 'medium' : 'low';
+  const uptime = model.uptime;
+  const hasUptime = uptime != null;
+  const uptimeClass = hasUptime && uptime >= 95 ? 'high' : hasUptime && uptime >= 80 ? 'medium' : 'low';
   const iconHTML = icon
     ? `<img class="model-icon" src="${icon}" alt="${model.ownedBy}" loading="lazy" onerror="this.style.display='none'">`
     : '';
@@ -243,11 +308,11 @@ function renderModelCard(model) {
         const cls = h.status === 'operational' ? 'up' : h.status === 'paid_only' ? 'paid' : 'down';
         return `<div class="uptime-segment ${cls}" title="${new Date(h.timestamp).toLocaleString()}: ${statusLabel(h.status)}"></div>`;
       }).join('');
-      const pad = Math.max(0, 48 - history.length);
+      const pad = Math.max(0, TIMELINE_SEGMENTS - history.length);
       const padHTML = Array(pad).fill('<div class="uptime-segment unknown"></div>').join('');
       timelineHTML = `<div class="uptime-timeline">${padHTML}${segments}</div>`;
     } else {
-      timelineHTML = `<div class="uptime-timeline">${Array(48).fill('<div class="uptime-segment unknown"></div>').join('')}</div>`;
+      timelineHTML = `<div class="uptime-timeline">${Array(TIMELINE_SEGMENTS).fill('<div class="uptime-segment unknown"></div>').join('')}</div>`;
     }
   }
 
@@ -272,7 +337,7 @@ function renderModelCard(model) {
         ${badges.join('')}
       </div>
       ${timelineHTML}
-      ${uptime != null && !model.isPaidOnly ? `
+      ${hasUptime && !model.isPaidOnly ? `
         <div class="uptime-bar-container">
           <div class="uptime-bar-label">
             <span class="uptime-bar-text">24h Uptime</span>
