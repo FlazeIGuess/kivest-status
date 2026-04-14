@@ -24,6 +24,7 @@ jobs:
         env:
           KIVEST_API_KEY: ${{ secrets.KIVEST_API_KEY }}
           API_PROXY_URL: ${{ secrets.API_PROXY_URL }}
+          PROXY_TOKEN: ${{ secrets.PROXY_TOKEN }}
         run: node scripts/check-models.js
 
       - name: Commit updated status data

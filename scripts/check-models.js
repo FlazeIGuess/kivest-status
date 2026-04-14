@@ -3,6 +3,7 @@ const path = require('path');
 
 const API_BASE = (process.env.API_PROXY_URL || 'https://ai.ezif.in').replace(/\/+$/, '');
 const API_KEY = process.env.KIVEST_API_KEY;
+const PROXY_TOKEN = process.env.PROXY_TOKEN || null;
 const DATA_DIR = path.join(__dirname, '..', 'data');
 const STATUS_FILE = path.join(DATA_DIR, 'status.json');
 const HISTORY_FILE = path.join(DATA_DIR, 'history.json');
@@ -24,19 +25,22 @@ function sleep(ms) {
 }
 
 async function fetchModels() {
+  // Helper: add proxy token if configured
+  const proxyHeader = PROXY_TOKEN ? { 'x-proxy-token': PROXY_TOKEN } : {};
+
   // Try without auth first (some environments block auth on this endpoint)
-  for (const headers of [{}, { 'Authorization': `Bearer ${API_KEY}` }]) {
+  for (const authHeaders of [{}, { 'Authorization': `Bearer ${API_KEY}` }]) {
     try {
       const url = `${API_BASE}/v1/models`;
-      const res = await fetch(url, { headers });
+      const res = await fetch(url, { headers: { ...proxyHeader, ...authHeaders } });
       if (res.ok) {
         const data = await res.json();
         return (data.data || []).filter(m => !EXCLUDED_MODELS.has(m.id));
       }
       const body = await res.text();
-      console.warn(`/v1/models returned ${res.status} (auth=${!!headers.Authorization}): ${body.slice(0, 200)}`);
+      console.warn(`/v1/models returned ${res.status} (auth=${!!authHeaders.Authorization}): ${body.slice(0, 200)}`);
     } catch (err) {
-      console.warn(`/v1/models fetch failed (auth=${!!headers.Authorization}): ${err.message}`);
+      console.warn(`/v1/models fetch failed (auth=${!!authHeaders.Authorization}): ${err.message}`);
     }
   }
   // Fallback: use model list from previous status.json
@@ -66,7 +70,8 @@ async function testModel(modelId) {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': `Bearer ${API_KEY}`
+        'Authorization': `Bearer ${API_KEY}`,
+        ...(PROXY_TOKEN ? { 'x-proxy-token': PROXY_TOKEN } : {})
       },
       body: JSON.stringify({
         model: modelId,
