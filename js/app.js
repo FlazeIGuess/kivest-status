@@ -94,7 +94,23 @@ function statusLabel(status) {
 
 function getModels() {
   if (!statusData?.models) return [];
-  return Object.values(statusData.models);
+  const models = Object.values(statusData.models);
+
+  // Correct model status from history if history has more recent data
+  if (historyData && historyData.length > 0) {
+    const latestEntry = historyData[historyData.length - 1];
+    const latestTime = new Date(latestEntry.timestamp).getTime();
+    for (const model of models) {
+      const modelTime = model.lastChecked ? new Date(model.lastChecked).getTime() : 0;
+      if (latestEntry.statuses?.[model.id] && latestTime > modelTime) {
+        model.status = latestEntry.statuses[model.id].status;
+        model.responseTime = latestEntry.statuses[model.id].responseTime;
+        model.lastChecked = latestEntry.timestamp;
+      }
+    }
+  }
+
+  return models;
 }
 
 function getFilteredModels() {
@@ -333,6 +349,26 @@ function buildProviderTabs() {
   // Scroll arrows
   const $scrollLeft = document.getElementById('scroll-left');
   const $scrollRight = document.getElementById('scroll-right');
+
+  function updateScrollArrows() {
+    if (!$scrollLeft || !$scrollRight) return;
+    const atStart = $tabs.scrollLeft <= 1;
+    const atEnd = $tabs.scrollLeft + $tabs.clientWidth >= $tabs.scrollWidth - 1;
+    $scrollLeft.classList.toggle('hidden', atStart);
+    $scrollRight.classList.toggle('hidden', atEnd);
+  }
+
+  $tabs.addEventListener('scroll', updateScrollArrows);
+  updateScrollArrows();
+
+  // Mouse wheel horizontal scroll
+  $tabs.addEventListener('wheel', (e) => {
+    if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
+      e.preventDefault();
+      $tabs.scrollLeft += e.deltaY;
+    }
+  }, { passive: false });
+
   if ($scrollLeft) {
     $scrollLeft.addEventListener('click', () => {
       $tabs.scrollBy({ left: -150, behavior: 'smooth' });

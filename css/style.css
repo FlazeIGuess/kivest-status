@@ -402,22 +402,24 @@ body {
   border-left: 1px solid var(--border);
   cursor: pointer;
   color: var(--text-dim);
-  transition: color 0.15s, background 0.15s;
+  transition: color 0.15s, background 0.15s, opacity 0.2s, width 0.2s;
   padding: 0;
 }
 
 .filter-scroll-btn:hover { color: var(--text); background: var(--accent-light); }
-.filter-scroll-btn svg { width: 14px; height: 14px; }
+.filter-scroll-btn svg { width: 14px; height: 14px; pointer-events: none; }
 .filter-scroll-btn.filter-scroll-left { border-left: none; border-right: 1px solid var(--border); }
+.filter-scroll-btn.hidden { width: 0; overflow: hidden; border: none; opacity: 0; pointer-events: none; }
 
 .filter-tab {
   padding: 8px 16px;
   font-size: 0.8125rem;
   font-weight: 500;
+  line-height: 1;
   color: var(--text-dim);
   cursor: pointer;
   border: none; background: none;
-  transition: all 0.15s;
+  transition: color 0.15s, background 0.15s;
   font-family: var(--sans);
   white-space: nowrap;
 }
