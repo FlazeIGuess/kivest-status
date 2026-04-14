@@ -1,5 +1,7 @@
 const fs = require('fs');
 const path = require('path');
+const http = require('http');
+const https = require('https');
 
 const DIRECT_API = 'https://ai.ezif.in';
 const PROXY_URL = process.env.API_PROXY_URL ? process.env.API_PROXY_URL.replace(/\/+$/, '') : null;
@@ -9,6 +11,10 @@ let PROXY_TOKEN = process.env.PROXY_TOKEN || null;
 const DATA_DIR = path.join(__dirname, '..', 'data');
 const STATUS_FILE = path.join(DATA_DIR, 'status.json');
 const HISTORY_FILE = path.join(DATA_DIR, 'history.json');
+
+// Force no keep-alive — critical for Playit.gg tunnel which hangs on reused connections
+const httpAgent = new http.Agent({ keepAlive: false });
+const httpsAgent = new https.Agent({ keepAlive: false });
 
 const MAX_HISTORY_ENTRIES = 288; // 24h at 5-min intervals
 const DELAY_BETWEEN_MODELS_MS = 12000; // 12s between each model (stays safely under burst limit + 5 RPM global)
@@ -33,13 +39,18 @@ async function fetchModels() {
   for (const authHeaders of [{ 'Authorization': `Bearer ${API_KEY}` }, {}]) {
     try {
       const url = `${API_BASE}/v1/models`;
-      const res = await fetch(url, { headers: { 'Connection': 'close', ...proxyHeader, ...authHeaders } });
-      if (res.ok) {
-        const data = await res.json();
+      console.log(`Fetching models from ${url} (auth=${!!authHeaders.Authorization})...`);
+      const res = await rawRequest(url, {
+        method: 'GET',
+        headers: { 'Connection': 'close', ...proxyHeader, ...authHeaders },
+        timeout: 30000
+      });
+      console.log(`  ← ${res.status} (${res.body.length} bytes)`);
+      if (res.status >= 200 && res.status < 300) {
+        const data = JSON.parse(res.body);
         return (data.data || []).filter(m => !EXCLUDED_MODELS.has(m.id));
       }
-      const body = await res.text();
-      console.warn(`/v1/models returned ${res.status} (auth=${!!authHeaders.Authorization}): ${body.slice(0, 200)}`);
+      console.warn(`/v1/models returned ${res.status} (auth=${!!authHeaders.Authorization}): ${res.body.slice(0, 200)}`);
     } catch (err) {
       console.warn(`/v1/models fetch failed (auth=${!!authHeaders.Authorization}): ${err.message}`);
     }
@@ -60,6 +71,48 @@ async function fetchModels() {
 }
 
 /**
+ * Make an HTTP(S) request manually to avoid Node.js fetch (undici) keeping TCP alive.
+ * This is critical for the Playit.gg tunnel which hangs on reused connections.
+ */
+function rawRequest(url, options, bodyStr) {
+  return new Promise((resolve, reject) => {
+    const parsed = new URL(url);
+    const isHttps = parsed.protocol === 'https:';
+    const lib = isHttps ? https : http;
+    const agent = isHttps ? httpsAgent : httpAgent;
+
+    const req = lib.request({
+      hostname: parsed.hostname,
+      port: parsed.port || (isHttps ? 443 : 80),
+      path: parsed.pathname + parsed.search,
+      method: options.method || 'GET',
+      headers: options.headers || {},
+      agent,
+      timeout: options.timeout || 90000
+    }, (res) => {
+      const chunks = [];
+      res.on('data', chunk => chunks.push(chunk));
+      res.on('end', () => {
+        const body = Buffer.concat(chunks).toString('utf-8');
+        resolve({
+          status: res.statusCode,
+          headers: res.headers,
+          body
+        });
+      });
+    });
+
+    req.on('timeout', () => {
+      req.destroy(new Error('Request timed out'));
+    });
+    req.on('error', reject);
+
+    if (bodyStr) req.write(bodyStr);
+    req.end();
+  });
+}
+
+/**
  * Test a single LLM model.
  * Sends include_thinking: true + enable_thinking: true to detect reasoning support.
  * Stores the full raw JSON response for the frontend to display.
@@ -67,8 +120,20 @@ async function fetchModels() {
  */
 async function testModel(modelId) {
   const start = Date.now();
+  const url = `${API_BASE}/v1/chat/completions`;
+  console.log(`    → POST ${url} (model: ${modelId})`);
   try {
-    const res = await fetch(`${API_BASE}/v1/chat/completions`, {
+    const reqBody = JSON.stringify({
+      model: modelId,
+      messages: [{ role: 'user', content: 'Which LLM are you?' }],
+      max_tokens: 120,
+      stream: false,
+      include_thinking: true,
+      enable_thinking: true,
+      thinking_budget: 512
+    });
+
+    const res = await rawRequest(url, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -76,26 +141,32 @@ async function testModel(modelId) {
         'Authorization': `Bearer ${API_KEY}`,
         ...(PROXY_TOKEN ? { 'x-proxy-token': PROXY_TOKEN } : {})
       },
-      body: JSON.stringify({
-        model: modelId,
-        messages: [{ role: 'user', content: 'Which LLM are you?' }],
-        max_tokens: 120,
-        stream: false,
-        include_thinking: true,
-        enable_thinking: true,
-        thinking_budget: 512
-      }),
-      signal: AbortSignal.timeout(90000)
-    });
+      timeout: 90000
+    }, reqBody);
+
     const elapsed = Date.now() - start;
+    console.log(`    ← ${res.status} (${elapsed}ms, ${res.body.length} bytes, content-type: ${res.headers['content-type'] || 'none'})`);
 
     // Handle non-JSON responses (e.g. proxy errors)
-    const contentType = res.headers.get('content-type') || '';
+    const contentType = res.headers['content-type'] || '';
     let body;
     if (contentType.includes('application/json')) {
-      body = await res.json();
+      try {
+        body = JSON.parse(res.body);
+      } catch (parseErr) {
+        console.log(`    ⚠ JSON parse failed: ${parseErr.message}, body: ${res.body.slice(0, 200)}`);
+        return {
+          status: 'down',
+          responseTime: elapsed,
+          isPaidOnly: false,
+          supportsReasoning: false,
+          response: null,
+          rawResponse: null,
+          error: `JSON parse error: ${res.body.slice(0, 300)}`
+        };
+      }
     } else {
-      const text = await res.text();
+      console.log(`    ⚠ Non-JSON response: ${res.body.slice(0, 200)}`);
       return {
         status: 'down',
         responseTime: elapsed,
@@ -103,12 +174,13 @@ async function testModel(modelId) {
         supportsReasoning: false,
         response: null,
         rawResponse: null,
-        error: `HTTP ${res.status}: ${text.slice(0, 500)}`
+        error: `HTTP ${res.status}: ${res.body.slice(0, 500)}`
       };
     }
 
-    if (!res.ok || body?.error) {
+    if (res.status >= 400 || body?.error) {
       const errMsg = body?.error?.message || '';
+      console.log(`    ⚠ API error: ${errMsg.slice(0, 150)}`);
       // Paid model detection: check multiple error patterns from Kivest API
       const isPaid = errMsg.includes('does not have access to model')
         || errMsg.includes('is only available on paid plans');
@@ -152,14 +224,17 @@ async function testModel(modelId) {
       error: null
     };
   } catch (err) {
+    const elapsed = Date.now() - start;
+    const errType = err.message?.includes('timed out') ? 'Timeout (90s)' : `${err.name}: ${err.message}`;
+    console.log(`    ✗ Request failed after ${elapsed}ms: ${errType}`);
     return {
       status: 'down',
-      responseTime: Date.now() - start,
+      responseTime: elapsed,
       isPaidOnly: false,
       supportsReasoning: false,
       response: null,
       rawResponse: null,
-      error: (err.name === 'TimeoutError' ? 'Timeout (90s)' : `${err.name}: ${err.message}`).slice(0, 500)
+      error: errType.slice(0, 500)
     };
   }
 }
