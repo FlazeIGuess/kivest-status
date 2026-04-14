@@ -13,7 +13,7 @@ const PROVIDER_ICONS = {
   moonshot: 'https://raw.githubusercontent.com/lobehub/lobe-icons/refs/heads/master/packages/static-png/light/kimi.png',
   nvidia: 'https://svgstack.com/media/img/nvidia-logo-pv5D386076.webp',
   zhipu: 'https://raw.githubusercontent.com/lobehub/lobe-icons/refs/heads/master/packages/static-png/light/zai.png',
-  kivest: 'https://i.ibb.co/xqW09xK3/image-removebg-preview-2.png',
+  kivest: 'https://svgstack.com/media/img/chatgpt-logo-hyKG382924.webp',
   sarvam: 'https://i.ibb.co/W4m5pZZ6/image.png',
   xiaomi: 'https://raw.githubusercontent.com/lobehub/lobe-icons/refs/heads/master/packages/static-png/light/xiaomimimo.png',
   bytedance: 'https://raw.githubusercontent.com/lobehub/lobe-icons/refs/heads/master/packages/static-png/light/bytedance-color.png',
@@ -29,7 +29,7 @@ function getModelIcon(modelId, ownedBy) {
   if (modelId.includes('veo')) {
     return 'https://raw.githubusercontent.com/lobehub/lobe-icons/refs/heads/master/packages/static-png/dark/deepmind-color.png';
   }
-  return PROVIDER_ICONS[ownedBy] || PROVIDER_ICONS.kivest;
+  return PROVIDER_ICONS[ownedBy] || null;
 }
 
 // === State ===
@@ -160,7 +160,7 @@ function renderSummary() {
   if (models.length === 0) {
     $systemStatus.className = 'system-status degraded';
     $systemStatusText.textContent = 'Loading...';
-    $heroTitle.textContent = 'Kivest AI Status';
+    $heroTitle.textContent = 'Model Status';
     $heroSubtitle.textContent = 'Waiting for data...';
     $statOnline.textContent = '-';
     $statDown.textContent = '-';
@@ -214,6 +214,9 @@ function renderModelCard(model) {
   const history = getModelHistory(model.id);
   const icon = getModelIcon(model.id, model.ownedBy);
   const uptimeClass = model.uptime >= 95 ? 'high' : model.uptime >= 80 ? 'medium' : 'low';
+  const iconHTML = icon
+    ? `<img class="model-icon" src="${icon}" alt="${model.ownedBy}" loading="lazy" onerror="this.style.display='none'">`
+    : '';
 
   let timelineHTML = '';
   if (history.length > 0) {
@@ -241,7 +244,7 @@ function renderModelCard(model) {
   return `
     <div class="model-card" data-model-id="${model.id}">
       <div class="model-card-header">
-        <img class="model-icon" src="${icon}" alt="${model.ownedBy}" loading="lazy" onerror="this.src='https://i.ibb.co/xqW09xK3/image-removebg-preview-2.png'">
+        ${iconHTML}
         <span class="model-name" title="${model.id}">${model.id}</span>
         <div class="model-status-dot ${model.status}"></div>
       </div>
@@ -320,12 +323,12 @@ function setupFilters() {
       const filter = btn.dataset.status;
       if (activeStatusFilter === filter) {
         activeStatusFilter = null;
-        btn.classList.remove('active-green', 'active-red', 'active-yellow');
+        btn.classList.remove('active-green', 'active-red', 'active-amber');
       } else {
-        document.querySelectorAll('.filter-status-btn').forEach(b => b.classList.remove('active-green', 'active-red', 'active-yellow'));
+        document.querySelectorAll('.filter-status-btn').forEach(b => b.classList.remove('active-green', 'active-red', 'active-amber'));
         activeStatusFilter = filter;
         if (filter === 'online') btn.classList.add('active-green');
-        else if (filter === 'paid') btn.classList.add('active-yellow');
+        else if (filter === 'paid') btn.classList.add('active-amber');
         else btn.classList.add('active-red');
       }
       renderGrid();
@@ -357,7 +360,24 @@ function startAutoRefresh() {
   }, 60000); // Refresh every 60s
 }
 
+// === Theme Toggle ===
+function initTheme() {
+  const saved = localStorage.getItem('theme');
+  if (saved === 'dark' || (!saved && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+    document.documentElement.setAttribute('data-theme', 'dark');
+  }
+}
+
+function toggleTheme() {
+  const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+  const newTheme = isDark ? 'light' : 'dark';
+  document.documentElement.setAttribute('data-theme', newTheme);
+  localStorage.setItem('theme', newTheme);
+}
+
 // === Init ===
+initTheme();
+
 async function init() {
   const ok = await fetchData();
   if (ok) {
@@ -366,6 +386,10 @@ async function init() {
   $loading.classList.add('hidden');
   setupFilters();
   startAutoRefresh();
+
+  // Theme toggle
+  const $toggle = document.getElementById('theme-toggle');
+  if ($toggle) $toggle.addEventListener('click', toggleTheme);
 
   // Update time-ago labels every 30s
   setInterval(() => {

@@ -3,10 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kivest AI — Status</title>
-  <meta name="description" content="Real-time status monitoring for all Kivest AI models. Check uptime, response times, and availability.">
-  <meta name="theme-color" content="#000000">
-  <link rel="icon" href="https://i.ibb.co/xqW09xK3/image-removebg-preview-2.png" type="image/png">
+  <title>AI Model Status</title>
+  <meta name="description" content="Real-time status monitoring for AI models. Check uptime, response times, and availability.">
+  <meta name="theme-color" content="#FAF7F2">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -16,30 +15,32 @@
 
   <!-- Loading Screen -->
   <div id="loading-screen" class="loading-screen">
-    <img class="loading-logo" src="https://i.ibb.co/xqW09xK3/image-removebg-preview-2.png" alt="Kivest AI">
+    <div class="loading-spinner"></div>
     <span class="loading-text">Loading</span>
   </div>
 
   <!-- Header -->
   <header class="header">
     <div class="header-left">
-      <img class="header-logo" src="https://i.ibb.co/xqW09xK3/image-removebg-preview-2.png" alt="Kivest AI">
-      <span class="header-title">kivestai <span>status</span></span>
+      <span class="header-title">model status <span>monitor</span></span>
     </div>
     <div class="header-right">
       <div class="live-indicator">
         <div class="live-dot"></div>
         <span>Live</span>
       </div>
-      <a class="header-link" href="https://ai.ezif.in/" target="_blank" rel="noopener">Home</a>
+      <a class="header-link" href="https://ai.ezif.in/" target="_blank" rel="noopener">API</a>
       <a class="header-link" href="https://ai.ezif.in/docs" target="_blank" rel="noopener">Docs</a>
-      <a class="header-link" href="https://discord.gg/z6bZZF4rme" target="_blank" rel="noopener">Discord</a>
+      <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+      </button>
     </div>
   </header>
 
   <!-- Disclaimer -->
   <div class="disclaimer">
-    <span>&#9888;&#65039; This is an <strong>unofficial</strong> community fan project and is not affiliated with, endorsed by, or associated with Kivest AI.</span>
+    <span>&#9888;&#65039; This is an <strong>unofficial</strong> community project and is not affiliated with any AI provider listed here.</span>
   </div>
 
   <main class="container">
@@ -50,7 +51,7 @@
         <div class="system-status-dot"></div>
         <span id="system-status-text">Loading...</span>
       </div>
-      <h1 id="hero-title" class="hero-title">Kivest AI Status</h1>
+      <h1 id="hero-title" class="hero-title">Model Status</h1>
       <p id="hero-subtitle" class="hero-subtitle">Monitoring all models in real-time</p>
     </section>
 
@@ -104,16 +105,11 @@
   <!-- Footer -->
   <footer class="footer">
     <div class="footer-content">
-      <span class="footer-sep">&middot;</span>
-      <a class="footer-link" href="https://ai.ezif.in/" target="_blank" rel="noopener">Home</a>
-      <span class="footer-sep">&middot;</span>
-      <a class="footer-link" href="https://ai.ezif.in/docs" target="_blank" rel="noopener">Docs</a>
-      <span class="footer-sep">&middot;</span>
-      <a class="footer-link" href="https://discord.gg/z6bZZF4rme" target="_blank" rel="noopener">Discord</a>
-      <span class="footer-sep">&middot;</span>
       <span class="footer-text">Auto-refreshes every 60s</span>
       <span class="footer-sep">&middot;</span>
-      <span class="footer-text">Unofficial fan project — not affiliated with Kivest AI</span>
+      <a class="footer-link" href="https://ai.ezif.in/docs" target="_blank" rel="noopener">API Docs</a>
+      <span class="footer-sep">&middot;</span>
+      <span class="footer-text">Unofficial community project</span>
     </div>
   </footer>
 
