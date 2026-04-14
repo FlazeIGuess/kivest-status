@@ -24,12 +24,32 @@ function sleep(ms) {
 }
 
 async function fetchModels() {
-  const res = await fetch(`${API_BASE}/v1/models`, {
-    headers: { 'Authorization': `Bearer ${API_KEY}` }
-  });
-  if (!res.ok) throw new Error(`Failed to fetch models: ${res.status}`);
-  const data = await res.json();
-  return (data.data || []).filter(m => !EXCLUDED_MODELS.has(m.id));
+  // Try without auth first (some environments block auth on this endpoint)
+  for (const headers of [{}, { 'Authorization': `Bearer ${API_KEY}` }]) {
+    try {
+      const res = await fetch(`${API_BASE}/v1/models`, { headers });
+      if (res.ok) {
+        const data = await res.json();
+        return (data.data || []).filter(m => !EXCLUDED_MODELS.has(m.id));
+      }
+      console.warn(`/v1/models returned ${res.status} (auth=${!!headers.Authorization})`);
+    } catch (err) {
+      console.warn(`/v1/models fetch failed (auth=${!!headers.Authorization}): ${err.message}`);
+    }
+  }
+  // Fallback: use model list from previous status.json
+  console.warn('Live model list unavailable, falling back to cached status.json');
+  try {
+    const cached = JSON.parse(fs.readFileSync(STATUS_FILE, 'utf-8'));
+    const ids = Object.keys(cached.models || {});
+    if (ids.length > 0) {
+      return ids.filter(id => !EXCLUDED_MODELS.has(id)).map(id => ({
+        id,
+        owned_by: cached.models[id].ownedBy || 'unknown'
+      }));
+    }
+  } catch {}
+  throw new Error('Failed to fetch models from API and no cached data available');
 }
 
 /**
