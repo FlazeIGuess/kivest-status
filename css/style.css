@@ -680,6 +680,27 @@ body {
   color: var(--text-muted);
 }
 
+.model-error {
+  background: var(--red-light);
+  border: 1px solid var(--red-border);
+  border-radius: var(--radius-sm);
+  padding: 7px 10px;
+  margin-bottom: 10px;
+  font-size: 0.6875rem;
+  line-height: 1.5;
+  color: var(--red);
+  max-height: 56px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+.error-text {
+  color: var(--red);
+}
+
 /* === Card Footer === */
 .model-card-footer {
   display: flex;

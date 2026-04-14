@@ -253,6 +253,7 @@ function renderModelCard(model) {
         ${badges.join('')}
       </div>
       ${model.response ? `<div class="model-response"><span class="response-label">Response:</span> <span class="response-text">${escapeHtml(model.response)}</span></div>` : ''}
+      ${!model.response && model.error ? `<div class="model-error"><span class="response-label">Error:</span> <span class="error-text">${escapeHtml(model.error)}</span></div>` : ''}
       ${timelineHTML}
       ${model.uptime != null ? `
         <div class="uptime-bar-container">
