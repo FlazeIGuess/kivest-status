@@ -241,6 +241,39 @@ function renderModelCard(model) {
   }
   badges.push(`<span class="badge badge-provider">${model.ownedBy || 'unknown'}</span>`);
 
+  // Response section — always present for all models
+  let responseHTML = '';
+  if (model.response) {
+    responseHTML = `
+      <div class="model-response-section">
+        <div class="response-preview">
+          <span class="response-label">Response:</span> <span class="response-text">${escapeHtml(model.response.slice(0, 200))}${model.response.length > 200 ? '...' : ''}</span>
+        </div>
+        <button class="expand-toggle" onclick="toggleExpand(this)" data-expanded="false">
+          <svg class="expand-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          Show Full Response
+        </button>
+        <div class="expand-content" style="display:none">
+          <div class="response-full"><span class="response-label">Full Response:</span>\n${escapeHtml(model.response)}</div>
+          ${model.reasoningContent ? `<div class="reasoning-block"><span class="response-label">⚡ Reasoning:</span>\n${escapeHtml(model.reasoningContent)}</div>` : ''}
+          ${model.rawResponse ? `<div class="raw-response-block"><button class="raw-toggle" onclick="toggleRaw(this)">Show RAW JSON</button><pre class="raw-json" style="display:none">${escapeHtml(JSON.stringify(model.rawResponse, null, 2))}</pre></div>` : ''}
+        </div>
+      </div>`;
+  } else if (model.error) {
+    responseHTML = `
+      <div class="model-response-section">
+        <div class="model-error"><span class="response-label">Error:</span> <span class="error-text">${escapeHtml(model.error.slice(0, 200))}${model.error.length > 200 ? '...' : ''}</span></div>
+        <button class="expand-toggle" onclick="toggleExpand(this)" data-expanded="false">
+          <svg class="expand-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          Show Details
+        </button>
+        <div class="expand-content" style="display:none">
+          <div class="error-full"><span class="response-label">Full Error:</span>\n${escapeHtml(model.error)}</div>
+          ${model.rawResponse ? `<div class="raw-response-block"><button class="raw-toggle" onclick="toggleRaw(this)">Show RAW JSON</button><pre class="raw-json" style="display:none">${escapeHtml(JSON.stringify(model.rawResponse, null, 2))}</pre></div>` : ''}
+        </div>
+      </div>`;
+  }
+
   return `
     <div class="model-card" data-model-id="${model.id}">
       <div class="model-card-header">
@@ -252,8 +285,7 @@ function renderModelCard(model) {
         <span class="badge badge-status ${model.status}">${statusLabel(model.status)}</span>
         ${badges.join('')}
       </div>
-      ${model.response ? `<div class="model-response"><span class="response-label">Response:</span> <span class="response-text">${escapeHtml(model.response)}</span></div>` : ''}
-      ${!model.response && model.error ? `<div class="model-error"><span class="response-label">Error:</span> <span class="error-text">${escapeHtml(model.error)}</span></div>` : ''}
+      ${responseHTML}
       ${timelineHTML}
       ${model.uptime != null ? `
         <div class="uptime-bar-container">
@@ -275,6 +307,33 @@ function renderModelCard(model) {
       </div>
     </div>
   `;
+}
+
+// Expand/collapse response section
+function toggleExpand(btn) {
+  const content = btn.nextElementSibling;
+  const expanded = btn.dataset.expanded === 'true';
+  if (expanded) {
+    content.style.display = 'none';
+    btn.dataset.expanded = 'false';
+    btn.innerHTML = '<svg class="expand-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg> Show Full Response';
+  } else {
+    content.style.display = 'block';
+    btn.dataset.expanded = 'true';
+    btn.innerHTML = '<svg class="expand-icon rotated" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg> Hide';
+  }
+}
+
+// Toggle raw JSON visibility
+function toggleRaw(btn) {
+  const pre = btn.nextElementSibling;
+  if (pre.style.display === 'none') {
+    pre.style.display = 'block';
+    btn.textContent = 'Hide RAW JSON';
+  } else {
+    pre.style.display = 'none';
+    btn.textContent = 'Show RAW JSON';
+  }
 }
 
 function renderGrid() {

@@ -9,8 +9,7 @@ const STATUS_FILE = path.join(DATA_DIR, 'status.json');
 const HISTORY_FILE = path.join(DATA_DIR, 'history.json');
 
 const MAX_HISTORY_ENTRIES = 288; // 24h at 5-min intervals
-const BATCH_SIZE = 4;
-const BATCH_DELAY_MS = 13000; // 13s between batches (safe under 5/10s burst)
+const DELAY_BETWEEN_MODELS_MS = 12000; // 12s between each model (stays safely under burst limit + 5 RPM global)
 
 // Non-LLM models to exclude (image generation, video generation, slides, deep-research)
 const EXCLUDED_MODELS = new Set([
@@ -60,7 +59,8 @@ async function fetchModels() {
 
 /**
  * Test a single LLM model.
- * Sends include_thinking: true + stream: false to detect reasoning support.
+ * Sends include_thinking: true + enable_thinking: true to detect reasoning support.
+ * Stores the full raw JSON response for the frontend to display.
  * Detects paid-only via: "does not have access to model" error message.
  */
 async function testModel(modelId) {
@@ -76,11 +76,13 @@ async function testModel(modelId) {
       body: JSON.stringify({
         model: modelId,
         messages: [{ role: 'user', content: 'Which LLM are you?' }],
-        max_tokens: 60,
+        max_tokens: 120,
         stream: false,
-        include_thinking: true
+        include_thinking: true,
+        enable_thinking: true,
+        thinking_budget: 512
       }),
-      signal: AbortSignal.timeout(45000)
+      signal: AbortSignal.timeout(90000)
     });
     const elapsed = Date.now() - start;
 
@@ -97,21 +99,25 @@ async function testModel(modelId) {
         isPaidOnly: false,
         supportsReasoning: false,
         response: null,
-        error: `HTTP ${res.status}: ${text.slice(0, 200)}`
+        rawResponse: null,
+        error: `HTTP ${res.status}: ${text.slice(0, 500)}`
       };
     }
 
-    if (!res.ok) {
+    if (!res.ok || body?.error) {
       const errMsg = body?.error?.message || '';
-      // Paid model detection: exact error from Kivest API
-      const isPaid = errMsg.includes('does not have access to model');
+      // Paid model detection: check multiple error patterns from Kivest API
+      const isPaid = errMsg.includes('does not have access to model')
+        || errMsg.includes('is only available on paid plans');
       return {
         status: isPaid ? 'paid_only' : 'down',
         responseTime: elapsed,
         isPaidOnly: isPaid,
         supportsReasoning: false,
         response: null,
-        error: errMsg.slice(0, 200)
+        reasoningContent: null,
+        rawResponse: body,
+        error: errMsg.slice(0, 500)
       };
     }
 
@@ -122,14 +128,22 @@ async function testModel(modelId) {
       choice?.message?.reasoning
     );
     const hasReasoningTokens = (body?.usage?.reasoning_tokens || 0) > 0;
-    const responseText = (choice?.message?.content || '').trim().slice(0, 300);
+    const responseText = (choice?.message?.content || '').trim();
+    const reasoningText = (choice?.message?.reasoning_content || choice?.message?.reasoning || '').trim();
+
+    // If the model only returned reasoning content but no main content,
+    // use a truncated version of the reasoning as the display response
+    const displayResponse = responseText
+      || (reasoningText ? `[Reasoning only] ${reasoningText.slice(0, 300)}` : null);
 
     return {
       status: 'operational',
       responseTime: elapsed,
       isPaidOnly: false,
       supportsReasoning: hasReasoningContent || hasReasoningTokens,
-      response: responseText || null,
+      response: displayResponse,
+      reasoningContent: reasoningText || null,
+      rawResponse: body,
       error: null
     };
   } catch (err) {
@@ -139,7 +153,8 @@ async function testModel(modelId) {
       isPaidOnly: false,
       supportsReasoning: false,
       response: null,
-      error: (err.name === 'TimeoutError' ? 'Timeout (45s)' : `${err.name}: ${err.message}`).slice(0, 200)
+      rawResponse: null,
+      error: (err.name === 'TimeoutError' ? 'Timeout (90s)' : `${err.name}: ${err.message}`).slice(0, 500)
     };
   }
 }
@@ -180,37 +195,52 @@ async function main() {
     ownedBy: m.owned_by
   }));
 
-  console.log(`Testing ${testQueue.length} models in batches of ${BATCH_SIZE}...`);
+  console.log(`Testing ${testQueue.length} models sequentially (${DELAY_BETWEEN_MODELS_MS / 1000}s delay between each)...`);
 
-  // Process in batches
+  const MAX_RETRIES = 2;
+
+  // Process one model at a time to stay within rate limits
   const results = {};
-  for (let i = 0; i < testQueue.length; i += BATCH_SIZE) {
-    const batch = testQueue.slice(i, i + BATCH_SIZE);
-    const batchNum = Math.floor(i / BATCH_SIZE) + 1;
-    const totalBatches = Math.ceil(testQueue.length / BATCH_SIZE);
-    console.log(`Batch ${batchNum}/${totalBatches}: ${batch.map(m => m.id).join(', ')}`);
+  for (let i = 0; i < testQueue.length; i++) {
+    const model = testQueue[i];
+    console.log(`[${i + 1}/${testQueue.length}] Testing ${model.id}...`);
 
-    const promises = batch.map(async (model) => {
-      const result = await testModel(model.id);
-      return { ...model, ...result };
-    });
+    let result;
+    for (let attempt = 0; attempt <= MAX_RETRIES; attempt++) {
+      result = await testModel(model.id);
 
-    const batchResults = await Promise.all(promises);
-    for (const r of batchResults) {
-      results[r.id] = r;
-      const emoji = r.status === 'operational' ? '✓' :
-                     r.status === 'paid_only' ? '$' : '✗';
-      const extras = [];
-      if (r.supportsReasoning) extras.push('reasoning');
-      if (r.isPaidOnly) extras.push('paid');
-      const extraStr = extras.length ? ` [${extras.join(', ')}]` : '';
-      console.log(`  ${emoji} ${r.id}: ${r.status} (${r.responseTime}ms)${extraStr}`);
+      // Retry on rate limit errors
+      const isRateLimit = result.error && (
+        result.error.includes('rate limit') ||
+        result.error.includes('Rate limit') ||
+        result.error.includes('Burst limit') ||
+        result.error.includes('Slow down') ||
+        result.error.includes('too many requests')
+      );
+
+      if (isRateLimit && attempt < MAX_RETRIES) {
+        const waitSec = 15 + attempt * 10; // 15s, 25s
+        console.log(`  ⏳ Rate limited, retrying in ${waitSec}s (attempt ${attempt + 2}/${MAX_RETRIES + 1})...`);
+        await sleep(waitSec * 1000);
+        continue;
+      }
+      break;
     }
 
-    // Wait between batches (except after the last one)
-    if (i + BATCH_SIZE < testQueue.length) {
-      console.log(`  Waiting ${BATCH_DELAY_MS / 1000}s...`);
-      await sleep(BATCH_DELAY_MS);
+    results[model.id] = { ...model, ...result };
+
+    const r = results[model.id];
+    const emoji = r.status === 'operational' ? '✓' :
+                   r.status === 'paid_only' ? '$' : '✗';
+    const extras = [];
+    if (r.supportsReasoning) extras.push('reasoning');
+    if (r.isPaidOnly) extras.push('paid');
+    const extraStr = extras.length ? ` [${extras.join(', ')}]` : '';
+    console.log(`  ${emoji} ${r.status} (${r.responseTime}ms)${extraStr}`);
+
+    // Wait between models (except after the last one)
+    if (i < testQueue.length - 1) {
+      await sleep(DELAY_BETWEEN_MODELS_MS);
     }
   }
 
@@ -230,6 +260,8 @@ async function main() {
         supportsReasoning: results[id].supportsReasoning || prevReasoning,
         isPaidOnly: results[id].isPaidOnly,
         response: results[id].response,
+        reasoningContent: results[id].reasoningContent || null,
+        rawResponse: results[id].rawResponse || null,
         error: results[id].error,
         lastChecked: now
       };
