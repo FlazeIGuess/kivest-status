@@ -2,7 +2,7 @@ const http = require('http');
 const https = require('https');
 
 const PORT = process.env.PORT || 3099;
-const TARGET = 'https://ai.ezif.in';
+const TARGET = (process.env.UPSTREAM_BASE_URL || 'https://ai.ezif.in').replace(/\/+$/, '');
 const PROXY_TOKEN = process.env.PROXY_TOKEN;
 
 // Constant-time comparison to prevent timing attacks
@@ -39,6 +39,11 @@ const server = http.createServer((req, res) => {
   }
 
   const targetUrl = new URL(urlPath, TARGET);
+  if (targetUrl.protocol !== 'https:' && targetUrl.protocol !== 'http:') {
+    res.writeHead(503, { 'Content-Type': 'application/json' });
+    res.end(JSON.stringify({ error: 'Invalid upstream protocol' }));
+    return;
+  }
 
   // Forward only safe headers, strip proxy token
   const headers = {
@@ -49,13 +54,14 @@ const server = http.createServer((req, res) => {
 
   const options = {
     hostname: targetUrl.hostname,
-    port: 443,
+    port: targetUrl.port || (targetUrl.protocol === 'https:' ? 443 : 80),
     path: targetUrl.pathname + targetUrl.search,
     method: req.method,
     headers,
   };
 
-  const proxyReq = https.request(options, (proxyRes) => {
+  const upstreamClient = targetUrl.protocol === 'https:' ? https : http;
+  const proxyReq = upstreamClient.request(options, (proxyRes) => {
     res.writeHead(proxyRes.statusCode, proxyRes.headers);
     proxyRes.pipe(res);
   });

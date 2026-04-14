@@ -28,8 +28,8 @@ async function fetchModels() {
   // Helper: add proxy token if configured
   const proxyHeader = PROXY_TOKEN ? { 'x-proxy-token': PROXY_TOKEN } : {};
 
-  // Try without auth first (some environments block auth on this endpoint)
-  for (const authHeaders of [{}, { 'Authorization': `Bearer ${API_KEY}` }]) {
+  // Prefer documented auth flow first, then fallback without auth if needed.
+  for (const authHeaders of [{ 'Authorization': `Bearer ${API_KEY}` }, {}]) {
     try {
       const url = `${API_BASE}/v1/models`;
       const res = await fetch(url, { headers: { ...proxyHeader, ...authHeaders } });
