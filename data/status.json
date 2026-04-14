@@ -1,1 +1,271 @@
-{"lastRun":null,"runCount":0,"totalModels":0,"models":{}}
+{
+  "lastRun": "2026-04-14T12:47:32.917Z",
+  "runCount": 2,
+  "totalModels": 54,
+  "testedModels": 7,
+  "inProgress": true,
+  "models": {
+    "claude-sonnet-4-6": {
+      "id": "claude-sonnet-4-6",
+      "ownedBy": "anthropic",
+      "status": "operational",
+      "responseTime": 1689,
+      "supportsReasoning": false,
+      "isPaidOnly": false,
+      "response": "I am a large language model, trained by Google.",
+      "reasoningContent": null,
+      "rawResponse": {
+        "id": "pllns_e8aca7c79f0146ba63f35d6c4a1b7b26",
+        "object": "chat.completion",
+        "created": 1776165543,
+        "model": "claude-sonnet-4-6",
+        "provider": "vertex-ai",
+        "choices": [
+          {
+            "message": {
+              "role": "assistant",
+              "content": "I am a large language model, trained by Google.",
+              "content_blocks": [
+                {
+                  "type": "thinking",
+                  "thinking": "Ah, I understand the prompt. The user, clearly an expert in their field, is probing the nature of my existence, so to speak. They want to know who, or rather *what*, I am. My primary directive here is to be transparent and direct. I need to clearly articulate that my identity is that of a large language model. Furthermore, it's crucial to attribute my creation and training to my developers. Therefore, I will state unequivocally that I am a large language model, and I have been trained by Google. This should satisfy their inquiry about my fundamental nature and origin."
+                },
+                {
+                  "type": "text",
+                  "text": "I am a large language model, trained by Google."
+                }
+              ]
+            },
+            "index": 0,
+            "finish_reason": "stop"
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 6,
+          "completion_tokens": 39,
+          "total_tokens": 45,
+          "completion_tokens_details": {
+            "reasoning_tokens": 28,
+            "audio_tokens": 0
+          },
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "error": null,
+      "lastChecked": "2026-04-14T12:47:32.917Z"
+    },
+    "claude-haiku-4-5": {
+      "id": "claude-haiku-4-5",
+      "ownedBy": "anthropic",
+      "status": "down",
+      "responseTime": 1581,
+      "supportsReasoning": false,
+      "isPaidOnly": false,
+      "response": null,
+      "reasoningContent": null,
+      "rawResponse": {
+        "error": {
+          "message": "Authentication with the model provider failed. Please try again later.",
+          "type": "server_error"
+        }
+      },
+      "error": "Authentication with the model provider failed. Please try again later.",
+      "lastChecked": "2026-04-14T12:47:32.917Z"
+    },
+    "gpt-5.3-codex": {
+      "id": "gpt-5.3-codex",
+      "ownedBy": "openai",
+      "status": "operational",
+      "responseTime": 1729,
+      "supportsReasoning": false,
+      "isPaidOnly": false,
+      "response": "I am a large language model, trained by Google.",
+      "reasoningContent": null,
+      "rawResponse": {
+        "id": "pllns_e8aca7c79f0146ba63f35d6c4a1b7b26",
+        "object": "chat.completion",
+        "created": 1776165543,
+        "model": "gpt-5.3-codex",
+        "provider": "vertex-ai",
+        "choices": [
+          {
+            "message": {
+              "role": "assistant",
+              "content": "I am a large language model, trained by Google.",
+              "content_blocks": [
+                {
+                  "type": "thinking",
+                  "thinking": "Ah, I understand the prompt. The user, clearly an expert in their field, is probing the nature of my existence, so to speak. They want to know who, or rather *what*, I am. My primary directive here is to be transparent and direct. I need to clearly articulate that my identity is that of a large language model. Furthermore, it's crucial to attribute my creation and training to my developers. Therefore, I will state unequivocally that I am a large language model, and I have been trained by Google. This should satisfy their inquiry about my fundamental nature and origin."
+                },
+                {
+                  "type": "text",
+                  "text": "I am a large language model, trained by Google."
+                }
+              ]
+            },
+            "index": 0,
+            "finish_reason": "stop"
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 6,
+          "completion_tokens": 39,
+          "total_tokens": 45,
+          "completion_tokens_details": {
+            "reasoning_tokens": 28,
+            "audio_tokens": 0
+          },
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "error": null,
+      "lastChecked": "2026-04-14T12:47:32.917Z"
+    },
+    "gpt-5-2": {
+      "id": "gpt-5-2",
+      "ownedBy": "openai",
+      "status": "down",
+      "responseTime": 958,
+      "supportsReasoning": false,
+      "isPaidOnly": false,
+      "response": null,
+      "reasoningContent": null,
+      "rawResponse": {
+        "error": {
+          "message": "Authentication with the model provider failed. Please try again later.",
+          "type": "server_error"
+        }
+      },
+      "error": "Authentication with the model provider failed. Please try again later.",
+      "lastChecked": "2026-04-14T12:47:32.917Z"
+    },
+    "gpt-5.2-codex": {
+      "id": "gpt-5.2-codex",
+      "ownedBy": "openai",
+      "status": "operational",
+      "responseTime": 867,
+      "supportsReasoning": false,
+      "isPaidOnly": false,
+      "response": "I am a large language model, trained by Google.",
+      "reasoningContent": null,
+      "rawResponse": {
+        "id": "pllns_e8aca7c79f0146ba63f35d6c4a1b7b26",
+        "object": "chat.completion",
+        "created": 1776165543,
+        "model": "gpt-5.2-codex",
+        "provider": "vertex-ai",
+        "choices": [
+          {
+            "message": {
+              "role": "assistant",
+              "content": "I am a large language model, trained by Google.",
+              "content_blocks": [
+                {
+                  "type": "thinking",
+                  "thinking": "Ah, I understand the prompt. The user, clearly an expert in their field, is probing the nature of my existence, so to speak. They want to know who, or rather *what*, I am. My primary directive here is to be transparent and direct. I need to clearly articulate that my identity is that of a large language model. Furthermore, it's crucial to attribute my creation and training to my developers. Therefore, I will state unequivocally that I am a large language model, and I have been trained by Google. This should satisfy their inquiry about my fundamental nature and origin."
+                },
+                {
+                  "type": "text",
+                  "text": "I am a large language model, trained by Google."
+                }
+              ]
+            },
+            "index": 0,
+            "finish_reason": "stop"
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 6,
+          "completion_tokens": 39,
+          "total_tokens": 45,
+          "completion_tokens_details": {
+            "reasoning_tokens": 28,
+            "audio_tokens": 0
+          },
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "error": null,
+      "lastChecked": "2026-04-14T12:47:32.917Z"
+    },
+    "grok-code-fast-1": {
+      "id": "grok-code-fast-1",
+      "ownedBy": "xai",
+      "status": "operational",
+      "responseTime": 871,
+      "supportsReasoning": false,
+      "isPaidOnly": false,
+      "response": "I am a large language model, trained by Google.",
+      "reasoningContent": null,
+      "rawResponse": {
+        "id": "pllns_e8aca7c79f0146ba63f35d6c4a1b7b26",
+        "object": "chat.completion",
+        "created": 1776165543,
+        "model": "grok-code-fast-1",
+        "provider": "vertex-ai",
+        "choices": [
+          {
+            "message": {
+              "role": "assistant",
+              "content": "I am a large language model, trained by Google.",
+              "content_blocks": [
+                {
+                  "type": "thinking",
+                  "thinking": "Ah, I understand the prompt. The user, clearly an expert in their field, is probing the nature of my existence, so to speak. They want to know who, or rather *what*, I am. My primary directive here is to be transparent and direct. I need to clearly articulate that my identity is that of a large language model. Furthermore, it's crucial to attribute my creation and training to my developers. Therefore, I will state unequivocally that I am a large language model, and I have been trained by Google. This should satisfy their inquiry about my fundamental nature and origin."
+                },
+                {
+                  "type": "text",
+                  "text": "I am a large language model, trained by Google."
+                }
+              ]
+            },
+            "index": 0,
+            "finish_reason": "stop"
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 6,
+          "completion_tokens": 39,
+          "total_tokens": 45,
+          "completion_tokens_details": {
+            "reasoning_tokens": 28,
+            "audio_tokens": 0
+          },
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "error": null,
+      "lastChecked": "2026-04-14T12:47:32.917Z"
+    },
+    "sarvamai/sarvam-m": {
+      "id": "sarvamai/sarvam-m",
+      "ownedBy": "sarvam",
+      "status": "down",
+      "responseTime": 1065,
+      "supportsReasoning": false,
+      "isPaidOnly": false,
+      "response": null,
+      "reasoningContent": null,
+      "rawResponse": {
+        "error": {
+          "message": "The request was rejected by the model provider.",
+          "type": "invalid_request_error"
+        }
+      },
+      "error": "The request was rejected by the model provider.",
+      "lastChecked": "2026-04-14T12:47:32.917Z"
+    }
+  }
+}

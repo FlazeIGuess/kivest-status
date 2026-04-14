@@ -1,9 +1,11 @@
 const fs = require('fs');
 const path = require('path');
 
-const API_BASE = (process.env.API_PROXY_URL || 'https://ai.ezif.in').replace(/\/+$/, '');
+const DIRECT_API = 'https://ai.ezif.in';
+const PROXY_URL = process.env.API_PROXY_URL ? process.env.API_PROXY_URL.replace(/\/+$/, '') : null;
+let API_BASE = (PROXY_URL || DIRECT_API);
 const API_KEY = process.env.KIVEST_API_KEY;
-const PROXY_TOKEN = process.env.PROXY_TOKEN || null;
+let PROXY_TOKEN = process.env.PROXY_TOKEN || null;
 const DATA_DIR = path.join(__dirname, '..', 'data');
 const STATUS_FILE = path.join(DATA_DIR, 'status.json');
 const HISTORY_FILE = path.join(DATA_DIR, 'history.json');
@@ -31,7 +33,7 @@ async function fetchModels() {
   for (const authHeaders of [{ 'Authorization': `Bearer ${API_KEY}` }, {}]) {
     try {
       const url = `${API_BASE}/v1/models`;
-      const res = await fetch(url, { headers: { ...proxyHeader, ...authHeaders } });
+      const res = await fetch(url, { headers: { 'Connection': 'close', ...proxyHeader, ...authHeaders } });
       if (res.ok) {
         const data = await res.json();
         return (data.data || []).filter(m => !EXCLUDED_MODELS.has(m.id));
@@ -70,6 +72,7 @@ async function testModel(modelId) {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
+        'Connection': 'close',
         'Authorization': `Bearer ${API_KEY}`,
         ...(PROXY_TOKEN ? { 'x-proxy-token': PROXY_TOKEN } : {})
       },
