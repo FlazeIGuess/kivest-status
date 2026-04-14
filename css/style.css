@@ -367,15 +367,48 @@ body {
 
 .filter-tabs {
   display: flex;
+  align-items: center;
   background: var(--bg-card);
   border: 1px solid var(--border);
   border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+
+.filter-tabs > #filter-tab-all {
+  flex-shrink: 0;
+  border-right: 1px solid var(--border);
+  border-radius: 0;
+}
+
+.filter-tabs-scroll {
+  display: flex;
   overflow-x: auto;
   overflow-y: hidden;
   scrollbar-width: none;
+  flex: 1;
+  min-width: 0;
 }
 
-.filter-tabs::-webkit-scrollbar { display: none; }
+.filter-tabs-scroll::-webkit-scrollbar { display: none; }
+
+.filter-scroll-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 32px;
+  background: none;
+  border: none;
+  border-left: 1px solid var(--border);
+  cursor: pointer;
+  color: var(--text-dim);
+  transition: color 0.15s, background 0.15s;
+  padding: 0;
+}
+
+.filter-scroll-btn:hover { color: var(--text); background: var(--accent-light); }
+.filter-scroll-btn svg { width: 14px; height: 14px; }
+.filter-scroll-btn.filter-scroll-left { border-left: none; border-right: 1px solid var(--border); }
 
 .filter-tab {
   padding: 8px 16px;

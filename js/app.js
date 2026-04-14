@@ -297,23 +297,52 @@ function buildProviderTabs() {
   const models = getModels();
   const providers = new Set(models.map(m => (m.ownedBy || 'unknown').toLowerCase()));
   const $tabs = document.getElementById('provider-tabs');
+  const $allBtn = document.getElementById('filter-tab-all');
   if (!$tabs) return;
-  let html = '<button class="filter-tab active" data-provider="all">All</button>';
+
+  // Build only provider buttons (All is separate)
   const sorted = [...providers].sort();
+  let html = '';
   for (const p of sorted) {
     const label = p.charAt(0).toUpperCase() + p.slice(1);
     html += `<button class="filter-tab" data-provider="${p}">${label}</button>`;
   }
   $tabs.innerHTML = html;
 
+  // All button click
+  if ($allBtn) {
+    $allBtn.addEventListener('click', () => {
+      $tabs.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active'));
+      $allBtn.classList.add('active');
+      activeProvider = 'all';
+      renderGrid();
+    });
+  }
+
+  // Provider tab clicks
   $tabs.querySelectorAll('.filter-tab').forEach(tab => {
     tab.addEventListener('click', () => {
       $tabs.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active'));
+      if ($allBtn) $allBtn.classList.remove('active');
       tab.classList.add('active');
       activeProvider = tab.dataset.provider;
       renderGrid();
     });
   });
+
+  // Scroll arrows
+  const $scrollLeft = document.getElementById('scroll-left');
+  const $scrollRight = document.getElementById('scroll-right');
+  if ($scrollLeft) {
+    $scrollLeft.addEventListener('click', () => {
+      $tabs.scrollBy({ left: -150, behavior: 'smooth' });
+    });
+  }
+  if ($scrollRight) {
+    $scrollRight.addEventListener('click', () => {
+      $tabs.scrollBy({ left: 150, behavior: 'smooth' });
+    });
+  }
 }
 
 function setupFilters() {

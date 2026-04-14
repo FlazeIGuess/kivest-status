@@ -89,8 +89,15 @@
 
       <!-- Filters -->
       <div class="filters">
-        <div id="provider-tabs" class="filter-tabs">
-          <button class="filter-tab active" data-provider="all">All</button>
+        <div class="filter-tabs">
+          <button class="filter-tab active" id="filter-tab-all" data-provider="all">All</button>
+          <button class="filter-scroll-btn filter-scroll-left" id="scroll-left" aria-label="Scroll left">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+          </button>
+          <div class="filter-tabs-scroll" id="provider-tabs"></div>
+          <button class="filter-scroll-btn filter-scroll-right" id="scroll-right" aria-label="Scroll right">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+          </button>
         </div>
         <div class="filter-status-group">
           <button class="filter-status-btn" data-status="online">
