@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const API_BASE = 'https://ai.ezif.in';
+const API_BASE = process.env.API_PROXY_URL || 'https://ai.ezif.in';
 const API_KEY = process.env.KIVEST_API_KEY;
 const DATA_DIR = path.join(__dirname, '..', 'data');
 const STATUS_FILE = path.join(DATA_DIR, 'status.json');
