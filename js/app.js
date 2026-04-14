@@ -272,6 +272,21 @@ function renderModelCard(model) {
           ${model.rawResponse ? `<div class="raw-response-block"><button class="raw-toggle" onclick="toggleRaw(this)">Show RAW JSON</button><pre class="raw-json" style="display:none">${escapeHtml(JSON.stringify(model.rawResponse, null, 2))}</pre></div>` : ''}
         </div>
       </div>`;
+  } else if (model.status === 'operational') {
+    // Operational but no response text stored (e.g. older runs)
+    responseHTML = `
+      <div class="model-response-section">
+        <div class="response-preview">
+          <span class="response-label">Response:</span> <span class="response-text" style="opacity:0.5">[No text content recorded]</span>
+        </div>
+        ${model.rawResponse ? `<button class="expand-toggle" onclick="toggleExpand(this)" data-expanded="false">
+          <svg class="expand-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          Show RAW JSON
+        </button>
+        <div class="expand-content" style="display:none">
+          <div class="raw-response-block"><button class="raw-toggle" onclick="toggleRaw(this)">Show RAW JSON</button><pre class="raw-json" style="display:none">${escapeHtml(JSON.stringify(model.rawResponse, null, 2))}</pre></div>
+        </div>` : ''}
+      </div>`;
   }
 
   return `

@@ -132,9 +132,11 @@ async function testModel(modelId) {
     const reasoningText = (choice?.message?.reasoning_content || choice?.message?.reasoning || '').trim();
 
     // If the model only returned reasoning content but no main content,
-    // use a truncated version of the reasoning as the display response
+    // use a truncated version of the reasoning as the display response.
+    // Always ensure a non-null response for successful models.
     const displayResponse = responseText
-      || (reasoningText ? `[Reasoning only] ${reasoningText.slice(0, 300)}` : null);
+      || (reasoningText ? `[Reasoning only] ${reasoningText.slice(0, 300)}` : null)
+      || '[No text content returned]';
 
     return {
       status: 'operational',
@@ -199,6 +201,22 @@ async function main() {
 
   const MAX_RETRIES = 2;
 
+  // Live status object — written to disk after every model
+  const liveModels = { ...(statusData.models || {}) };
+
+  // Helper: build and write status.json with current results
+  function writeLiveStatus(testedCount) {
+    const liveStatus = {
+      lastRun: now,
+      runCount,
+      totalModels: models.length,
+      testedModels: testedCount,
+      inProgress: testedCount < testQueue.length,
+      models: liveModels
+    };
+    fs.writeFileSync(STATUS_FILE, JSON.stringify(liveStatus, null, 2));
+  }
+
   // Process one model at a time to stay within rate limits
   const results = {};
   for (let i = 0; i < testQueue.length; i++) {
@@ -237,6 +255,24 @@ async function main() {
     if (r.isPaidOnly) extras.push('paid');
     const extraStr = extras.length ? ` [${extras.join(', ')}]` : '';
     console.log(`  ${emoji} ${r.status} (${r.responseTime}ms)${extraStr}`);
+
+    // Immediately update live status with this model's result
+    const prev = statusData.models?.[model.id];
+    const prevReasoning = prev?.supportsReasoning || false;
+    liveModels[model.id] = {
+      id: model.id,
+      ownedBy: model.ownedBy,
+      status: r.status,
+      responseTime: r.responseTime,
+      supportsReasoning: r.supportsReasoning || prevReasoning,
+      isPaidOnly: r.isPaidOnly,
+      response: r.response,
+      reasoningContent: r.reasoningContent || null,
+      rawResponse: r.rawResponse || null,
+      error: r.error,
+      lastChecked: now
+    };
+    writeLiveStatus(i + 1);
 
     // Wait between models (except after the last one)
     if (i < testQueue.length - 1) {
