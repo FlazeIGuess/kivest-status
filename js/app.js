@@ -72,12 +72,6 @@ async function fetchData() {
 }
 
 // === Rendering ===
-function escapeHtml(str) {
-  const div = document.createElement('div');
-  div.textContent = str;
-  return div.innerHTML;
-}
-
 function timeAgo(isoString) {
   if (!isoString) return 'Never';
   const diff = Date.now() - new Date(isoString).getTime();
@@ -158,8 +152,8 @@ function getModelHistory(modelId) {
 function renderSummary() {
   const models = getModels();
   if (models.length === 0) {
-    $systemStatus.className = 'system-status degraded';
-    $systemStatusText.textContent = 'Loading...';
+    if ($systemStatus) $systemStatus.className = 'system-status degraded';
+    if ($systemStatusText) $systemStatusText.textContent = 'Loading...';
     $heroTitle.textContent = 'Model Status';
     $heroSubtitle.textContent = 'Waiting for data...';
     $statOnline.textContent = '-';
@@ -183,21 +177,21 @@ function renderSummary() {
 
   // System status
   if (down === 0 && paidOnly === 0) {
-    $systemStatus.className = 'system-status operational';
-    $systemStatusText.textContent = 'All Systems Operational';
+    if ($systemStatus) $systemStatus.className = 'system-status operational';
+    if ($systemStatusText) $systemStatusText.textContent = 'All Systems Operational';
   } else if (down > total * 0.5) {
-    $systemStatus.className = 'system-status outage';
-    $systemStatusText.textContent = 'Major Outage';
+    if ($systemStatus) $systemStatus.className = 'system-status outage';
+    if ($systemStatusText) $systemStatusText.textContent = 'Major Outage';
   } else if (down > 0) {
-    $systemStatus.className = 'system-status degraded';
-    $systemStatusText.textContent = 'Partial Outage';
+    if ($systemStatus) $systemStatus.className = 'system-status degraded';
+    if ($systemStatusText) $systemStatusText.textContent = 'Partial Outage';
   } else {
-    $systemStatus.className = 'system-status operational';
-    $systemStatusText.textContent = 'All Systems Operational';
+    if ($systemStatus) $systemStatus.className = 'system-status operational';
+    if ($systemStatusText) $systemStatusText.textContent = 'All Systems Operational';
   }
 
-  $heroTitle.textContent = `${onlinePercent}% Online`;
-  $heroSubtitle.textContent = `${operational} of ${total} models operational`;
+  $heroTitle.textContent = `${onlinePercent}% Operational`;
+  $heroSubtitle.textContent = `${operational} of ${total} models are currently online.`;
 
   $statOnline.textContent = operational;
   $statDown.textContent = down;
@@ -219,17 +213,18 @@ function renderModelCard(model) {
     : '';
 
   let timelineHTML = '';
-  if (history.length > 0) {
-    const segments = history.map(h => {
-      const cls = h.status === 'operational' ? 'up' : h.status === 'paid_only' ? 'paid' : 'down';
-      return `<div class="uptime-segment ${cls}" title="${new Date(h.timestamp).toLocaleString()}: ${statusLabel(h.status)}"></div>`;
-    }).join('');
-    // Pad with empty segments if fewer than 48
-    const pad = Math.max(0, 48 - history.length);
-    const padHTML = Array(pad).fill('<div class="uptime-segment unknown"></div>').join('');
-    timelineHTML = `<div class="uptime-timeline">${padHTML}${segments}</div>`;
-  } else {
-    timelineHTML = `<div class="uptime-timeline">${Array(48).fill('<div class="uptime-segment unknown"></div>').join('')}</div>`;
+  if (!model.isPaidOnly) {
+    if (history.length > 0) {
+      const segments = history.map(h => {
+        const cls = h.status === 'operational' ? 'up' : h.status === 'paid_only' ? 'paid' : 'down';
+        return `<div class="uptime-segment ${cls}" title="${new Date(h.timestamp).toLocaleString()}: ${statusLabel(h.status)}"></div>`;
+      }).join('');
+      const pad = Math.max(0, 48 - history.length);
+      const padHTML = Array(pad).fill('<div class="uptime-segment unknown"></div>').join('');
+      timelineHTML = `<div class="uptime-timeline">${padHTML}${segments}</div>`;
+    } else {
+      timelineHTML = `<div class="uptime-timeline">${Array(48).fill('<div class="uptime-segment unknown"></div>').join('')}</div>`;
+    }
   }
 
   const badges = [];
@@ -240,54 +235,6 @@ function renderModelCard(model) {
     badges.push('<span class="badge badge-paid">💎 Paid</span>');
   }
   badges.push(`<span class="badge badge-provider">${model.ownedBy || 'unknown'}</span>`);
-
-  // Response section — always present for all models
-  let responseHTML = '';
-  if (model.response) {
-    responseHTML = `
-      <div class="model-response-section">
-        <div class="response-preview">
-          <span class="response-label">Response:</span> <span class="response-text">${escapeHtml(model.response.slice(0, 200))}${model.response.length > 200 ? '...' : ''}</span>
-        </div>
-        <button class="expand-toggle" onclick="toggleExpand(this)" data-expanded="false">
-          <svg class="expand-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-          Show Full Response
-        </button>
-        <div class="expand-content" style="display:none">
-          <div class="response-full"><span class="response-label">Full Response:</span>\n${escapeHtml(model.response)}</div>
-          ${model.reasoningContent ? `<div class="reasoning-block"><span class="response-label">⚡ Reasoning:</span>\n${escapeHtml(model.reasoningContent)}</div>` : ''}
-          ${model.rawResponse ? `<div class="raw-response-block"><button class="raw-toggle" onclick="toggleRaw(this)">Show RAW JSON</button><pre class="raw-json" style="display:none">${escapeHtml(JSON.stringify(model.rawResponse, null, 2))}</pre></div>` : ''}
-        </div>
-      </div>`;
-  } else if (model.error) {
-    responseHTML = `
-      <div class="model-response-section">
-        <div class="model-error"><span class="response-label">Error:</span> <span class="error-text">${escapeHtml(model.error.slice(0, 200))}${model.error.length > 200 ? '...' : ''}</span></div>
-        <button class="expand-toggle" onclick="toggleExpand(this)" data-expanded="false">
-          <svg class="expand-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-          Show Details
-        </button>
-        <div class="expand-content" style="display:none">
-          <div class="error-full"><span class="response-label">Full Error:</span>\n${escapeHtml(model.error)}</div>
-          ${model.rawResponse ? `<div class="raw-response-block"><button class="raw-toggle" onclick="toggleRaw(this)">Show RAW JSON</button><pre class="raw-json" style="display:none">${escapeHtml(JSON.stringify(model.rawResponse, null, 2))}</pre></div>` : ''}
-        </div>
-      </div>`;
-  } else if (model.status === 'operational') {
-    // Operational but no response text stored (e.g. older runs)
-    responseHTML = `
-      <div class="model-response-section">
-        <div class="response-preview">
-          <span class="response-label">Response:</span> <span class="response-text" style="opacity:0.5">[No text content recorded]</span>
-        </div>
-        ${model.rawResponse ? `<button class="expand-toggle" onclick="toggleExpand(this)" data-expanded="false">
-          <svg class="expand-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-          Show RAW JSON
-        </button>
-        <div class="expand-content" style="display:none">
-          <div class="raw-response-block"><button class="raw-toggle" onclick="toggleRaw(this)">Show RAW JSON</button><pre class="raw-json" style="display:none">${escapeHtml(JSON.stringify(model.rawResponse, null, 2))}</pre></div>
-        </div>` : ''}
-      </div>`;
-  }
 
   return `
     <div class="model-card" data-model-id="${model.id}">
@@ -300,8 +247,7 @@ function renderModelCard(model) {
         <span class="badge badge-status ${model.status}">${statusLabel(model.status)}</span>
         ${badges.join('')}
       </div>
-      ${responseHTML}
-      ${model.isPaidOnly ? '' : timelineHTML}
+      ${timelineHTML}
       ${model.uptime != null && !model.isPaidOnly ? `
         <div class="uptime-bar-container">
           <div class="uptime-bar-label">
@@ -322,33 +268,6 @@ function renderModelCard(model) {
       </div>
     </div>
   `;
-}
-
-// Expand/collapse response section
-function toggleExpand(btn) {
-  const content = btn.nextElementSibling;
-  const expanded = btn.dataset.expanded === 'true';
-  if (expanded) {
-    content.style.display = 'none';
-    btn.dataset.expanded = 'false';
-    btn.innerHTML = '<svg class="expand-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg> Show Full Response';
-  } else {
-    content.style.display = 'block';
-    btn.dataset.expanded = 'true';
-    btn.innerHTML = '<svg class="expand-icon rotated" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg> Hide';
-  }
-}
-
-// Toggle raw JSON visibility
-function toggleRaw(btn) {
-  const pre = btn.nextElementSibling;
-  if (pre.style.display === 'none') {
-    pre.style.display = 'block';
-    btn.textContent = 'Hide RAW JSON';
-  } else {
-    pre.style.display = 'none';
-    btn.textContent = 'Show RAW JSON';
-  }
 }
 
 function renderGrid() {
@@ -438,16 +357,21 @@ function startAutoRefresh() {
 // === Theme Toggle ===
 function initTheme() {
   const saved = localStorage.getItem('theme');
-  if (saved === 'dark' || (!saved && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-    document.documentElement.setAttribute('data-theme', 'dark');
+  if (saved === 'light') {
+    document.documentElement.setAttribute('data-theme', 'light');
   }
+  // Dark is default — no attribute needed
 }
 
 function toggleTheme() {
-  const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
-  const newTheme = isDark ? 'light' : 'dark';
-  document.documentElement.setAttribute('data-theme', newTheme);
-  localStorage.setItem('theme', newTheme);
+  const isLight = document.documentElement.getAttribute('data-theme') === 'light';
+  if (isLight) {
+    document.documentElement.removeAttribute('data-theme');
+    localStorage.setItem('theme', 'dark');
+  } else {
+    document.documentElement.setAttribute('data-theme', 'light');
+    localStorage.setItem('theme', 'light');
+  }
 }
 
 // === Init ===

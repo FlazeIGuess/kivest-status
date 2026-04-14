@@ -114,25 +114,26 @@ function rawRequest(url, options, bodyStr) {
 
 /**
  * Test a single LLM model.
- * Sends include_thinking: true + enable_thinking: true to detect reasoning support.
+ * First tries with thinking params to detect reasoning support.
+ * If content comes back empty, retries without thinking params.
  * Stores the full raw JSON response for the frontend to display.
- * Detects paid-only via: "does not have access to model" error message.
  */
 async function testModel(modelId) {
   const start = Date.now();
   const url = `${API_BASE}/v1/chat/completions`;
-  console.log(`    → POST ${url} (model: ${modelId})`);
-  try {
-    const reqBody = JSON.stringify({
+
+  async function doRequest(withThinking) {
+    const params = {
       model: modelId,
       messages: [{ role: 'user', content: 'Which LLM are you?' }],
       max_tokens: 120,
       stream: false,
-      include_thinking: true,
-      enable_thinking: true,
-      thinking_budget: 512
-    });
+    };
+    if (withThinking) {
+      params.include_thinking = true;
+    }
 
+    console.log(`    → POST ${url} (model: ${modelId}${withThinking ? ', +thinking' : ', plain'})`);
     const res = await rawRequest(url, {
       method: 'POST',
       headers: {
@@ -142,10 +143,16 @@ async function testModel(modelId) {
         ...(PROXY_TOKEN ? { 'x-proxy-token': PROXY_TOKEN } : {})
       },
       timeout: 90000
-    }, reqBody);
+    }, JSON.stringify(params));
 
     const elapsed = Date.now() - start;
     console.log(`    ← ${res.status} (${elapsed}ms, ${res.body.length} bytes, content-type: ${res.headers['content-type'] || 'none'})`);
+    return { res, elapsed };
+  }
+
+  try {
+    // First attempt: with thinking params
+    let { res, elapsed } = await doRequest(true);
 
     // Handle non-JSON responses (e.g. proxy errors)
     const contentType = res.headers['content-type'] || '';
@@ -197,24 +204,40 @@ async function testModel(modelId) {
     }
 
     // Detect reasoning support from the response
-    const choice = body?.choices?.[0];
-    const hasReasoningContent = !!(
+    let choice = body?.choices?.[0];
+    let hasReasoningContent = !!(
       choice?.message?.reasoning_content ||
       choice?.message?.reasoning
     );
     // Check content_blocks for thinking (e.g. Gemini)
-    const contentBlocks = choice?.message?.content_blocks || [];
-    const thinkingBlock = contentBlocks.find(b => b.type === 'thinking');
-    const hasThinkingBlock = !!thinkingBlock;
+    let contentBlocks = choice?.message?.content_blocks || [];
+    let thinkingBlock = contentBlocks.find(b => b.type === 'thinking');
+    let hasThinkingBlock = !!thinkingBlock;
     // Check multiple locations for reasoning tokens
-    const hasReasoningTokens = (body?.usage?.reasoning_tokens || 0) > 0
+    let hasReasoningTokens = (body?.usage?.reasoning_tokens || 0) > 0
       || (body?.usage?.completion_tokens_details?.reasoning_tokens || 0) > 0;
-    const responseText = (choice?.message?.content || '').trim();
-    const reasoningText = (
+    let responseText = (choice?.message?.content || '').trim();
+    let reasoningText = (
       choice?.message?.reasoning_content ||
       choice?.message?.reasoning ||
       (thinkingBlock?.thinking || '')
     ).trim();
+
+    // If content is empty, retry WITHOUT thinking params — some models break with them
+    if (!responseText && !reasoningText) {
+      console.log(`    ⚠ Empty content with thinking params, retrying without...`);
+      const retry = await doRequest(false);
+      elapsed = retry.elapsed;
+      const retryContentType = retry.res.headers['content-type'] || '';
+      if (retryContentType.includes('application/json')) {
+        try {
+          body = JSON.parse(retry.res.body);
+          choice = body?.choices?.[0];
+          responseText = (choice?.message?.content || '').trim();
+          // No need to re-check reasoning — this was a plain request
+        } catch {}
+      }
+    }
 
     // If the model only returned reasoning content but no main content,
     // use a truncated version of the reasoning as the display response.
