@@ -200,7 +200,7 @@ function renderSummary() {
 
   // Last updated
   if (statusData?.lastRun) {
-    $lastUpdated.textContent = `Last checked: ${timeAgo(statusData.lastRun)} · Run #${statusData.runCount || '?'}`;
+    $lastUpdated.textContent = `Last checked: ${timeAgo(statusData.lastRun)}`;
   }
 }
 
@@ -354,28 +354,7 @@ function startAutoRefresh() {
   }, 60000); // Refresh every 60s
 }
 
-// === Theme Toggle ===
-function initTheme() {
-  const saved = localStorage.getItem('theme');
-  if (saved === 'light') {
-    document.documentElement.setAttribute('data-theme', 'light');
-  }
-  // Dark is default — no attribute needed
-}
-
-function toggleTheme() {
-  const isLight = document.documentElement.getAttribute('data-theme') === 'light';
-  if (isLight) {
-    document.documentElement.removeAttribute('data-theme');
-    localStorage.setItem('theme', 'dark');
-  } else {
-    document.documentElement.setAttribute('data-theme', 'light');
-    localStorage.setItem('theme', 'light');
-  }
-}
-
 // === Init ===
-initTheme();
 
 async function init() {
   const ok = await fetchData();
@@ -385,10 +364,6 @@ async function init() {
   $loading.classList.add('hidden');
   setupFilters();
   startAutoRefresh();
-
-  // Theme toggle
-  const $toggle = document.getElementById('theme-toggle');
-  if ($toggle) $toggle.addEventListener('click', toggleTheme);
 
   // Update time-ago labels every 30s
   setInterval(() => {
