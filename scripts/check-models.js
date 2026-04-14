@@ -116,7 +116,7 @@ async function testModel(modelId) {
       isPaidOnly: false,
       supportsReasoning: false,
       response: null,
-      error: (err.name === 'TimeoutError' ? 'Timeout (45s)' : err.message).slice(0, 200)
+      error: (err.name === 'TimeoutError' ? 'Timeout (45s)' : `${err.name}: ${err.message}`).slice(0, 200)
     };
   }
 }
