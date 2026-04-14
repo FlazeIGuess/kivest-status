@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kivest AI — Status</title>
+  <meta name="description" content="Real-time status monitoring for all Kivest AI models. Check uptime, response times, and availability.">
+  <meta name="theme-color" content="#000000">
+  <link rel="icon" href="https://i.ibb.co/xqW09xK3/image-removebg-preview-2.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Loading Screen -->
+  <div id="loading-screen" class="loading-screen">
+    <img class="loading-logo" src="https://i.ibb.co/xqW09xK3/image-removebg-preview-2.png" alt="Kivest AI">
+    <span class="loading-text">Loading</span>
+  </div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="header-left">
+      <img class="header-logo" src="https://i.ibb.co/xqW09xK3/image-removebg-preview-2.png" alt="Kivest AI">
+      <span class="header-title">kivestai <span>status</span></span>
+    </div>
+    <div class="header-right">
+      <div class="live-indicator">
+        <div class="live-dot"></div>
+        <span>Live</span>
+      </div>
+      <a class="header-link" href="https://ai.ezif.in/" target="_blank" rel="noopener">Home</a>
+      <a class="header-link" href="https://ai.ezif.in/docs" target="_blank" rel="noopener">Docs</a>
+      <a class="header-link" href="https://discord.gg/z6bZZF4rme" target="_blank" rel="noopener">Discord</a>
+    </div>
+  </header>
+
+  <!-- Disclaimer -->
+  <div class="disclaimer">
+    <span>&#9888;&#65039; This is an <strong>unofficial</strong> community fan project and is not affiliated with, endorsed by, or associated with Kivest AI.</span>
+  </div>
+
+  <main class="container">
+
+    <!-- Hero / Summary -->
+    <section class="hero">
+      <div id="system-status" class="system-status degraded">
+        <div class="system-status-dot"></div>
+        <span id="system-status-text">Loading...</span>
+      </div>
+      <h1 id="hero-title" class="hero-title">Kivest AI Status</h1>
+      <p id="hero-subtitle" class="hero-subtitle">Monitoring all models in real-time</p>
+    </section>
+
+    <!-- Stats Grid -->
+    <section class="stats-grid">
+      <div class="stat-card">
+        <div id="stat-online" class="stat-value green">-</div>
+        <div class="stat-label">Online</div>
+      </div>
+      <div class="stat-card">
+        <div id="stat-down" class="stat-value red">-</div>
+        <div class="stat-label">Down</div>
+      </div>
+      <div class="stat-card">
+        <div id="stat-uptime" class="stat-value blue">-</div>
+        <div class="stat-label">Avg Uptime</div>
+      </div>
+      <div class="stat-card">
+        <div id="stat-total" class="stat-value">-</div>
+        <div class="stat-label">Total Models</div>
+      </div>
+    </section>
+
+    <!-- Last Updated -->
+    <div id="last-updated" class="last-updated">Waiting for data...</div>
+
+    <!-- Filters -->
+    <section class="filters">
+      <div id="provider-tabs" class="filter-tabs">
+        <button class="filter-tab active" data-provider="all">All</button>
+      </div>
+      <div class="search-box">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input id="search-input" type="text" placeholder="Search models or providers...">
+      </div>
+      <div class="filter-status-group">
+        <button class="filter-status-btn" data-status="online">Online</button>
+        <button class="filter-status-btn" data-status="paid">Paid Only</button>
+        <button class="filter-status-btn" data-status="offline">Offline</button>
+        <button class="filter-status-btn" id="filter-reasoning" data-status="reasoning">⚡ Reasoning</button>
+      </div>
+    </section>
+
+    <!-- Model Grid -->
+    <section id="model-grid" class="model-grid">
+      <!-- Rendered by JS -->
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <span class="footer-sep">&middot;</span>
+      <a class="footer-link" href="https://ai.ezif.in/" target="_blank" rel="noopener">Home</a>
+      <span class="footer-sep">&middot;</span>
+      <a class="footer-link" href="https://ai.ezif.in/docs" target="_blank" rel="noopener">Docs</a>
+      <span class="footer-sep">&middot;</span>
+      <a class="footer-link" href="https://discord.gg/z6bZZF4rme" target="_blank" rel="noopener">Discord</a>
+      <span class="footer-sep">&middot;</span>
+      <span class="footer-text">Auto-refreshes every 60s</span>
+      <span class="footer-sep">&middot;</span>
+      <span class="footer-text">Unofficial fan project — not affiliated with Kivest AI</span>
+    </div>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
