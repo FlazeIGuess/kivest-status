@@ -1,0 +1,10 @@
+services:
+  kivest-proxy:
+    build: .
+    container_name: kivest-proxy
+    restart: unless-stopped
+    ports:
+      - "3099:3099"
+    environment:
+      - PORT=3099
+      - PROXY_TOKEN=b49f975f5b037fa2b8d5b3cf199244ab09b238e8c570fdfe29d507ce73e1533a
