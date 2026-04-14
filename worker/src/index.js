@@ -19,11 +19,15 @@ export default {
     }
 
     const url = new URL(request.url);
-    const path = url.pathname;
+    // Normalize path: strip double slashes
+    const path = url.pathname.replace(/\/+/g, '/');
 
     // Only allow /v1/ API paths
     if (!path.startsWith('/v1/')) {
-      return new Response('Not found', { status: 404 });
+      return new Response(JSON.stringify({ error: `Path not allowed: ${path}` }), {
+        status: 404,
+        headers: { 'Content-Type': 'application/json' },
+      });
     }
 
     // Build target URL

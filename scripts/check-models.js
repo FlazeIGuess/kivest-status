@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const API_BASE = process.env.API_PROXY_URL || 'https://ai.ezif.in';
+const API_BASE = (process.env.API_PROXY_URL || 'https://ai.ezif.in').replace(/\/+$/, '');
 const API_KEY = process.env.KIVEST_API_KEY;
 const DATA_DIR = path.join(__dirname, '..', 'data');
 const STATUS_FILE = path.join(DATA_DIR, 'status.json');
@@ -27,12 +27,14 @@ async function fetchModels() {
   // Try without auth first (some environments block auth on this endpoint)
   for (const headers of [{}, { 'Authorization': `Bearer ${API_KEY}` }]) {
     try {
-      const res = await fetch(`${API_BASE}/v1/models`, { headers });
+      const url = `${API_BASE}/v1/models`;
+      const res = await fetch(url, { headers });
       if (res.ok) {
         const data = await res.json();
         return (data.data || []).filter(m => !EXCLUDED_MODELS.has(m.id));
       }
-      console.warn(`/v1/models returned ${res.status} (auth=${!!headers.Authorization})`);
+      const body = await res.text();
+      console.warn(`/v1/models returned ${res.status} (auth=${!!headers.Authorization}): ${body.slice(0, 200)}`);
     } catch (err) {
       console.warn(`/v1/models fetch failed (auth=${!!headers.Authorization}): ${err.message}`);
     }
@@ -76,7 +78,23 @@ async function testModel(modelId) {
       signal: AbortSignal.timeout(45000)
     });
     const elapsed = Date.now() - start;
-    const body = await res.json();
+
+    // Handle non-JSON responses (e.g. proxy errors)
+    const contentType = res.headers.get('content-type') || '';
+    let body;
+    if (contentType.includes('application/json')) {
+      body = await res.json();
+    } else {
+      const text = await res.text();
+      return {
+        status: 'down',
+        responseTime: elapsed,
+        isPaidOnly: false,
+        supportsReasoning: false,
+        response: null,
+        error: `HTTP ${res.status}: ${text.slice(0, 200)}`
+      };
+    }
 
     if (!res.ok) {
       const errMsg = body?.error?.message || '';
