@@ -381,7 +381,9 @@ async function main() {
       reasoningContent: r.reasoningContent || null,
       rawResponse: r.rawResponse || null,
       error: r.error,
-      lastChecked: now
+      lastChecked: now,
+      uptime: prev?.uptime ?? null,
+      totalChecks: prev?.totalChecks ?? null
     };
     writeLiveStatus(i + 1);
 

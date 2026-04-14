@@ -207,7 +207,15 @@ function renderSummary() {
 function renderModelCard(model) {
   const history = getModelHistory(model.id);
   const icon = getModelIcon(model.id, model.ownedBy);
-  const uptimeClass = model.uptime >= 95 ? 'high' : model.uptime >= 80 ? 'medium' : 'low';
+
+  // Calculate uptime from history if not provided by server
+  let uptime = model.uptime;
+  if (uptime == null && history.length > 0) {
+    const opCount = history.filter(h => h.status === 'operational').length;
+    uptime = parseFloat(((opCount / history.length) * 100).toFixed(1));
+  }
+
+  const uptimeClass = uptime >= 95 ? 'high' : uptime >= 80 ? 'medium' : 'low';
   const iconHTML = icon
     ? `<img class="model-icon" src="${icon}" alt="${model.ownedBy}" loading="lazy" onerror="this.style.display='none'">`
     : '';
@@ -248,14 +256,14 @@ function renderModelCard(model) {
         ${badges.join('')}
       </div>
       ${timelineHTML}
-      ${model.uptime != null && !model.isPaidOnly ? `
+      ${uptime != null && !model.isPaidOnly ? `
         <div class="uptime-bar-container">
           <div class="uptime-bar-label">
             <span class="uptime-bar-text">24h Uptime</span>
-            <span class="uptime-bar-value ${uptimeClass}">${model.uptime}%</span>
+            <span class="uptime-bar-value ${uptimeClass}">${uptime}%</span>
           </div>
           <div class="uptime-bar">
-            <div class="uptime-bar-fill ${uptimeClass}" style="width: ${model.uptime}%"></div>
+            <div class="uptime-bar-fill ${uptimeClass}" style="width: ${uptime}%"></div>
           </div>
         </div>
       ` : ''}

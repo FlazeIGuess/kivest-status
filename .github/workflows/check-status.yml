@@ -37,6 +37,12 @@ jobs:
             echo "No changes to commit"
           else
             git commit -m "chore: update model status [skip ci]"
-            git pull --rebase origin main
+            git fetch origin main
+            # Rebase, auto-resolving data file conflicts with our (CI) version
+            if ! git rebase origin/main; then
+              git checkout --theirs data/status.json data/history.json 2>/dev/null || true
+              git add data/status.json data/history.json
+              GIT_EDITOR=true git rebase --continue || true
+            fi
             git push
           fi
