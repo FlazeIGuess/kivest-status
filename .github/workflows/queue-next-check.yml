@@ -22,12 +22,12 @@ jobs:
     if: ${{ github.event.workflow_run.conclusion != 'cancelled' }}
     runs-on: ubuntu-latest
     steps:
-      - name: Wait 5 minutes
-        run: sleep 300
+      - name: Wait 1 minute
+        run: sleep 60
 
       - name: Dispatch next status check
         env:
-          GH_TOKEN: ${{ github.token }}
+          GH_TOKEN: ${{ secrets.GH_PAT }}
           REPOSITORY: ${{ github.repository }}
           REF_NAME: ${{ github.event.repository.default_branch }}
         run: |
