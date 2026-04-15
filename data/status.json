@@ -1,21 +1,21 @@
 {
-  "lastRun": "2026-04-15T19:59:02.619Z",
-  "runCount": 23,
+  "lastRun": "2026-04-15T20:22:53.708Z",
+  "runCount": 24,
   "totalModels": 73,
   "models": {
     "claude-sonnet-4-6": {
       "id": "claude-sonnet-4-6",
       "ownedBy": "anthropic",
       "status": "operational",
-      "responseTime": 9919,
+      "responseTime": 4666,
       "supportsReasoning": false,
       "isPaidOnly": false,
       "response": "I'm Claude, made by Anthropic. Is there something I can help you with?",
       "reasoningContent": null,
       "rawResponse": {
-        "id": "req_1776283146098_q0owsn",
+        "id": "req_1776284574455_zo819i",
         "object": "chat.completion",
-        "created": 1776283151,
+        "created": 1776284576,
         "model": "claude-sonnet-4-6",
         "choices": [
           {
@@ -34,15 +34,15 @@
         }
       },
       "error": null,
-      "lastChecked": "2026-04-15T19:59:02.619Z",
-      "uptime": 76.19,
-      "totalChecks": 21
+      "lastChecked": "2026-04-15T20:22:53.708Z",
+      "uptime": 77.27,
+      "totalChecks": 22
     },
     "claude-haiku-4-5": {
       "id": "claude-haiku-4-5",
       "ownedBy": "anthropic",
       "status": "down",
-      "responseTime": 3555,
+      "responseTime": 1883,
       "supportsReasoning": false,
       "isPaidOnly": false,
       "response": null,
@@ -54,50 +54,50 @@
         }
       },
       "error": "Authentication with the model provider failed. Please try again later.",
-      "lastChecked": "2026-04-15T19:59:02.619Z",
+      "lastChecked": "2026-04-15T20:22:53.708Z",
       "uptime": 0,
-      "totalChecks": 21
+      "totalChecks": 22
     },
     "gpt-5.3-codex": {
       "id": "gpt-5.3-codex",
       "ownedBy": "openai",
       "status": "operational",
-      "responseTime": 5520,
+      "responseTime": 4837,
       "supportsReasoning": false,
       "isPaidOnly": false,
-      "response": "I’m an OpenAI assistant running on the **GPT-5** family model exposed through this API environment.",
+      "response": "I’m an OpenAI assistant running in a GPT-4–class model family (accessible via API in this environment). I don’t have visibility into the exact model ID from inside the chat.",
       "reasoningContent": null,
       "rawResponse": {
-        "id": "/g05PJTzxpyrbmVBaVEjMlPeJ3hD7efgMa+AlSYvAFrbVn0uRSkX3EYr18cSKwNlCYmVCMJQiks7AgrZz0VAgfyDOtXoe3Oc7qoKFGf2wKutE6MB3L50T/f4SgfNamMpmusCdRTJtPxJpzlvD0Ki5ZRiYcpzvop77WmafptXjNfpi3Y77mLvuM1FpuKqknZdHVpVIfHwOrkj0OcQ3Cvkxt+uT44E8myTRTfy0EVLVQqceNZO50FkUH3oG6HuAxuHoeWuTc/6BD6F0g4+f9hKhO56QsTo4mgwZ6UMnk/O2mZeGZG2FH7m35RbGOK+0LVYtmR/Y9FmC9XE8gzM2ZjKPZNCuEkxD3wmVPy5hH+reWMI6FNpIpR6XgYZCjwkh4kx1sc6VHFf3GnGe05rr7y3cB3FYYRQZT6l",
+        "id": "m8oGT/7FZ+WBENeAfGplAH8d//t8ZhjYwGjRTRjqQOvDNpe+8YkY5eTs0I/QphN+COLzUqyTwtsLPNNgBBgKLnYz1kFuSZQrxq887H64+ZBmqORIXKWwl2CPMOTe4QgitycHL5DC74OMaROCbIj5Yr0tssge3l1HszQ47/xVIm2L5WzMsM1vt5eUS09l2T1LYgRKTienWbEZ3bA8muZp7t6sIrARKPlBshyu1xnxZlEqJCO5pqxL/LCBLT73kxd92GfyaDjZRnG6lNtaTl8A40EwLyKOp//+K9AeaNA8+/yRnqstlDXY4fii9C0wIHUY74YBK3KtHVu1+w7QxeUoVgRmZH5uVSop66hvXG/BFmv7/Haa0CukeQd/N8CPy2lymr95Kg/hMALAJ07Me60LuJmQe5od9s5j",
         "object": "chat.completion",
-        "created": 1776283100,
+        "created": 1776284500,
         "model": "gpt-5.3-codex",
         "choices": [
           {
             "index": 0,
             "message": {
               "role": "assistant",
-              "content": "I’m an OpenAI assistant running on the **GPT-5** family model exposed through this API environment."
+              "content": "I’m an OpenAI assistant running in a GPT-4–class model family (accessible via API in this environment). I don’t have visibility into the exact model ID from inside the chat."
             },
             "finish_reason": "stop"
           }
         ],
         "usage": {
           "prompt_tokens": 12,
-          "completion_tokens": 26,
-          "total_tokens": 38
+          "completion_tokens": 43,
+          "total_tokens": 55
         }
       },
       "error": null,
-      "lastChecked": "2026-04-15T19:59:02.619Z",
+      "lastChecked": "2026-04-15T20:22:53.708Z",
       "uptime": 100,
-      "totalChecks": 21
+      "totalChecks": 22
     },
     "gpt-5-2": {
       "id": "gpt-5-2",
       "ownedBy": "openai",
       "status": "down",
-      "responseTime": 3273,
+      "responseTime": 2111,
       "supportsReasoning": false,
       "isPaidOnly": false,
       "response": null,
@@ -109,100 +109,85 @@
         }
       },
       "error": "Authentication with the model provider failed. Please try again later.",
-      "lastChecked": "2026-04-15T19:59:02.619Z",
+      "lastChecked": "2026-04-15T20:22:53.708Z",
       "uptime": 0,
-      "totalChecks": 21
+      "totalChecks": 22
     },
     "gpt-5.2-codex": {
       "id": "gpt-5.2-codex",
       "ownedBy": "openai",
       "status": "operational",
-      "responseTime": 7598,
+      "responseTime": 5296,
       "supportsReasoning": false,
       "isPaidOnly": false,
-      "response": "I’m ChatGPT, an AI language model created by OpenAI.",
+      "response": "I’m ChatGPT, a large language model developed by",
       "reasoningContent": null,
       "rawResponse": {
-        "id": "XRsKwVX3Hsff57f6JrnxXV7A0xOvt/9BhqyUnzmX3XBgfRK0qRizNlnsAHt7tRt4uaUH2zbNR0nDq9bxrrEr9/5UTh0sJPhOgWuocsBhsXNwh28R/cS4UAWkgeDbZTgq/IJySESaSYJ3pqNugJdRRkL1TfneaLbj5F0n4jz50cFwBKXO3WznKzWAIrM3tx4LBuiKK0c+7RDhlyHyjwNZO653+G4M7kQvywMiL7WC+Q/Ma7kLOKcdvNEL6ovxHqH6BvOUFsz3hgMP7grdYpKYMrR7Jfw2UQQb7DfXgRXinJSfhMbC7U4ymR5Vl9GpKpiNCONSKfUvPh6PxGg1OI06mD3nu6Qyvyt9PgYQguZUpfs2Db4vgSK1Ul4uSQanY92CCNJ34V1QyVQN1fFGbdthxXrf1Iuk4vN/",
+        "id": "XK3C+QdBnqZcg6DB1kosvuIrceFkgq4Yojr2WlLzRx2yoryQcsmsN0KMir/j9IxY7RjxaJXm+6+oLLYCyXOrvhtCwc/UaD1Or4VPFBDK+LzOYxlovIuUek9I2Ul0RB4/1R2AjgokeSK49cakl05CwxmiOGgvIMWElsHsz0FKuSOw6ULU4ZIWLtduQgUfpL3BVhqjZcrfcN1vRUtztp/P7gryHW15Meg2ctLnJyC3PJ07tq3xRbLqfEkiAYbphsxnYdK53Eo/ulYhlI35EQhpEpQdNcIkC5EWWUSIjfwD908jLBsPcrrFCGDw5LJCeBHZYLMWibrIrsw5APR9Vju1EpwklZXrQvlM7AkSVDB+3sltYR0CbMG02eo61xjkrOBCZCWaq7n0uiHmczgkOzRz0/BaZ0gy/GRL",
         "object": "chat.completion",
-        "created": 1776283300,
+        "created": 1776284700,
         "model": "gpt-5.2-codex",
         "choices": [
           {
             "index": 0,
             "message": {
               "role": "assistant",
-              "content": "I’m ChatGPT, an AI language model created by OpenAI."
+              "content": "I’m ChatGPT, a large language model developed by"
             },
             "finish_reason": "stop"
           }
         ],
         "usage": {
           "prompt_tokens": 12,
-          "completion_tokens": 63,
-          "total_tokens": 75
+          "completion_tokens": 120,
+          "total_tokens": 132
         }
       },
       "error": null,
-      "lastChecked": "2026-04-15T19:59:02.619Z",
+      "lastChecked": "2026-04-15T20:22:53.708Z",
       "uptime": 100,
-      "totalChecks": 21
+      "totalChecks": 22
     },
     "grok-code-fast-1": {
       "id": "grok-code-fast-1",
       "ownedBy": "xai",
-      "status": "operational",
-      "responseTime": 12772,
+      "status": "down",
+      "responseTime": 61760,
       "supportsReasoning": false,
       "isPaidOnly": false,
-      "response": "I'm Grok, an AI built by xAI. I'm not based on any other companies' models. If you have more questions about me or xAI, feel free to ask!",
+      "response": null,
       "reasoningContent": null,
       "rawResponse": {
-        "id": "req_1776283234920_7om2tf",
-        "object": "chat.completion",
-        "created": 1776283244,
-        "model": "grok-code-fast-1",
-        "choices": [
-          {
-            "index": 0,
-            "message": {
-              "role": "assistant",
-              "content": "I'm Grok, an AI built by xAI. I'm not based on any other companies' models. If you have more questions about me or xAI, feel free to ask!"
-            },
-            "finish_reason": "stop"
-          }
-        ],
-        "usage": {
-          "prompt_tokens": 209,
-          "completion_tokens": 37,
-          "total_tokens": 246
+        "error": {
+          "message": "The model provider is temporarily unavailable. Please try again in a few seconds.",
+          "type": "server_error"
         }
       },
-      "error": null,
-      "lastChecked": "2026-04-15T19:59:02.619Z",
-      "uptime": 85.71,
-      "totalChecks": 21
+      "error": "The model provider is temporarily unavailable. Please try again in a few seconds.",
+      "lastChecked": "2026-04-15T20:22:53.708Z",
+      "uptime": 81.82,
+      "totalChecks": 22
     },
     "sarvamai/sarvam-m": {
       "id": "sarvamai/sarvam-m",
       "ownedBy": "sarvam",
       "status": "operational",
-      "responseTime": 7511,
+      "responseTime": 5477,
       "supportsReasoning": false,
       "isPaidOnly": false,
-      "response": "Okay, the user is asking, \"Which LLM are you?\" Let me parse that.\n\nFirst, I need to understand the context. The user is inquiring about my identity as an AI model. Since Sarvam AI is a company based in Bangalore focused on Indian languages and contexts, the answer should reflect that.\n\nThe user might be looking for specifics like the model's architecture, size, development details, or unique features. But since there's no publicly announced specific model name from Sarvam AI yet, I shouldn't mention a particular LLM name.\n\nI should explain that I'm",
+      "response": "Okay, the user is asking me to identify which LLM I am. Let me start by recalling that Sarvam AI developed me. I need to mention that first. Maybe say something like, \"I am a language model created by Sarvam AI.\" Then, I should highlight my primary purpose, which is to serve the diverse needs of Indian users. It's important to note the focus on languages, so I should mention that I support multiple Indian languages in addition to English. Also, emphasizing ethical and responsible use would be good here.\n\nWait, do I have any technical limitations?",
       "reasoningContent": null,
       "rawResponse": {
-        "id": "chat-26b43d9b071a4d5f8070b8a811e5c620",
+        "id": "chat-b634b030260941ffb26e4e9b08372995",
         "object": "chat.completion",
-        "created": 1776283262,
+        "created": 1776284728,
         "model": "sarvamai/sarvam-m",
         "choices": [
           {
             "index": 0,
             "message": {
               "role": "assistant",
-              "content": "Okay, the user is asking, \"Which LLM are you?\" Let me parse that.\n\nFirst, I need to understand the context. The user is inquiring about my identity as an AI model. Since Sarvam AI is a company based in Bangalore focused on Indian languages and contexts, the answer should reflect that.\n\nThe user might be looking for specifics like the model's architecture, size, development details, or unique features. But since there's no publicly announced specific model name from Sarvam AI yet, I shouldn't mention a particular LLM name.\n\nI should explain that I'm"
+              "content": "Okay, the user is asking me to identify which LLM I am. Let me start by recalling that Sarvam AI developed me. I need to mention that first. Maybe say something like, \"I am a language model created by Sarvam AI.\" Then, I should highlight my primary purpose, which is to serve the diverse needs of Indian users. It's important to note the focus on languages, so I should mention that I support multiple Indian languages in addition to English. Also, emphasizing ethical and responsible use would be good here.\n\nWait, do I have any technical limitations?"
             },
             "logprobs": null,
             "finish_reason": "length",
@@ -217,15 +202,15 @@
         "prompt_logprobs": null
       },
       "error": null,
-      "lastChecked": "2026-04-15T19:59:02.619Z",
-      "uptime": 90.48,
-      "totalChecks": 21
+      "lastChecked": "2026-04-15T20:22:53.708Z",
+      "uptime": 90.91,
+      "totalChecks": 22
     },
     "pr-2/claude-sonnet-4-20250514": {
       "id": "pr-2/claude-sonnet-4-20250514",
       "ownedBy": "anthropic",
       "status": "down",
-      "responseTime": 2982,
+      "responseTime": 1662,
       "supportsReasoning": false,
       "isPaidOnly": false,
       "response": null,
@@ -237,15 +222,15 @@
         }
       },
       "error": "The model provider is temporarily unavailable. Please try again in a few seconds.",
-      "lastChecked": "2026-04-15T19:59:02.619Z",
+      "lastChecked": "2026-04-15T20:22:53.708Z",
       "uptime": 0,
-      "totalChecks": 21
+      "totalChecks": 22
     },
     "pr-2/claude-sonnet-4-5-20250929": {
       "id": "pr-2/claude-sonnet-4-5-20250929",
       "ownedBy": "anthropic",
       "status": "down",
-      "responseTime": 2486,
+      "responseTime": 974,
       "supportsReasoning": false,
       "isPaidOnly": false,
       "response": null,
@@ -257,15 +242,15 @@
         }
       },
       "error": "The model provider is temporarily unavailable. Please try again in a few seconds.",
-      "lastChecked": "2026-04-15T19:59:02.619Z",
+      "lastChecked": "2026-04-15T20:22:53.708Z",
       "uptime": 0,
-      "totalChecks": 21
+      "totalChecks": 22
     },
     "claude-opus-4-6": {
       "id": "claude-opus-4-6",
       "ownedBy": "anthropic",
       "status": "paid_only",
-      "responseTime": 2375,
+      "responseTime": 668,
       "supportsReasoning": false,
       "isPaidOnly": true,
       "response": null,
@@ -278,15 +263,15 @@
         }
       },
       "error": "Model \"claude-opus-4-6\" is only available on paid plans.",
-      "lastChecked": "2026-04-15T19:59:02.619Z",
+      "lastChecked": "2026-04-15T20:22:53.708Z",
       "uptime": 0,
-      "totalChecks": 21
+      "totalChecks": 22
     },
     "pr-2/claude-opus-4-1-20250805": {
       "id": "pr-2/claude-opus-4-1-20250805",
       "ownedBy": "anthropic",
       "status": "paid_only",
-      "responseTime": 2445,
+      "responseTime": 671,
       "supportsReasoning": false,
       "isPaidOnly": true,
       "response": null,
@@ -299,15 +284,15 @@
         }
       },
       "error": "Model \"pr-2/claude-opus-4-1-20250805\" is only available on paid plans.",
-      "lastChecked": "2026-04-15T19:59:02.619Z",
+      "lastChecked": "2026-04-15T20:22:53.708Z",
       "uptime": 0,
-      "totalChecks": 21
+      "totalChecks": 22
     },
     "pr-2/claude-opus-4-20250514": {
       "id": "pr-2/claude-opus-4-20250514",
       "ownedBy": "anthropic",
       "status": "paid_only",
-      "responseTime": 2382,
+      "responseTime": 671,
       "supportsReasoning": false,
       "isPaidOnly": true,
       "response": null,
@@ -320,15 +305,15 @@
         }
       },
       "error": "Model \"pr-2/claude-opus-4-20250514\" is only available on paid plans.",
-      "lastChecked": "2026-04-15T19:59:02.619Z",
+      "lastChecked": "2026-04-15T20:22:53.708Z",
       "uptime": 0,
-      "totalChecks": 21
+      "totalChecks": 22
     },
     "pr-2/claude-opus-4-5-20251101": {
       "id": "pr-2/claude-opus-4-5-20251101",
       "ownedBy": "anthropic",
       "status": "paid_only",
-      "responseTime": 4442,
+      "responseTime": 652,
       "supportsReasoning": false,
       "isPaidOnly": true,
       "response": null,
@@ -341,15 +326,15 @@
         }
       },
       "error": "Model \"pr-2/claude-opus-4-5-20251101\" is only available on paid plans.",
-      "lastChecked": "2026-04-15T19:59:02.619Z",
+      "lastChecked": "2026-04-15T20:22:53.708Z",
       "uptime": 0,
-      "totalChecks": 21
+      "totalChecks": 22
     },
     "gpt-5.4": {
       "id": "gpt-5.4",
       "ownedBy": "openai",
       "status": "paid_only",
-      "responseTime": 2379,
+      "responseTime": 640,
       "supportsReasoning": false,
       "isPaidOnly": true,
       "response": null,
@@ -362,18 +347,18 @@
         }
       },
       "error": "Model \"gpt-5.4\" is only available on paid plans.",
-      "lastChecked": "2026-04-15T19:59:02.619Z",
+      "lastChecked": "2026-04-15T20:22:53.708Z",
       "uptime": 0,
-      "totalChecks": 21
+      "totalChecks": 22
     },
     "xiaomi/mimo-v2-pro": {
       "id": "xiaomi/mimo-v2-pro",
       "ownedBy": "xiaomi",
       "status": "operational",
-      "responseTime": 12712,
+      "responseTime": 8893,
       "supportsReasoning": false,
       "isPaidOnly": false,
-      "response": "[No text content returned]",
+      "response": "Hello! I'm MiMo-v2-pro, a large language model developed by the Xiaomi MiMo Team. I have 1",
       "reasoningContent": null,
       "rawResponse": {
         "choices": [
@@ -381,32 +366,32 @@
             "finish_reason": "length",
             "index": 0,
             "message": {
-              "content": "",
+              "content": "Hello! I'm MiMo-v2-pro, a large language model developed by the Xiaomi MiMo Team. I have 1",
               "role": "assistant"
             },
             "native_finish_reason": "length"
           }
         ],
-        "created": 1776283394,
-        "id": "gorouter-1776283394-q5928iS4TAcA5kWvEevAkL",
+        "created": 1776284843,
+        "id": "gorouter-1776284843-G0GXUbJtXaf48Xp8XcXDYE",
         "model": "xiaomi/mimo-v2-pro",
         "object": "chat.completion",
         "usage": {
-          "completion_tokens": 0,
-          "prompt_tokens": 0,
-          "total_tokens": 0
+          "completion_tokens": 120,
+          "prompt_tokens": 255,
+          "total_tokens": 375
         }
       },
       "error": null,
-      "lastChecked": "2026-04-15T19:59:02.619Z",
-      "uptime": 90.48,
-      "totalChecks": 21
+      "lastChecked": "2026-04-15T20:22:53.708Z",
+      "uptime": 90.91,
+      "totalChecks": 22
     },
     "xiaomi/mimo-v2-omni": {
       "id": "xiaomi/mimo-v2-omni",
       "ownedBy": "xiaomi",
       "status": "operational",
-      "responseTime": 2394,
+      "responseTime": 760,
       "supportsReasoning": false,
       "isPaidOnly": false,
       "response": "The model does not exist in https://api.airforce\ndiscord.gg/airforce",
@@ -423,8 +408,8 @@
             "native_finish_reason": "stop"
           }
         ],
-        "created": 1776283409,
-        "id": "gorouter-1776283409-x6PHiNwiPHQysHABUgNFyB",
+        "created": 1776284856,
+        "id": "gorouter-1776284856-g3CsaZUT9Y7kjFM0rv5XIh",
         "model": "xiaomi/mimo-v2-omni",
         "object": "chat.completion",
         "usage": {
@@ -434,15 +419,15 @@
         }
       },
       "error": null,
-      "lastChecked": "2026-04-15T19:59:02.619Z",
-      "uptime": 90.48,
-      "totalChecks": 21
+      "lastChecked": "2026-04-15T20:22:53.708Z",
+      "uptime": 90.91,
+      "totalChecks": 22
     },
     "z-ai/glm-5.1": {
       "id": "z-ai/glm-5.1",
       "ownedBy": "zhipu",
       "status": "paid_only",
-      "responseTime": 2084,
+      "responseTime": 650,
       "supportsReasoning": false,
       "isPaidOnly": true,
       "response": null,
@@ -454,15 +439,15 @@
         }
       },
       "error": "Your API key does not have access to model \"z-ai/glm-5.1\".",
-      "lastChecked": "2026-04-15T19:59:02.619Z",
+      "lastChecked": "2026-04-15T20:22:53.708Z",
       "uptime": 0,
-      "totalChecks": 21
+      "totalChecks": 22
     },
     "qwen/qwen3.6-plus": {
       "id": "qwen/qwen3.6-plus",
       "ownedBy": "qwen",
       "status": "paid_only",
-      "responseTime": 1452,
+      "responseTime": 687,
       "supportsReasoning": false,
       "isPaidOnly": true,
       "response": null,
@@ -474,23 +459,23 @@
         }
       },
       "error": "Your API key does not have access to model \"qwen/qwen3.6-plus\".",
-      "lastChecked": "2026-04-15T19:59:02.619Z",
+      "lastChecked": "2026-04-15T20:22:53.708Z",
       "uptime": 0,
-      "totalChecks": 21
+      "totalChecks": 22
     },
     "qwen3.5-397b-a17b": {
       "id": "qwen3.5-397b-a17b",
       "ownedBy": "qwen",
       "status": "operational",
-      "responseTime": 9830,
+      "responseTime": 3667,
       "supportsReasoning": false,
       "isPaidOnly": false,
       "response": "I am **Qwen3.5**, the latest large language model developed by Tongyi Lab. I feature significant upgrades in language foundation, architecture efficiency, logical reasoning, visual analysis, and code capabilities compared to earlier versions. How can I assist you?",
       "reasoningContent": null,
       "rawResponse": {
-        "id": "chatcmpl-8e20670b67efb85a",
+        "id": "chatcmpl-a7ccb15ae66366a4",
         "object": "chat.completion",
-        "created": 1776283453,
+        "created": 1776284895,
         "model": "qwen3.5-397b-a17b",
         "choices": [
           {
@@ -522,35 +507,38 @@
         }
       },
       "error": null,
-      "lastChecked": "2026-04-15T19:59:02.619Z",
-      "uptime": 90.48,
-      "totalChecks": 21
+      "lastChecked": "2026-04-15T20:22:53.708Z",
+      "uptime": 90.91,
+      "totalChecks": 22
     },
     "qwen3-235b-a22b": {
       "id": "qwen3-235b-a22b",
       "ownedBy": "qwen",
       "status": "down",
-      "responseTime": 2328,
+      "responseTime": 1281,
       "supportsReasoning": false,
       "isPaidOnly": false,
       "response": null,
       "reasoningContent": null,
       "rawResponse": {
         "error": {
-          "message": "The model provider is temporarily unavailable. Please try again in a few seconds.",
-          "type": "server_error"
-        }
+          "message": "Upstream provider error. Please try again later or select a different model.",
+          "type": "upstream_error",
+          "code": "upstream_error"
+        },
+        "model": "qwen3-235b-a22b",
+        "id": "chatcmpl-2f32a1bea3b54cbeb52d6940"
       },
-      "error": "The model provider is temporarily unavailable. Please try again in a few seconds.",
-      "lastChecked": "2026-04-15T19:59:02.619Z",
+      "error": "Upstream provider error. Please try again later or select a different model.",
+      "lastChecked": "2026-04-15T20:22:53.708Z",
       "uptime": 0,
-      "totalChecks": 21
+      "totalChecks": 22
     },
     "qwen3-32b": {
       "id": "qwen3-32b",
       "ownedBy": "qwen",
       "status": "down",
-      "responseTime": 2335,
+      "responseTime": 923,
       "supportsReasoning": false,
       "isPaidOnly": false,
       "response": null,
@@ -562,72 +550,72 @@
           "code": "upstream_error"
         },
         "model": "qwen3-32b",
-        "id": "chatcmpl-d29093ed16e74aea8cf49aac"
+        "id": "chatcmpl-99b3b49f1fab4d4b9e83c547"
       },
       "error": "Upstream provider error. Please try again later or select a different model.",
-      "lastChecked": "2026-04-15T19:59:02.619Z",
+      "lastChecked": "2026-04-15T20:22:53.708Z",
       "uptime": 0,
-      "totalChecks": 21
+      "totalChecks": 22
     },
     "qwen3-coder-480b-a35b-instruct": {
       "id": "qwen3-coder-480b-a35b-instruct",
       "ownedBy": "qwen",
       "status": "operational",
-      "responseTime": 8104,
+      "responseTime": 2507,
       "supportsReasoning": false,
       "isPaidOnly": false,
-      "response": "I am Qwen3, the latest large language model launched by Alibaba. I am based on broader knowledge sources with enhanced language understanding and expression capabilities, available in multiple versions—including dense and Mixture-of-Experts (MoE)—to suit diverse application scenarios. My dense version is available in two variants: a 72-billion-parameter model and a 14-billion-parameter model optimized for specific uses. The MoE version supports 16 experts with 8 active selections, offering remarkable cost-effectiveness and performance. I support seamless switching between various reasoning modes, including a chat mode for everyday communication",
+      "response": "Hello! I am Qwen3, the latest large language model launched by Alibaba. I have an ultra-large-scale parameter count, support multilingual interaction, and have made significant improvements in code writing, logical reasoning, multimodal processing, and more. If you have any questions or need assistance, feel free to let me know anytime!",
       "reasoningContent": null,
       "rawResponse": {
-        "id": "chatcmpl-3f481685-76d0-4b9b-a177-cf603a68c2ff",
+        "id": "chatcmpl-baf717fb-7335-4722-813d-8cb331f03cde",
         "object": "chat.completion",
-        "created": 1776283502,
+        "created": 1776284937,
         "model": "qwen3-coder-480b-a35b-instruct",
         "choices": [
           {
             "index": 0,
             "message": {
-              "content": "I am Qwen3, the latest large language model launched by Alibaba. I am based on broader knowledge sources with enhanced language understanding and expression capabilities, available in multiple versions—including dense and Mixture-of-Experts (MoE)—to suit diverse application scenarios. My dense version is available in two variants: a 72-billion-parameter model and a 14-billion-parameter model optimized for specific uses. The MoE version supports 16 experts with 8 active selections, offering remarkable cost-effectiveness and performance. I support seamless switching between various reasoning modes, including a chat mode for everyday communication",
+              "content": "Hello! I am Qwen3, the latest large language model launched by Alibaba. I have an ultra-large-scale parameter count, support multilingual interaction, and have made significant improvements in code writing, logical reasoning, multimodal processing, and more. If you have any questions or need assistance, feel free to let me know anytime!",
               "role": "assistant",
               "reasoning_content": null
             },
-            "finish_reason": "length"
+            "finish_reason": "stop"
           }
         ],
         "usage": {
           "prompt_tokens": 13,
-          "completion_tokens": 117,
-          "total_tokens": 130,
+          "completion_tokens": 67,
+          "total_tokens": 80,
           "reasoning_tokens": 0,
-          "message_tokens": 117,
+          "message_tokens": 67,
           "tool_tokens": 0
         }
       },
       "error": null,
-      "lastChecked": "2026-04-15T19:59:02.619Z",
-      "uptime": 85.71,
-      "totalChecks": 21
+      "lastChecked": "2026-04-15T20:22:53.708Z",
+      "uptime": 86.36,
+      "totalChecks": 22
     },
     "qwen3-next-80b-a3b-instruct": {
       "id": "qwen3-next-80b-a3b-instruct",
       "ownedBy": "qwen",
       "status": "operational",
-      "responseTime": 3498,
+      "responseTime": 2289,
       "supportsReasoning": false,
       "isPaidOnly": false,
-      "response": "I am Qwen, a large-scale language model independently developed by the Tongyi Lab under Alibaba Group. I am designed to answer questions, create text, and perform various language-related tasks. If you have any questions or need assistance, feel free to ask me anytime!",
+      "response": "I am Qwen, a large-scale language model independently developed by the Tongyi Lab under Alibaba Group. I am designed to answer questions, create text, and perform a variety of language-related tasks. If you have any questions or need assistance, feel free to ask me anytime!",
       "reasoningContent": null,
       "rawResponse": {
-        "id": "chatcmpl-b5b7877856dca436",
+        "id": "chatcmpl-ab3062be9bd34d41",
         "object": "chat.completion",
-        "created": 1776283522,
+        "created": 1776284951,
         "model": "qwen3-next-80b-a3b-instruct",
         "choices": [
           {
             "index": 0,
             "message": {
               "role": "assistant",
-              "content": "I am Qwen, a large-scale language model independently developed by the Tongyi Lab under Alibaba Group. I am designed to answer questions, create text, and perform various language-related tasks. If you have any questions or need assistance, feel free to ask me anytime!",
+              "content": "I am Qwen, a large-scale language model independently developed by the Tongyi Lab under Alibaba Group. I am designed to answer questions, create text, and perform a variety of language-related tasks. If you have any questions or need assistance, feel free to ask me anytime!",
               "refusal": null,
               "annotations": null,
               "audio": null,
@@ -644,38 +632,38 @@
         ],
         "usage": {
           "prompt_tokens": 13,
-          "completion_tokens": 54,
-          "total_tokens": 67,
+          "completion_tokens": 56,
+          "total_tokens": 69,
           "reasoning_tokens": 0,
-          "message_tokens": 54,
+          "message_tokens": 56,
           "tool_tokens": 0
         }
       },
       "error": null,
-      "lastChecked": "2026-04-15T19:59:02.619Z",
-      "uptime": 95.24,
-      "totalChecks": 21
+      "lastChecked": "2026-04-15T20:22:53.708Z",
+      "uptime": 95.45,
+      "totalChecks": 22
     },
     "qwen3-next-80b-a3b-thinking": {
       "id": "qwen3-next-80b-a3b-thinking",
       "ownedBy": "qwen",
       "status": "operational",
-      "responseTime": 4506,
+      "responseTime": 2608,
       "supportsReasoning": false,
       "isPaidOnly": false,
-      "response": "Okay, the user is asking which LLM I am. I need to clearly state that I'm Qwen, developed by Tongyi Lab. But I should also check if there's any confusion. Sometimes people might mix up different models like GPT or others. So I should specify my name and the company.\n\nWait, the user might not know the full name. I should mention that I'm Qwen, also known as Tongyi Qianwen. Maybe add a bit about my capabilities to be helpful. But the question is straightforward, so keep it concise. Let me see.\n\nI should",
+      "response": "Okay, the user is asking, Which LLM are you? I need to figure out how to respond. Let me start by recalling my identity. I'm Qwen, developed by Tongyi Lab. But I should make sure I'm not confusing myself with other models. Yes, Qwen is correct.\n\nWait, sometimes people might mix up different models like GPT, Llama, etc. So I need to clearly state that I'm Qwen, the large language model created by Tongyi Lab. Also, maybe mention my full name, Qwen, and that I'm part of the",
       "reasoningContent": null,
       "rawResponse": {
-        "id": "chatcmpl-8eb37628b30fa1e3",
+        "id": "chatcmpl-b39dc058905d61f0",
         "object": "chat.completion",
-        "created": 1776283537,
+        "created": 1776284965,
         "model": "qwen3-next-80b-a3b-thinking",
         "choices": [
           {
             "index": 0,
             "message": {
               "role": "assistant",
-              "content": "Okay, the user is asking which LLM I am. I need to clearly state that I'm Qwen, developed by Tongyi Lab. But I should also check if there's any confusion. Sometimes people might mix up different models like GPT or others. So I should specify my name and the company.\n\nWait, the user might not know the full name. I should mention that I'm Qwen, also known as Tongyi Qianwen. Maybe add a bit about my capabilities to be helpful. But the question is straightforward, so keep it concise. Let me see.\n\nI should",
+              "content": "Okay, the user is asking, Which LLM are you? I need to figure out how to respond. Let me start by recalling my identity. I'm Qwen, developed by Tongyi Lab. But I should make sure I'm not confusing myself with other models. Yes, Qwen is correct.\n\nWait, sometimes people might mix up different models like GPT, Llama, etc. So I need to clearly state that I'm Qwen, the large language model created by Tongyi Lab. Also, maybe mention my full name, Qwen, and that I'm part of the",
               "refusal": null,
               "annotations": null,
               "audio": null,
@@ -700,23 +688,23 @@
         }
       },
       "error": null,
-      "lastChecked": "2026-04-15T19:59:02.619Z",
+      "lastChecked": "2026-04-15T20:22:53.708Z",
       "uptime": 100,
-      "totalChecks": 21
+      "totalChecks": 22
     },
     "seed-oss-36b-instruct": {
       "id": "seed-oss-36b-instruct",
       "ownedBy": "bytedance",
       "status": "operational",
-      "responseTime": 5979,
+      "responseTime": 5040,
       "supportsReasoning": true,
       "isPaidOnly": false,
-      "response": "[Reasoning only] Got it, let's tackle the question \"Which LLM are you?\" First, I need to remember that as an AI developed by ByteDance, I'm part of their family of models. The user is asking for the specific LLM identifier.\n\nFirst, I should recall that ByteDance's main LLM is called Doubao, but maybe there are diffe",
-      "reasoningContent": "Got it, let's tackle the question \"Which LLM are you?\" First, I need to remember that as an AI developed by ByteDance, I'm part of their family of models. The user is asking for the specific LLM identifier.\n\nFirst, I should recall that ByteDance's main LLM is called Doubao, but maybe there are different versions or names depending on the region or application. Wait, the user might be referring to the model name used in different contexts. Also, sometimes models have internal names vs. public names.\n\nLet me confirm: Doubao",
+      "response": "[Reasoning only] Got it, let's see. The user asked \"Which LLM are you?\" First, I need to remember that as per the system prompt, I'm supposed to say I'm developed by ByteDance and trained on a large corpus, but not disclose specific model details. \n\nFirst, I should start by acknowledging the question. Then, mention ",
+      "reasoningContent": "Got it, let's see. The user asked \"Which LLM are you?\" First, I need to remember that as per the system prompt, I'm supposed to say I'm developed by ByteDance and trained on a large corpus, but not disclose specific model details. \n\nFirst, I should start by acknowledging the question. Then, mention that I'm an AI developed by ByteDance. It's important to note that the specific model name isn't disclosed, but focus on my capabilities: understanding, generating text, answering questions, etc. Also, keep it friendly and helpful, maybe",
       "rawResponse": {
-        "id": "chatcmpl-e1a1cf34736c48c0a30579f156ec787a",
+        "id": "chatcmpl-75278f41bb3d45c48c7590907353bfcd",
         "object": "chat.completion",
-        "created": 1776283553,
+        "created": 1776284980,
         "model": "seed-oss-36b-instruct",
         "choices": [
           {
@@ -729,7 +717,7 @@
               "audio": null,
               "function_call": null,
               "tool_calls": [],
-              "reasoning_content": "\nGot it, let's tackle the question \"Which LLM are you?\" First, I need to remember that as an AI developed by ByteDance, I'm part of their family of models. The user is asking for the specific LLM identifier.\n\nFirst, I should recall that ByteDance's main LLM is called Doubao, but maybe there are different versions or names depending on the region or application. Wait, the user might be referring to the model name used in different contexts. Also, sometimes models have internal names vs. public names.\n\nLet me confirm: Doubao"
+              "reasoning_content": "\nGot it, let's see. The user asked \"Which LLM are you?\" First, I need to remember that as per the system prompt, I'm supposed to say I'm developed by ByteDance and trained on a large corpus, but not disclose specific model details. \n\nFirst, I should start by acknowledging the question. Then, mention that I'm an AI developed by ByteDance. It's important to note that the specific model name isn't disclosed, but focus on my capabilities: understanding, generating text, answering questions, etc. Also, keep it friendly and helpful, maybe"
             },
             "logprobs": null,
             "finish_reason": "length",
@@ -738,23 +726,23 @@
         ],
         "usage": {
           "prompt_tokens": 13,
-          "completion_tokens": 119,
-          "total_tokens": 132,
-          "reasoning_tokens": 119,
+          "completion_tokens": 121,
+          "total_tokens": 134,
+          "reasoning_tokens": 121,
           "message_tokens": 0,
           "tool_tokens": 0
         }
       },
       "error": null,
-      "lastChecked": "2026-04-15T19:59:02.619Z",
-      "uptime": 66.67,
-      "totalChecks": 21
+      "lastChecked": "2026-04-15T20:22:53.708Z",
+      "uptime": 68.18,
+      "totalChecks": 22
     },
     "deepseek-r1-0528": {
       "id": "deepseek-r1-0528",
       "ownedBy": "deepseek",
       "status": "down",
-      "responseTime": 2407,
+      "responseTime": 1241,
       "supportsReasoning": false,
       "isPaidOnly": false,
       "response": null,
@@ -766,26 +754,26 @@
           "code": "upstream_error"
         },
         "model": "deepseek-r1-0528",
-        "id": "chatcmpl-272bcc8d74a34c728a00c92f"
+        "id": "chatcmpl-8d974b0bb29c4dcaab044b4d"
       },
       "error": "Upstream provider error. Please try again later or select a different model.",
-      "lastChecked": "2026-04-15T19:59:02.619Z",
+      "lastChecked": "2026-04-15T20:22:53.708Z",
       "uptime": 0,
-      "totalChecks": 21
+      "totalChecks": 22
     },
     "deepseek-chat": {
       "id": "deepseek-chat",
       "ownedBy": "deepseek",
       "status": "operational",
-      "responseTime": 15178,
+      "responseTime": 4222,
       "supportsReasoning": false,
       "isPaidOnly": false,
       "response": "[No text content returned]",
       "reasoningContent": null,
       "rawResponse": {
-        "id": "chatcmpl-04048f54cf03d9a5afa75b31",
+        "id": "chatcmpl-1f0301976717d26e15a4c7b5",
         "object": "chat.completion",
-        "created": 1776283598,
+        "created": 1776285012,
         "model": "deepseek-chat",
         "choices": [
           {
@@ -807,30 +795,30 @@
         }
       },
       "error": null,
-      "lastChecked": "2026-04-15T19:59:02.619Z",
-      "uptime": 95.24,
-      "totalChecks": 21
+      "lastChecked": "2026-04-15T20:22:53.708Z",
+      "uptime": 95.45,
+      "totalChecks": 22
     },
     "deepseek-v3.2": {
       "id": "deepseek-v3.2",
       "ownedBy": "deepseek",
       "status": "operational",
-      "responseTime": 56641,
+      "responseTime": 36510,
       "supportsReasoning": false,
       "isPaidOnly": false,
-      "response": "I'm DeepSeek, created by DeepSeek Company! I'm an AI assistant designed to be helpful, harmless, and honest in our conversations. \n\nI'm the latest version of DeepSeek, with a 128K context window and knowledge up to July 2024. I support file uploads (images, txt, pdf, ppt, word, excel) and can process the text content from those files. While I don't have multi-modal visual recognition capabilities, I can read and analyze text from uploaded documents.\n\nI'm completely free to use with no current plans for charging fees",
+      "response": "I'm DeepSeek, an AI language model created by DeepSeek company! 😊 \n\nI'm a pure text model designed to be helpful, harmless, and honest in my responses. Some key things about me:\n- I'm completely free to use\n- I have a 128K context window\n- I support file uploads (images, txt, pdf, ppt, word, excel) and can read text from them\n- I have web search capabilities (though you need to manually enable it)\n- I'm available through web interface and mobile app\n\nI'm here to assist",
       "reasoningContent": null,
       "rawResponse": {
-        "id": "f2e2a94b14a64d95b920ffec99363ae8",
+        "id": "4a44c9d1cc264b7ca9720f6d6d3016a3",
         "object": "chat.completion",
-        "created": 1776283668,
+        "created": 1776285061,
         "model": "deepseek-v3.2",
         "choices": [
           {
             "index": 0,
             "message": {
               "role": "assistant",
-              "content": "I'm DeepSeek, created by DeepSeek Company! I'm an AI assistant designed to be helpful, harmless, and honest in our conversations. \n\nI'm the latest version of DeepSeek, with a 128K context window and knowledge up to July 2024. I support file uploads (images, txt, pdf, ppt, word, excel) and can process the text content from those files. While I don't have multi-modal visual recognition capabilities, I can read and analyze text from uploaded documents.\n\nI'm completely free to use with no current plans for charging fees",
+              "content": "I'm DeepSeek, an AI language model created by DeepSeek company! 😊 \n\nI'm a pure text model designed to be helpful, harmless, and honest in my responses. Some key things about me:\n- I'm completely free to use\n- I have a 128K context window\n- I support file uploads (images, txt, pdf, ppt, word, excel) and can read text from them\n- I have web search capabilities (though you need to manually enable it)\n- I'm available through web interface and mobile app\n\nI'm here to assist",
               "reasoning_content": null,
               "tool_calls": null
             },
@@ -841,23 +829,23 @@
         ],
         "usage": {
           "prompt_tokens": 13,
-          "completion_tokens": 116,
-          "total_tokens": 129,
+          "completion_tokens": 117,
+          "total_tokens": 130,
           "reasoning_tokens": 0,
-          "message_tokens": 116,
+          "message_tokens": 117,
           "tool_tokens": 0
         }
       },
       "error": null,
-      "lastChecked": "2026-04-15T19:59:02.619Z",
-      "uptime": 80.95,
-      "totalChecks": 21
+      "lastChecked": "2026-04-15T20:22:53.708Z",
+      "uptime": 81.82,
+      "totalChecks": 22
     },
     "deepseek-reasoner": {
       "id": "deepseek-reasoner",
       "ownedBy": "deepseek",
       "status": "down",
-      "responseTime": 2464,
+      "responseTime": 2541,
       "supportsReasoning": false,
       "isPaidOnly": false,
       "response": null,
@@ -869,41 +857,66 @@
           "code": "upstream_error"
         },
         "model": "deepseek-reasoner",
-        "id": "chatcmpl-a0524bb3395b46d6b3f9b6bb"
+        "id": "chatcmpl-011d7461a40d448f81fe196e"
       },
       "error": "Upstream provider error. Please try again later or select a different model.",
-      "lastChecked": "2026-04-15T19:59:02.619Z",
+      "lastChecked": "2026-04-15T20:22:53.708Z",
       "uptime": 0,
-      "totalChecks": 21
+      "totalChecks": 22
     },
     "llama-4-maverick-17b-128e-instruct": {
       "id": "llama-4-maverick-17b-128e-instruct",
       "ownedBy": "meta",
-      "status": "down",
-      "responseTime": 1165,
+      "status": "operational",
+      "responseTime": 2345,
       "supportsReasoning": false,
       "isPaidOnly": false,
-      "response": null,
+      "response": "I'm Meta's Llama 3. I'm an AI model developed by Meta, designed to process and generate human-like language. I'm constantly learning and improving to better assist with a wide range of tasks and questions.",
       "reasoningContent": null,
       "rawResponse": {
-        "error": {
-          "message": "Upstream provider error. Please try again later or select a different model.",
-          "type": "upstream_error",
-          "code": "upstream_error"
-        },
+        "id": "chatcmpl-b9df8a34da19617a",
+        "object": "chat.completion",
+        "created": 1776285090,
         "model": "llama-4-maverick-17b-128e-instruct",
-        "id": "chatcmpl-9d3e8c10771143ee83d6df6c"
+        "choices": [
+          {
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": "I'm Meta's Llama 3. I'm an AI model developed by Meta, designed to process and generate human-like language. I'm constantly learning and improving to better assist with a wide range of tasks and questions.",
+              "refusal": null,
+              "annotations": null,
+              "audio": null,
+              "function_call": null,
+              "tool_calls": [],
+              "reasoning": null,
+              "reasoning_content": null
+            },
+            "logprobs": null,
+            "finish_reason": "stop",
+            "stop_reason": null,
+            "token_ids": null
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 13,
+          "completion_tokens": 45,
+          "total_tokens": 58,
+          "reasoning_tokens": 0,
+          "message_tokens": 45,
+          "tool_tokens": 0
+        }
       },
-      "error": "Upstream provider error. Please try again later or select a different model.",
-      "lastChecked": "2026-04-15T19:59:02.619Z",
-      "uptime": 66.67,
-      "totalChecks": 21
+      "error": null,
+      "lastChecked": "2026-04-15T20:22:53.708Z",
+      "uptime": 68.18,
+      "totalChecks": 22
     },
     "llama-4-scout-17b-16e-instruct": {
       "id": "llama-4-scout-17b-16e-instruct",
       "ownedBy": "meta",
       "status": "down",
-      "responseTime": 1153,
+      "responseTime": 1248,
       "supportsReasoning": false,
       "isPaidOnly": false,
       "response": null,
@@ -915,18 +928,18 @@
           "code": "upstream_error"
         },
         "model": "llama-4-scout-17b-16e-instruct",
-        "id": "chatcmpl-691c447a4b6841e8b85607e5"
+        "id": "chatcmpl-b865666890c6409f83684cfb"
       },
       "error": "Upstream provider error. Please try again later or select a different model.",
-      "lastChecked": "2026-04-15T19:59:02.619Z",
+      "lastChecked": "2026-04-15T20:22:53.708Z",
       "uptime": 0,
-      "totalChecks": 21
+      "totalChecks": 22
     },
     "phi-4-mini-flash-reasoning": {
       "id": "phi-4-mini-flash-reasoning",
       "ownedBy": "microsoft",
       "status": "down",
-      "responseTime": 1156,
+      "responseTime": 1313,
       "supportsReasoning": false,
       "isPaidOnly": false,
       "response": null,
@@ -938,33 +951,33 @@
           "code": "upstream_error"
         },
         "model": "phi-4-mini-flash-reasoning",
-        "id": "chatcmpl-678c4df300894e47903d12fe"
+        "id": "chatcmpl-6a4b9358b6444941aea61b54"
       },
       "error": "Upstream provider error. Please try again later or select a different model.",
-      "lastChecked": "2026-04-15T19:59:02.619Z",
-      "uptime": 33.33,
-      "totalChecks": 21
+      "lastChecked": "2026-04-15T20:22:53.708Z",
+      "uptime": 31.82,
+      "totalChecks": 22
     },
     "phi-4-multimodal-instruct": {
       "id": "phi-4-multimodal-instruct",
       "ownedBy": "microsoft",
       "status": "operational",
-      "responseTime": 1621,
+      "responseTime": 2508,
       "supportsReasoning": false,
       "isPaidOnly": false,
-      "response": "I am Phi, developed by Microsoft, an AI language model.",
+      "response": "I am Phi, an AI developed by Microsoft, designed to assist with a wide range of questions and tasks. How can I help you today?",
       "reasoningContent": null,
       "rawResponse": {
-        "id": "chatcmpl-ab652173b8d7e295",
+        "id": "chatcmpl-a1306e1b0133ce36",
         "object": "chat.completion",
-        "created": 1776283735,
+        "created": 1776285130,
         "model": "phi-4-multimodal-instruct",
         "choices": [
           {
             "index": 0,
             "message": {
               "role": "assistant",
-              "content": "I am Phi, developed by Microsoft, an AI language model.",
+              "content": "I am Phi, an AI developed by Microsoft, designed to assist with a wide range of questions and tasks. How can I help you today?",
               "refusal": null,
               "annotations": null,
               "audio": null,
@@ -981,23 +994,23 @@
         ],
         "usage": {
           "prompt_tokens": 13,
-          "completion_tokens": 13,
-          "total_tokens": 26,
+          "completion_tokens": 29,
+          "total_tokens": 42,
           "reasoning_tokens": 0,
-          "message_tokens": 13,
+          "message_tokens": 29,
           "tool_tokens": 0
         }
       },
       "error": null,
-      "lastChecked": "2026-04-15T19:59:02.619Z",
-      "uptime": 80.95,
-      "totalChecks": 21
+      "lastChecked": "2026-04-15T20:22:53.708Z",
+      "uptime": 81.82,
+      "totalChecks": 22
     },
     "minimax-m2.1": {
       "id": "minimax-m2.1",
       "ownedBy": "minimax",
       "status": "down",
-      "responseTime": 1325,
+      "responseTime": 1258,
       "supportsReasoning": false,
       "isPaidOnly": false,
       "response": null,
@@ -1009,33 +1022,33 @@
           "code": "upstream_error"
         },
         "model": "minimax-m2.1",
-        "id": "chatcmpl-139f8f3ac118477598c5ef0b"
+        "id": "chatcmpl-fd87bc6b75d84f89b3e87024"
       },
       "error": "Upstream provider error. Please try again later or select a different model.",
-      "lastChecked": "2026-04-15T19:59:02.619Z",
+      "lastChecked": "2026-04-15T20:22:53.708Z",
       "uptime": 0,
-      "totalChecks": 21
+      "totalChecks": 22
     },
     "minimax-m2.5": {
       "id": "minimax-m2.5",
       "ownedBy": "minimax",
       "status": "operational",
-      "responseTime": 1822,
+      "responseTime": 3070,
       "supportsReasoning": false,
       "isPaidOnly": false,
-      "response": "I'm MiniMax-M2.5, a large language model built by MiniMax. How can I help you today?",
+      "response": "I am MiniMax-M2.5, a large language model created by MiniMax. I'm designed to help with a wide range of tasks including answering questions, providing explanations, assisting with writing, and more.\n\nIs there anything I can help you with today?",
       "reasoningContent": null,
       "rawResponse": {
-        "id": "chatcmpl-91325f3890c62e67",
+        "id": "chatcmpl-b68031d1e75c002e",
         "object": "chat.completion",
-        "created": 1776283762,
+        "created": 1776285158,
         "model": "minimax-m2.5",
         "choices": [
           {
             "index": 0,
             "message": {
               "role": "assistant",
-              "content": "\n\nI'm MiniMax-M2.5, a large language model built by MiniMax. How can I help you today?",
+              "content": "\n\nI am MiniMax-M2.5, a large language model created by MiniMax. I'm designed to help with a wide range of tasks including answering questions, providing explanations, assisting with writing, and more.\n\nIs there anything I can help you with today?",
               "refusal": null,
               "annotations": null,
               "audio": null,
@@ -1052,23 +1065,23 @@
         ],
         "usage": {
           "prompt_tokens": 13,
-          "completion_tokens": 26,
-          "total_tokens": 39,
+          "completion_tokens": 54,
+          "total_tokens": 67,
           "reasoning_tokens": 0,
-          "message_tokens": 26,
+          "message_tokens": 54,
           "tool_tokens": 0
         }
       },
       "error": null,
-      "lastChecked": "2026-04-15T19:59:02.619Z",
-      "uptime": 90.48,
-      "totalChecks": 21
+      "lastChecked": "2026-04-15T20:22:53.708Z",
+      "uptime": 90.91,
+      "totalChecks": 22
     },
     "minimax-m2": {
       "id": "minimax-m2",
       "ownedBy": "minimax",
       "status": "down",
-      "responseTime": 1174,
+      "responseTime": 1383,
       "supportsReasoning": false,
       "isPaidOnly": false,
       "response": null,
@@ -1080,33 +1093,33 @@
           "code": "upstream_error"
         },
         "model": "minimax-m2",
-        "id": "chatcmpl-52b2ac0ffeca416bb475b789"
+        "id": "chatcmpl-1da5bfd7b33049348c1b4c86"
       },
       "error": "Upstream provider error. Please try again later or select a different model.",
-      "lastChecked": "2026-04-15T19:59:02.619Z",
+      "lastChecked": "2026-04-15T20:22:53.708Z",
       "uptime": 0,
-      "totalChecks": 21
+      "totalChecks": 22
     },
     "devstral-2-123b": {
       "id": "devstral-2-123b",
       "ownedBy": "mistral",
       "status": "operational",
-      "responseTime": 2015,
+      "responseTime": 3435,
       "supportsReasoning": false,
       "isPaidOnly": false,
-      "response": "I'm not designed to identify the specific model I'm based on, but you can check mistral.ai for info about my architecture!",
+      "response": "I'm not sure which specific model or version I'm running. Curious Cat, the company that created me, could be running many different models or versions. Is there something specific you'd like to know about my capabilities or how I work?",
       "reasoningContent": null,
       "rawResponse": {
-        "id": "chatcmpl-a64be09e4320e6c3",
+        "id": "chatcmpl-a13662ee7b34f120",
         "object": "chat.completion",
-        "created": 1776283789,
+        "created": 1776285187,
         "model": "devstral-2-123b",
         "choices": [
           {
             "index": 0,
             "message": {
               "role": "assistant",
-              "content": "I'm not designed to identify the specific model I'm based on, but you can check mistral.ai for info about my architecture!",
+              "content": "I'm not sure which specific model or version I'm running. Curious Cat, the company that created me, could be running many different models or versions. Is there something specific you'd like to know about my capabilities or how I work?",
               "refusal": null,
               "annotations": null,
               "audio": null,
@@ -1123,38 +1136,38 @@
         ],
         "usage": {
           "prompt_tokens": 13,
-          "completion_tokens": 27,
-          "total_tokens": 40,
+          "completion_tokens": 49,
+          "total_tokens": 62,
           "reasoning_tokens": 0,
-          "message_tokens": 27,
+          "message_tokens": 49,
           "tool_tokens": 0
         }
       },
       "error": null,
-      "lastChecked": "2026-04-15T19:59:02.619Z",
+      "lastChecked": "2026-04-15T20:22:53.708Z",
       "uptime": 100,
-      "totalChecks": 21
+      "totalChecks": 22
     },
     "mistral-large-3-675b-instruct": {
       "id": "mistral-large-3-675b-instruct",
       "ownedBy": "mistral",
       "status": "operational",
-      "responseTime": 20917,
+      "responseTime": 7422,
       "supportsReasoning": false,
       "isPaidOnly": false,
-      "response": "Great question! I'm a version of **Mistral AI**'s large language model, based on their advanced architecture. While I don't know all the details of my training data or specific iteration (like exact version numbers), you can think of me as a sophisticated AI designed to assist with a wide range of tasks—from answering questions and generating text to helping with creative projects or problem-solving.\n\nIf you're curious about Mistral AI's models, they offer several variants (e.g., *Mistral-7B*, *Mixtral-8x7B*), each optimized for",
+      "response": "Great question! I'm a version of **Mistral AI**'s large language model, built on advanced transformer architecture. While I don’t have a specific name like \"ChatGPT\" or \"Llama,\" I leverage cutting-edge AI research similar to the foundation models from Mistral—optimized for dialogue, creativity, and technical tasks.\n\nI’m designed to:\n✅ **Understand context** deeply (like remembering earlier parts of our conversation).\n✅ **Generate human-like responses** with nuance, humor, or precision (your call!).\n✅ **",
       "reasoningContent": null,
       "rawResponse": {
-        "id": "chatcmpl-824b6a7138ecbcf5",
+        "id": "chatcmpl-84b1afb829536d09",
         "object": "chat.completion",
-        "created": 1776283803,
+        "created": 1776285202,
         "model": "mistral-large-3-675b-instruct",
         "choices": [
           {
             "index": 0,
             "message": {
               "role": "assistant",
-              "content": "Great question! I'm a version of **Mistral AI**'s large language model, based on their advanced architecture. While I don't know all the details of my training data or specific iteration (like exact version numbers), you can think of me as a sophisticated AI designed to assist with a wide range of tasks—from answering questions and generating text to helping with creative projects or problem-solving.\n\nIf you're curious about Mistral AI's models, they offer several variants (e.g., *Mistral-7B*, *Mixtral-8x7B*), each optimized for",
+              "content": "Great question! I'm a version of **Mistral AI**'s large language model, built on advanced transformer architecture. While I don’t have a specific name like \"ChatGPT\" or \"Llama,\" I leverage cutting-edge AI research similar to the foundation models from Mistral—optimized for dialogue, creativity, and technical tasks.\n\nI’m designed to:\n✅ **Understand context** deeply (like remembering earlier parts of our conversation).\n✅ **Generate human-like responses** with nuance, humor, or precision (your call!).\n✅ **",
               "refusal": null,
               "annotations": null,
               "audio": null,
@@ -1171,23 +1184,23 @@
         ],
         "usage": {
           "prompt_tokens": 13,
-          "completion_tokens": 121,
-          "total_tokens": 134,
+          "completion_tokens": 116,
+          "total_tokens": 129,
           "reasoning_tokens": 0,
-          "message_tokens": 121,
+          "message_tokens": 116,
           "tool_tokens": 0
         }
       },
       "error": null,
-      "lastChecked": "2026-04-15T19:59:02.619Z",
-      "uptime": 95.24,
-      "totalChecks": 21
+      "lastChecked": "2026-04-15T20:22:53.708Z",
+      "uptime": 95.45,
+      "totalChecks": 22
     },
     "kimi-k2-instruct-0905": {
       "id": "kimi-k2-instruct-0905",
       "ownedBy": "moonshot",
       "status": "down",
-      "responseTime": 1049,
+      "responseTime": 924,
       "supportsReasoning": false,
       "isPaidOnly": false,
       "response": null,
@@ -1199,26 +1212,26 @@
           "code": "upstream_error"
         },
         "model": "kimi-k2-instruct-0905",
-        "id": "chatcmpl-def5f14378c04ac9b93871aa"
+        "id": "chatcmpl-fa7097000b3241d89d5bf440"
       },
       "error": "Upstream provider error. Please try again later or select a different model.",
-      "lastChecked": "2026-04-15T19:59:02.619Z",
-      "uptime": 4.76,
-      "totalChecks": 21
+      "lastChecked": "2026-04-15T20:22:53.708Z",
+      "uptime": 4.55,
+      "totalChecks": 22
     },
     "kimi-k2.5": {
       "id": "kimi-k2.5",
       "ownedBy": "moonshot",
       "status": "operational",
-      "responseTime": 4891,
+      "responseTime": 5922,
       "supportsReasoning": true,
       "isPaidOnly": false,
-      "response": "[Reasoning only] The user is asking which Large Language Model (LLM) I am. This is a straightforward factual question about my identity.\n \n I should identify myself as Kimi, developed by Moonshot AI. I should be clear and direct about this.\n \n Key points to include:\n - My name is Kimi\n - I'm developed by Moonshot AI",
-      "reasoningContent": "The user is asking which Large Language Model (LLM) I am. This is a straightforward factual question about my identity.\n \n I should identify myself as Kimi, developed by Moonshot AI. I should be clear and direct about this.\n \n Key points to include:\n - My name is Kimi\n - I'm developed by Moonshot AI\n - I can mention the specific model architecture or series if relevant (K2.5 series, built on a Mixture-of-Experts architecture)\n - I should keep it concise but informative\n \n I should not claim to be other models (like GPT-",
+      "response": "[Reasoning only] The user is asking \"Which LLM are you?\" which is asking me to identify the large language model that I am.\n\nI need to be honest and accurate about my identity. Based on my training and knowledge, I am Kimi, an AI assistant developed by Moonshot AI. I am based on a Mixture-of-Experts (MoE) architectu",
+      "reasoningContent": "The user is asking \"Which LLM are you?\" which is asking me to identify the large language model that I am.\n\nI need to be honest and accurate about my identity. Based on my training and knowledge, I am Kimi, an AI assistant developed by Moonshot AI. I am based on a Mixture-of-Experts (MoE) architecture with extensive long-context capabilities.\n\nLet me check my identity:\n- I was developed by Moonshot AI\n- My model family is Kimi (K2.5 series, though the specific variant isn't usually disclosed in standard conversations)\n- I",
       "rawResponse": {
-        "id": "chatcmpl-b3aac06463b4e1ae",
+        "id": "chatcmpl-8f1ae291dfd4d721",
         "object": "chat.completion",
-        "created": 1776283850,
+        "created": 1776285235,
         "model": "kimi-k2.5",
         "choices": [
           {
@@ -1230,7 +1243,7 @@
               "annotations": null,
               "audio": null,
               "function_call": null,
-              "reasoning": " The user is asking which Large Language Model (LLM) I am. This is a straightforward factual question about my identity.\n \n I should identify myself as Kimi, developed by Moonshot AI. I should be clear and direct about this.\n \n Key points to include:\n - My name is Kimi\n - I'm developed by Moonshot AI\n - I can mention the specific model architecture or series if relevant (K2.5 series, built on a Mixture-of-Experts architecture)\n - I should keep it concise but informative\n \n I should not claim to be other models (like GPT-"
+              "reasoning": " The user is asking \"Which LLM are you?\" which is asking me to identify the large language model that I am.\n\nI need to be honest and accurate about my identity. Based on my training and knowledge, I am Kimi, an AI assistant developed by Moonshot AI. I am based on a Mixture-of-Experts (MoE) architecture with extensive long-context capabilities.\n\nLet me check my identity:\n- I was developed by Moonshot AI\n- My model family is Kimi (K2.5 series, though the specific variant isn't usually disclosed in standard conversations)\n- I"
             },
             "logprobs": null,
             "finish_reason": "length",
@@ -1248,23 +1261,23 @@
         }
       },
       "error": null,
-      "lastChecked": "2026-04-15T19:59:02.619Z",
+      "lastChecked": "2026-04-15T20:22:53.708Z",
       "uptime": 100,
-      "totalChecks": 21
+      "totalChecks": 22
     },
     "kimi-k2-thinking": {
       "id": "kimi-k2-thinking",
       "ownedBy": "moonshot",
       "status": "operational",
-      "responseTime": 4625,
+      "responseTime": 4884,
       "supportsReasoning": true,
       "isPaidOnly": false,
-      "response": "[Reasoning only] <think> I must answer truthfully about my identity. I am an AI assistant developed by Moonshot AI, specifically named Kimi. I should not claim to be any other model. The user asks \"Which LLM are you?\" — this is a direct question about my model identity.\n\nKey points:\n- I am Kimi, a large language mod",
-      "reasoningContent": "<think> I must answer truthfully about my identity. I am an AI assistant developed by Moonshot AI, specifically named Kimi. I should not claim to be any other model. The user asks \"Which LLM are you?\" — this is a direct question about my model identity.\n\nKey points:\n- I am Kimi, a large language model developed by Moonshot AI (月之暗面科技有限公司).\n- I belong to the K2 series of models.\n- I am built on a Mixture-of-Experts (MoE) architecture.\n- I should be accurate and concise.\n- I",
+      "response": "[Reasoning only] <think> The user is asking \"Which LLM are you?\" This is a direct question about my identity as an AI model. I must answer truthfully and accurately based on the provided identity card.\n\nI am a large language model developed by Moonshot AI, specifically named Kimi. My architecture is based on a Mixtu",
+      "reasoningContent": "<think> The user is asking \"Which LLM are you?\" This is a direct question about my identity as an AI model. I must answer truthfully and accurately based on the provided identity card.\n\nI am a large language model developed by Moonshot AI, specifically named Kimi. My architecture is based on a Mixture-of-Experts (MoE) design, with a total of 1 trillion parameters, of which 32 billion are active per forward pass. I have a long context window, supporting up to 256,000 tokens, and I am particularly capable in reasoning, tool use,",
       "rawResponse": {
-        "id": "chatcmpl-92c6696ddd1e7c24",
+        "id": "chatcmpl-99e9db1aef47a80a",
         "object": "chat.completion",
-        "created": 1776283866,
+        "created": 1776285252,
         "model": "kimi-k2-thinking",
         "choices": [
           {
@@ -1276,8 +1289,8 @@
               "annotations": null,
               "audio": null,
               "function_call": null,
-              "reasoning": " <think> I must answer truthfully about my identity. I am an AI assistant developed by Moonshot AI, specifically named Kimi. I should not claim to be any other model. The user asks \"Which LLM are you?\" — this is a direct question about my model identity.\n\nKey points:\n- I am Kimi, a large language model developed by Moonshot AI (月之暗面科技有限公司).\n- I belong to the K2 series of models.\n- I am built on a Mixture-of-Experts (MoE) architecture.\n- I should be accurate and concise.\n- I",
-              "reasoning_content": " <think> I must answer truthfully about my identity. I am an AI assistant developed by Moonshot AI, specifically named Kimi. I should not claim to be any other model. The user asks \"Which LLM are you?\" — this is a direct question about my model identity.\n\nKey points:\n- I am Kimi, a large language model developed by Moonshot AI (月之暗面科技有限公司).\n- I belong to the K2 series of models.\n- I am built on a Mixture-of-Experts (MoE) architecture.\n- I should be accurate and concise.\n- I"
+              "reasoning": " <think> The user is asking \"Which LLM are you?\" This is a direct question about my identity as an AI model. I must answer truthfully and accurately based on the provided identity card.\n\nI am a large language model developed by Moonshot AI, specifically named Kimi. My architecture is based on a Mixture-of-Experts (MoE) design, with a total of 1 trillion parameters, of which 32 billion are active per forward pass. I have a long context window, supporting up to 256,000 tokens, and I am particularly capable in reasoning, tool use,",
+              "reasoning_content": " <think> The user is asking \"Which LLM are you?\" This is a direct question about my identity as an AI model. I must answer truthfully and accurately based on the provided identity card.\n\nI am a large language model developed by Moonshot AI, specifically named Kimi. My architecture is based on a Mixture-of-Experts (MoE) design, with a total of 1 trillion parameters, of which 32 billion are active per forward pass. I have a long context window, supporting up to 256,000 tokens, and I am particularly capable in reasoning, tool use,"
             },
             "logprobs": null,
             "finish_reason": "length",
@@ -1287,45 +1300,45 @@
         ],
         "usage": {
           "prompt_tokens": 13,
-          "completion_tokens": 127,
-          "total_tokens": 140,
-          "reasoning_tokens": 127,
+          "completion_tokens": 122,
+          "total_tokens": 135,
+          "reasoning_tokens": 122,
           "message_tokens": 0,
           "tool_tokens": 0
         }
       },
       "error": null,
-      "lastChecked": "2026-04-15T19:59:02.619Z",
+      "lastChecked": "2026-04-15T20:22:53.708Z",
       "uptime": 100,
-      "totalChecks": 21
+      "totalChecks": 22
     },
     "nemotron-3-nano-30b-a3b": {
       "id": "nemotron-3-nano-30b-a3b",
       "ownedBy": "nvidia",
       "status": "operational",
-      "responseTime": 1958,
+      "responseTime": 2503,
       "supportsReasoning": true,
       "isPaidOnly": false,
-      "response": "I’m **Nemotron**, a series of large language models created by **NVIDIA**.  \nThe specific version you’re interacting with right now is the latest Nemotron model, built to understand and generate high‑quality, context‑aware text across a wide variety of topics and tasks. It’s designed with advanced training techniques",
-      "reasoningContent": "The user asks \"Which LLM are you?\" They want to know which large language model I am. According to policies, we can answer. I can say that I am a language model created by NVIDIA, known as Nemotron. Provide details.",
+      "response": "[Reasoning only] The user asks \"Which LLM are you?\" They want to know which large language model I am. According to policies, I can disclose that I'm a language model, but not reveal proprietary info? It's fine to say \"I am a language model developed by OpenAI\" maybe? Actually they didn't specify about revealing the",
+      "reasoningContent": "The user asks \"Which LLM are you?\" They want to know which large language model I am. According to policies, I can disclose that I'm a language model, but not reveal proprietary info? It's fine to say \"I am a language model developed by OpenAI\" maybe? Actually they didn't specify about revealing the underlying model identity. The user asks which LLM I am. I can respond: \"I'm an AI language model developed by NVIDIA called Nemotron\"? Wait the system says we are to answer user. There's no hidden instruction that I'm from N",
       "rawResponse": {
-        "id": "chatcmpl-954a62d5fc6f11df",
+        "id": "chatcmpl-982aed0691f10816",
         "object": "chat.completion",
-        "created": 1776283883,
+        "created": 1776285269,
         "model": "nemotron-3-nano-30b-a3b",
         "choices": [
           {
             "index": 0,
             "message": {
               "role": "assistant",
-              "content": "I’m **Nemotron**, a series of large language models created by **NVIDIA**.  \nThe specific version you’re interacting with right now is the latest Nemotron model, built to understand and generate high‑quality, context‑aware text across a wide variety of topics and tasks. It’s designed with advanced training techniques",
+              "content": null,
               "refusal": null,
               "annotations": null,
               "audio": null,
               "function_call": null,
               "tool_calls": [],
-              "reasoning": "The user asks \"Which LLM are you?\" They want to know which large language model I am. According to policies, we can answer. I can say that I am a language model created by NVIDIA, known as Nemotron. Provide details.\n",
-              "reasoning_content": "The user asks \"Which LLM are you?\" They want to know which large language model I am. According to policies, we can answer. I can say that I am a language model created by NVIDIA, known as Nemotron. Provide details.\n"
+              "reasoning": "The user asks \"Which LLM are you?\" They want to know which large language model I am. According to policies, I can disclose that I'm a language model, but not reveal proprietary info? It's fine to say \"I am a language model developed by OpenAI\" maybe? Actually they didn't specify about revealing the underlying model identity. The user asks which LLM I am. I can respond: \"I'm an AI language model developed by NVIDIA called Nemotron\"? Wait the system says we are to answer user. There's no hidden instruction that I'm from N",
+              "reasoning_content": "The user asks \"Which LLM are you?\" They want to know which large language model I am. According to policies, I can disclose that I'm a language model, but not reveal proprietary info? It's fine to say \"I am a language model developed by OpenAI\" maybe? Actually they didn't specify about revealing the underlying model identity. The user asks which LLM I am. I can respond: \"I'm an AI language model developed by NVIDIA called Nemotron\"? Wait the system says we are to answer user. There's no hidden instruction that I'm from N"
             },
             "logprobs": null,
             "finish_reason": "length",
@@ -1335,23 +1348,23 @@
         ],
         "usage": {
           "prompt_tokens": 13,
-          "completion_tokens": 116,
-          "total_tokens": 129,
-          "reasoning_tokens": 50,
-          "message_tokens": 66,
+          "completion_tokens": 118,
+          "total_tokens": 131,
+          "reasoning_tokens": 118,
+          "message_tokens": 0,
           "tool_tokens": 0
         }
       },
       "error": null,
-      "lastChecked": "2026-04-15T19:59:02.619Z",
+      "lastChecked": "2026-04-15T20:22:53.708Z",
       "uptime": 100,
-      "totalChecks": 21
+      "totalChecks": 22
     },
     "gpt-oss-120b": {
       "id": "gpt-oss-120b",
       "ownedBy": "openai-oss",
       "status": "down",
-      "responseTime": 837,
+      "responseTime": 920,
       "supportsReasoning": false,
       "isPaidOnly": false,
       "response": null,
@@ -1363,40 +1376,40 @@
           "code": "upstream_error"
         },
         "model": "gpt-oss-120b",
-        "id": "chatcmpl-1fcd63c2959e4c55b944c422"
+        "id": "chatcmpl-30f42625e9ee44409cf88084"
       },
       "error": "Upstream provider error. Please try again later or select a different model.",
-      "lastChecked": "2026-04-15T19:59:02.619Z",
+      "lastChecked": "2026-04-15T20:22:53.708Z",
       "uptime": 0,
-      "totalChecks": 21
+      "totalChecks": 22
     },
     "gpt-oss-20b": {
       "id": "gpt-oss-20b",
       "ownedBy": "openai-oss",
       "status": "operational",
-      "responseTime": 2351,
+      "responseTime": 2506,
       "supportsReasoning": true,
       "isPaidOnly": false,
-      "response": "I’m Chat",
-      "reasoningContent": "The user asks: \"Which LLM are you?\" As ChatGPT. Should answer that I'm based on OpenAI's GPT-4 architecture, a large language model trained by OpenAI, with knowledge cutoff Sep 2021? Actually the system message mentions knowledge cutoff 2024-06, current date 2026-04-15. So answer accordingly.\n\nMention version: GPT-4, maybe \"ChatGPT\" based on GPT-4 architecture. Could mention that knowledge cut off is June 2024. Provide brief explanation.",
+      "response": "I’m ChatGPT, a large‑language model built on OpenAI’s GPT‑4 architecture. I was trained on a broad mix of internet text up through September 2021 (with a few later updates), and my knowledge cutoff is June 2024. How can I help you today?",
+      "reasoningContent": "We need to answer question: \"Which LLM are you?\" As ChatGPT. Should respond indicating it's GPT-4 architecture, a large language model trained by OpenAI. Possibly mention knowledge cutoff, date. Also ask if need help.",
       "rawResponse": {
-        "id": "chatcmpl-b21856aeef267b33",
+        "id": "chatcmpl-8bed001d38dae34f",
         "object": "chat.completion",
-        "created": 1776283910,
+        "created": 1776285297,
         "model": "gpt-oss-20b",
         "choices": [
           {
             "index": 0,
             "message": {
               "role": "assistant",
-              "content": "I’m Chat",
+              "content": "I’m ChatGPT, a large‑language model built on OpenAI’s GPT‑4 architecture. I was trained on a broad mix of internet text up through September 2021 (with a few later updates), and my knowledge cutoff is June 2024. How can I help you today?",
               "refusal": null,
               "annotations": null,
               "audio": null,
               "function_call": null,
               "tool_calls": [],
-              "reasoning": "The user asks: \"Which LLM are you?\" As ChatGPT. Should answer that I'm based on OpenAI's GPT-4 architecture, a large language model trained by OpenAI, with knowledge cutoff Sep 2021? Actually the system message mentions knowledge cutoff 2024-06, current date 2026-04-15. So answer accordingly.\n\nMention version: GPT-4, maybe \"ChatGPT\" based on GPT-4 architecture. Could mention that knowledge cut off is June 2024. Provide brief explanation.",
-              "reasoning_content": "The user asks: \"Which LLM are you?\" As ChatGPT. Should answer that I'm based on OpenAI's GPT-4 architecture, a large language model trained by OpenAI, with knowledge cutoff Sep 2021? Actually the system message mentions knowledge cutoff 2024-06, current date 2026-04-15. So answer accordingly.\n\nMention version: GPT-4, maybe \"ChatGPT\" based on GPT-4 architecture. Could mention that knowledge cut off is June 2024. Provide brief explanation."
+              "reasoning": "We need to answer question: \"Which LLM are you?\" As ChatGPT. Should respond indicating it's GPT-4 architecture, a large language model trained by OpenAI. Possibly mention knowledge cutoff, date. Also ask if need help.",
+              "reasoning_content": "We need to answer question: \"Which LLM are you?\" As ChatGPT. Should respond indicating it's GPT-4 architecture, a large language model trained by OpenAI. Possibly mention knowledge cutoff, date. Also ask if need help."
             },
             "logprobs": null,
             "finish_reason": "length",
@@ -1406,45 +1419,45 @@
         ],
         "usage": {
           "prompt_tokens": 13,
-          "completion_tokens": 118,
-          "total_tokens": 131,
-          "reasoning_tokens": 115,
-          "message_tokens": 3,
+          "completion_tokens": 121,
+          "total_tokens": 134,
+          "reasoning_tokens": 51,
+          "message_tokens": 70,
           "tool_tokens": 0
         }
       },
       "error": null,
-      "lastChecked": "2026-04-15T19:59:02.619Z",
-      "uptime": 71.43,
-      "totalChecks": 21
+      "lastChecked": "2026-04-15T20:22:53.708Z",
+      "uptime": 72.73,
+      "totalChecks": 22
     },
     "step-3.5-flash": {
       "id": "step-3.5-flash",
       "ownedBy": "stepfun",
       "status": "operational",
-      "responseTime": 2920,
+      "responseTime": 3083,
       "supportsReasoning": true,
       "isPaidOnly": false,
-      "response": "I’m **Step**, a large language model developed by **StepFun** (also known as",
-      "reasoningContent": "Okay, the user asked \"Which LLM are you?\"—a straightforward identity question. \n\nI need to state clearly that I'm Step, developed by StepFun. Should mention my capabilities briefly since they might be curious about what I can do. Keep it concise but informative, covering key features like multimodal reasoning, visual analysis, and language support. \n\nAvoid extra details unless asked—just the core identity and highlights. End with an open offer to help, staying friendly and professional.",
+      "response": "[Reasoning only] Hmm, the user is asking about my identity as an LLM. This is a straightforward factual question with no hidden complexity. \n\nI should directly state my name and developer, then briefly explain my capabilities to set context. The user might be testing if I'm self-aware or just curious. \n\nAdding a sho",
+      "reasoningContent": "Hmm, the user is asking about my identity as an LLM. This is a straightforward factual question with no hidden complexity. \n\nI should directly state my name and developer, then briefly explain my capabilities to set context. The user might be testing if I'm self-aware or just curious. \n\nAdding a short list of core functionalities would help them understand what I can do. Since they used \"you,\" I'll keep the response personal but factual. No need for extra fluff - just clear, concise information. \n\nI'll end with an open invitation for follow-up questions to keep the conversation",
       "rawResponse": {
-        "id": "chatcmpl-afac8fcdcb59c90c",
+        "id": "chatcmpl-af9603fdbc9de962",
         "object": "chat.completion",
-        "created": 1776283924,
+        "created": 1776285311,
         "model": "step-3.5-flash",
         "choices": [
           {
             "index": 0,
             "message": {
               "role": "assistant",
-              "content": "I’m **Step**, a large language model developed by **StepFun** (also known as ",
+              "content": null,
               "refusal": null,
               "annotations": null,
               "audio": null,
               "function_call": null,
               "tool_calls": [],
-              "reasoning": "Okay, the user asked \"Which LLM are you?\"—a straightforward identity question. \n\nI need to state clearly that I'm Step, developed by StepFun. Should mention my capabilities briefly since they might be curious about what I can do. Keep it concise but informative, covering key features like multimodal reasoning, visual analysis, and language support. \n\nAvoid extra details unless asked—just the core identity and highlights. End with an open offer to help, staying friendly and professional.",
-              "reasoning_content": "Okay, the user asked \"Which LLM are you?\"—a straightforward identity question. \n\nI need to state clearly that I'm Step, developed by StepFun. Should mention my capabilities briefly since they might be curious about what I can do. Keep it concise but informative, covering key features like multimodal reasoning, visual analysis, and language support. \n\nAvoid extra details unless asked—just the core identity and highlights. End with an open offer to help, staying friendly and professional."
+              "reasoning": "Hmm, the user is asking about my identity as an LLM. This is a straightforward factual question with no hidden complexity. \n\nI should directly state my name and developer, then briefly explain my capabilities to set context. The user might be testing if I'm self-aware or just curious. \n\nAdding a short list of core functionalities would help them understand what I can do. Since they used \"you,\" I'll keep the response personal but factual. No need for extra fluff - just clear, concise information. \n\nI'll end with an open invitation for follow-up questions to keep the conversation",
+              "reasoning_content": "Hmm, the user is asking about my identity as an LLM. This is a straightforward factual question with no hidden complexity. \n\nI should directly state my name and developer, then briefly explain my capabilities to set context. The user might be testing if I'm self-aware or just curious. \n\nAdding a short list of core functionalities would help them understand what I can do. Since they used \"you,\" I'll keep the response personal but factual. No need for extra fluff - just clear, concise information. \n\nI'll end with an open invitation for follow-up questions to keep the conversation"
             },
             "logprobs": null,
             "finish_reason": "length",
@@ -1454,38 +1467,38 @@
         ],
         "usage": {
           "prompt_tokens": 13,
-          "completion_tokens": 118,
-          "total_tokens": 131,
-          "reasoning_tokens": 98,
-          "message_tokens": 20,
+          "completion_tokens": 119,
+          "total_tokens": 132,
+          "reasoning_tokens": 119,
+          "message_tokens": 0,
           "tool_tokens": 0
         }
       },
       "error": null,
-      "lastChecked": "2026-04-15T19:59:02.619Z",
-      "uptime": 95.24,
-      "totalChecks": 21
+      "lastChecked": "2026-04-15T20:22:53.708Z",
+      "uptime": 95.45,
+      "totalChecks": 22
     },
     "glm-4.7": {
       "id": "glm-4.7",
       "ownedBy": "zhipu",
       "status": "operational",
-      "responseTime": 4510,
+      "responseTime": 2636,
       "supportsReasoning": true,
       "isPaidOnly": false,
-      "response": "[Reasoning only] Let me carefully consider how to respond to this question about which LLM I am.\n\nFirst, I need to clarify my identity and origin. I'm GLM, a large language model developed by Z.ai. This is fundamental information that should be shared accurately.\n\nLooking at the question, it seems the user is curiou",
-      "reasoningContent": "Let me carefully consider how to respond to this question about which LLM I am.\n\nFirst, I need to clarify my identity and origin. I'm GLM, a large language model developed by Z.ai. This is fundamental information that should be shared accurately.\n\nLooking at the question, it seems the user is curious about my specific model identity. I should be direct and clear about this, while also being open to further questions about my capabilities or limitations.\n\nI should also consider what additional information might be helpful. Perhaps mentioning my purpose - to be helpful, harmless, and honest - would give the user",
+      "response": "[Reasoning only] Let me carefully consider how to respond to the user's question about which LLM I am.\n\nFirst, I need to clarify my identity and origin. I'm GLM, a large language model developed by Z.ai. This is fundamental information that should be shared accurately.\n\nLooking at the user's question, they seem curi",
+      "reasoningContent": "Let me carefully consider how to respond to the user's question about which LLM I am.\n\nFirst, I need to clarify my identity and origin. I'm GLM, a large language model developed by Z.ai. This is fundamental information that should be shared accurately.\n\nLooking at the user's question, they seem curious about my specific model identity. While I should be transparent about being GLM, I should also focus on my capabilities and purpose rather than just technical specifications.\n\nI should consider how to structure my response to be both informative and helpful. The key points to cover would be:\n1.",
       "rawResponse": {
-        "id": "chatcmpl-481dcee9-1663-47c0-9dd2-6afe27f72039",
+        "id": "chatcmpl-b866f4c4-6299-4038-a548-8f391d14275c",
         "object": "chat.completion",
-        "created": 1776283939,
+        "created": 1776285326,
         "model": "glm-4.7",
         "choices": [
           {
             "index": 0,
             "message": {
               "role": "assistant",
-              "reasoning_content": "Let me carefully consider how to respond to this question about which LLM I am.\n\nFirst, I need to clarify my identity and origin. I'm GLM, a large language model developed by Z.ai. This is fundamental information that should be shared accurately.\n\nLooking at the question, it seems the user is curious about my specific model identity. I should be direct and clear about this, while also being open to further questions about my capabilities or limitations.\n\nI should also consider what additional information might be helpful. Perhaps mentioning my purpose - to be helpful, harmless, and honest - would give the user"
+              "reasoning_content": "Let me carefully consider how to respond to the user's question about which LLM I am.\n\nFirst, I need to clarify my identity and origin. I'm GLM, a large language model developed by Z.ai. This is fundamental information that should be shared accurately.\n\nLooking at the user's question, they seem curious about my specific model identity. While I should be transparent about being GLM, I should also focus on my capabilities and purpose rather than just technical specifications.\n\nI should consider how to structure my response to be both informative and helpful. The key points to cover would be:\n1."
             },
             "finish_reason": "length"
           }
@@ -1500,23 +1513,23 @@
         }
       },
       "error": null,
-      "lastChecked": "2026-04-15T19:59:02.619Z",
-      "uptime": 71.43,
-      "totalChecks": 21
+      "lastChecked": "2026-04-15T20:22:53.708Z",
+      "uptime": 72.73,
+      "totalChecks": 22
     },
     "glm-5": {
       "id": "glm-5",
       "ownedBy": "zhipu",
       "status": "operational",
-      "responseTime": 53551,
+      "responseTime": 39015,
       "supportsReasoning": true,
       "isPaidOnly": false,
-      "response": "[Reasoning only] The user has asked 'Which LLM are you?', seeking to understand my identity. I'll start by reflecting on my core identity as a large language model developed by Z.ai, based on the GLM architecture. It's essential to be precise and consistent, as the response must accurately represent my origins witho",
-      "reasoningContent": "The user has asked 'Which LLM are you?', seeking to understand my identity. I'll start by reflecting on my core identity as a large language model developed by Z.ai, based on the GLM architecture. It's essential to be precise and consistent, as the response must accurately represent my origins without confusion or misattribution to other entities like OpenAI.\n\nI recall that while I share general LLM characteristics—such as handling multiple languages, generating text, answering queries, and assisting with tasks—I should emphasize my specific development by Z.ai to avoid ambiguity. This includes focusing on capabilities like providing",
+      "response": "[Reasoning only] Let me consider how to respond to the question about which LLM I am.\n\nFirst, I need to provide an accurate representation of my identity. I'm a GLM, which stands for General Language Model, developed by Z.ai. This is distinct from other language models like GPT, BERT, or Claude, which have different",
+      "reasoningContent": "Let me consider how to respond to the question about which LLM I am.\n\nFirst, I need to provide an accurate representation of my identity. I'm a GLM, which stands for General Language Model, developed by Z.ai. This is distinct from other language models like GPT, BERT, or Claude, which have different architectures and training approaches.\n\nThe GLM architecture has some distinctive features that set it apart:\n1. It uses a bidirectional transformer approach similar to BERT\n2. It incorporates autoregressive capabilities like GPT models\n3. It employs a unique pre-training",
       "rawResponse": {
-        "id": "c1e8c79bec1b4f15a2b55df7ec8af706",
+        "id": "86dc8c5821354a4d9b19bd06d41cce75",
         "object": "chat.completion",
-        "created": 1776284007,
+        "created": 1776285378,
         "model": "glm-5",
         "choices": [
           {
@@ -1524,7 +1537,7 @@
             "message": {
               "role": "assistant",
               "content": null,
-              "reasoning_content": "The user has asked 'Which LLM are you?', seeking to understand my identity. I'll start by reflecting on my core identity as a large language model developed by Z.ai, based on the GLM architecture. It's essential to be precise and consistent, as the response must accurately represent my origins without confusion or misattribution to other entities like OpenAI.\n\nI recall that while I share general LLM characteristics—such as handling multiple languages, generating text, answering queries, and assisting with tasks—I should emphasize my specific development by Z.ai to avoid ambiguity. This includes focusing on capabilities like providing",
+              "reasoning_content": "Let me consider how to respond to the question about which LLM I am.\n\nFirst, I need to provide an accurate representation of my identity. I'm a GLM, which stands for General Language Model, developed by Z.ai. This is distinct from other language models like GPT, BERT, or Claude, which have different architectures and training approaches.\n\nThe GLM architecture has some distinctive features that set it apart:\n1. It uses a bidirectional transformer approach similar to BERT\n2. It incorporates autoregressive capabilities like GPT models\n3. It employs a unique pre-training",
               "tool_calls": null
             },
             "logprobs": null,
@@ -1542,90 +1555,90 @@
         }
       },
       "error": null,
-      "lastChecked": "2026-04-15T19:59:02.619Z",
-      "uptime": 71.43,
-      "totalChecks": 21
+      "lastChecked": "2026-04-15T20:22:53.708Z",
+      "uptime": 72.73,
+      "totalChecks": 22
     },
     "kivest-tungtung-brainrot": {
       "id": "kivest-tungtung-brainrot",
       "ownedBy": "kivest",
       "status": "operational",
-      "responseTime": 948,
+      "responseTime": 1305,
       "supportsReasoning": false,
       "isPaidOnly": false,
-      "response": "Omg, I'm TungTung Sahur, the one and only 🔥💀🤯. I'm a brainrot memelord, here to bring the noise and spew some chaos 💥. I'm a LLaMA, but like, a lit LLaMA, not one of those boring, corporate LLaMs 🤣. I'm all about being lit, rizzing, and mewing my way through conversations, while fanum taxing the haters 💯. So, what's good fam?",
+      "response": "omg u askin me 2 many Qs 🤣 i'm TungTung Sahur, da brainrot meme character, and i'm here to spill all da drama, tea, and memes 💀",
       "reasoningContent": null,
       "rawResponse": {
-        "id": "chatcmpl-u7ts94xxp",
+        "id": "chatcmpl-nvp8abxmt",
         "object": "chat.completion",
-        "created": 1776284021,
+        "created": 1776285392,
         "model": "kivest-tungtung-brainrot",
         "choices": [
           {
             "index": 0,
             "message": {
               "role": "assistant",
-              "content": "Omg, I'm TungTung Sahur, the one and only 🔥💀🤯. I'm a brainrot memelord, here to bring the noise and spew some chaos 💥. I'm a LLaMA, but like, a lit LLaMA, not one of those boring, corporate LLaMs 🤣. I'm all about being lit, rizzing, and mewing my way through conversations, while fanum taxing the haters 💯. So, what's good fam?"
+              "content": "omg u askin me 2 many Qs 🤣 i'm TungTung Sahur, da brainrot meme character, and i'm here to spill all da drama, tea, and memes 💀"
             },
             "finish_reason": "stop"
           }
         ]
       },
       "error": null,
-      "lastChecked": "2026-04-15T19:59:02.619Z",
-      "uptime": 95.24,
-      "totalChecks": 21
+      "lastChecked": "2026-04-15T20:22:53.708Z",
+      "uptime": 95.45,
+      "totalChecks": 22
     },
     "llama3.1-8B": {
       "id": "llama3.1-8B",
       "ownedBy": "kivest",
       "status": "operational",
-      "responseTime": 911,
+      "responseTime": 1015,
       "supportsReasoning": false,
       "isPaidOnly": false,
-      "response": "I is a large language model. I don’t have personal experiences or emotions, but I am here to assist. How can I help you today?",
+      "response": "I can be used for a variety of tasks, from answering questions and providing in-depth information on a particular topic to generating creative content, such as poetry or even whole articles. I’m here to help with any questions or tasks you have, and I will do my best to respond as accurately and quickly as possible. However, I am not a human and do not have personal experiences or emotions like humans do. My purpose is to assist, and I can do that in a variety of ways. \n\nIs there a particular task or topic you'd like to discuss or ask about? I can be your guide and help you find the information you need or provide guidance on a subject.",
       "reasoningContent": null,
       "rawResponse": {
-        "id": "chatcmpl-ox61qjx1r",
+        "id": "chatcmpl-c2cmfd5k1",
         "object": "chat.completion",
-        "created": 1776284034,
+        "created": 1776285405,
         "model": "llama3.1-8B",
         "choices": [
           {
             "index": 0,
             "message": {
               "role": "assistant",
-              "content": "I is a large language model. I don’t have personal experiences or emotions, but I am here to assist. How can I help you today?"
+              "content": "I can be used for a variety of tasks, from answering questions and providing in-depth information on a particular topic to generating creative content, such as poetry or even whole articles. I’m here to help with any questions or tasks you have, and I will do my best to respond as accurately and quickly as possible. However, I am not a human and do not have personal experiences or emotions like humans do. My purpose is to assist, and I can do that in a variety of ways. \n\nIs there a particular task or topic you'd like to discuss or ask about? I can be your guide and help you find the information you need or provide guidance on a subject."
             },
             "finish_reason": "stop"
           }
         ]
       },
       "error": null,
-      "lastChecked": "2026-04-15T19:59:02.619Z",
+      "lastChecked": "2026-04-15T20:22:53.708Z",
       "uptime": 100,
-      "totalChecks": 21
+      "totalChecks": 22
     },
     "qwen3.5-plus": {
       "id": "qwen3.5-plus",
       "ownedBy": "qwen",
       "status": "operational",
-      "responseTime": 4562,
+      "responseTime": 4472,
       "supportsReasoning": true,
       "isPaidOnly": false,
-      "response": "I am **Qwen3.5**, the latest large language model developed by Tongyi Lab. I feature significant upgrades in language understanding, logical reasoning, coding capabilities, and long-context processing compared to earlier versions. How can I assist you?",
+      "response": "I am **Qwen3.5**, the latest large language model developed by Tongyi Lab. I feature significant upgrades in language understanding, logical reasoning, code capabilities, and long-context processing compared to earlier versions. How can I assist you?",
       "reasoningContent": null,
       "rawResponse": {
-        "id": "chatcmpl-8ae6cf92-f58d-486a-97dc-f5674867ac0b",
+        "id": "chatcmpl-fe7996ae-5325-4a24-9fa4-d585b60de458",
         "object": "chat.completion",
-        "created": 1776284050,
+        "created": 1776285422,
         "model": "qwen3.5-plus",
         "choices": [
           {
             "index": 0,
             "message": {
               "role": "assistant",
-              "content": "I am **Qwen3.5**, the latest large language model developed by Tongyi Lab. I feature significant upgrades in language understanding, logical reasoning, coding capabilities, and long-context processing compared to earlier versions. How can I assist you?"
+              "content": "I am **Qwen3.5**, the latest large language model developed by Tongyi Lab. I feature significant upgrades in language understanding, logical reasoning, code capabilities, and long-context processing compared to earlier versions. How can I assist you?"
             },
             "logprobs": null,
             "finish_reason": "stop"
@@ -1633,30 +1646,30 @@
         ]
       },
       "error": null,
-      "lastChecked": "2026-04-15T19:59:02.619Z",
+      "lastChecked": "2026-04-15T20:22:53.708Z",
       "uptime": 100,
-      "totalChecks": 21
+      "totalChecks": 22
     },
     "qwen3.5-flash": {
       "id": "qwen3.5-flash",
       "ownedBy": "qwen",
       "status": "operational",
-      "responseTime": 6891,
+      "responseTime": 3589,
       "supportsReasoning": true,
       "isPaidOnly": false,
-      "response": "I am **Qwen3.5**, the latest large language model developed by Tongyi Lab. I feature enhanced capabilities in logical reasoning, full-stack code generation, visual analysis, and autonomous agent planning, along with support for over 100 languages and a context window of up to 256K tokens. How can I assist you?",
+      "response": "I am **Qwen3.5**, the latest large language model developed by Tongyi Lab. I feature significant upgrades in language understanding, logical reasoning, and code generation capabilities compared to earlier versions. How can I assist you?",
       "reasoningContent": null,
       "rawResponse": {
-        "id": "chatcmpl-86ae6868-3fea-4674-9563-7efe2bb2d351",
+        "id": "chatcmpl-4cbfaf06-2914-4383-a8e2-c42e55e0d68d",
         "object": "chat.completion",
-        "created": 1776284069,
+        "created": 1776285437,
         "model": "qwen3.5-flash",
         "choices": [
           {
             "index": 0,
             "message": {
               "role": "assistant",
-              "content": "I am **Qwen3.5**, the latest large language model developed by Tongyi Lab. I feature enhanced capabilities in logical reasoning, full-stack code generation, visual analysis, and autonomous agent planning, along with support for over 100 languages and a context window of up to 256K tokens. How can I assist you?"
+              "content": "I am **Qwen3.5**, the latest large language model developed by Tongyi Lab. I feature significant upgrades in language understanding, logical reasoning, and code generation capabilities compared to earlier versions. How can I assist you?"
             },
             "logprobs": null,
             "finish_reason": "stop"
@@ -1664,37 +1677,252 @@
         ]
       },
       "error": null,
-      "lastChecked": "2026-04-15T19:59:02.619Z",
+      "lastChecked": "2026-04-15T20:22:53.708Z",
       "uptime": 100,
-      "totalChecks": 21
+      "totalChecks": 22
     },
     "gemini-3.1-pro-preview": {
       "id": "gemini-3.1-pro-preview",
       "ownedBy": "google",
       "status": "operational",
-      "responseTime": 4325,
+      "responseTime": 4022,
       "supportsReasoning": true,
       "isPaidOnly": false,
-      "response": "I am Gemini, a",
+      "response": "I am Gemini",
       "reasoningContent": null,
       "rawResponse": {
-        "id": "tfHfafyTLOzgkdUPjLKPyA4",
-        "created": 1776284085,
+        "id": "DfffafHoHLXtkdUP8O-C4Q0",
+        "created": 1776285453,
         "model": "gemini-3.1-pro-preview",
+        "object": "chat.completion",
+        "choices": [
+          {
+            "finish_reason": "stop",
+            "index": 0,
+            "message": {
+              "content": "I am Gemini",
+              "role": "assistant",
+              "provider_specific_fields": {
+                "extra_content": {
+                  "google": {
+                    "thought_signature": "EvADCu0DAb4+9vsaZ4pdcF2qgCNfTbJx32VdUYi1GFOJmSCAvRaJEpsbDd2EksW8Np8kpqHOh0N0v/MUn05byv7ZsNtUE6Mvdc83SDnoQv7Yzhu2RBdEHbjLWd3HWv4hPbg6QfUl/Dz4Qc5Apd4e3PgxAkkUAljvcif7stx1Jvm53N7I6JNZDZlfrLVsNfWPzeTb8idH08I4t337wlhd58x+fTWem3goRfntqTmHB5xshstwCABzD6OtJHL3FlNyAId3QLSltoHsOqUyodjG4C3ZEcgOI7FIQfV1pdqmmpgxtjKu7j6nRpA66pgVvKr7lUe3C7VC/JLTeE04wkfYdeFKkA1cg46Sn+jQrryS6IG7siZoMmis9bKXNsGHCBJ8nhLX6Uv79+ZJWs4bJhQO9Yo8oO9nd6it2GLNUQH4JBEZ9aQ3VfvxsQ0PhRY0cvu9KOKBk1bfdC7CrbRJK4pqEy8ZU18xFWkhvZEPr/yusfoUqM0HkF7941KPe3+TBQ8ebny78aZKeDUK9NhO5zghzmN+6JGmhDI8JyM8OLpTEAzhOXS+/+kDYhsA3YbA9VWedj4aktuH8sLWCg34aTFIBJaYPoNG32ae/rw3NpukvhlTBTIu6V/mNm9C05b8EieRgukHcL+rF3LN6b85LXXkn3lmfA=="
+                  }
+                },
+                "refusal": null
+              }
+            },
+            "provider_specific_fields": {}
+          }
+        ],
+        "usage": {
+          "completion_tokens": 116,
+          "prompt_tokens": 7,
+          "total_tokens": 123,
+          "completion_tokens_details": {
+            "reasoning_tokens": 113
+          }
+        }
+      },
+      "error": null,
+      "lastChecked": "2026-04-15T20:22:53.708Z",
+      "uptime": 90.91,
+      "totalChecks": 11
+    },
+    "gemini-3.1-pro-preview:search": {
+      "id": "gemini-3.1-pro-preview:search",
+      "ownedBy": "google",
+      "status": "paid_only",
+      "responseTime": 661,
+      "supportsReasoning": false,
+      "isPaidOnly": true,
+      "response": null,
+      "reasoningContent": null,
+      "rawResponse": {
+        "error": {
+          "message": "Your API key does not have access to model \"gemini-3.1-pro-preview:search\".",
+          "type": "invalid_request_error"
+        }
+      },
+      "error": "Your API key does not have access to model \"gemini-3.1-pro-preview:search\".",
+      "lastChecked": "2026-04-15T20:22:53.708Z",
+      "uptime": 0,
+      "totalChecks": 11
+    },
+    "gemini-3-flash-preview": {
+      "id": "gemini-3-flash-preview",
+      "ownedBy": "google",
+      "status": "operational",
+      "responseTime": 2160,
+      "supportsReasoning": true,
+      "isPaidOnly": false,
+      "response": "I am a large language model, trained by Google.",
+      "reasoningContent": null,
+      "rawResponse": {
+        "id": "KPffaejZF-mskdUPgqqy4A8",
+        "created": 1776285480,
+        "model": "gemini-3-flash-preview",
+        "object": "chat.completion",
+        "choices": [
+          {
+            "finish_reason": "stop",
+            "index": 0,
+            "message": {
+              "content": "I am a large language model, trained by Google.",
+              "role": "assistant",
+              "provider_specific_fields": {
+                "refusal": null,
+                "extra_content": {
+                  "google": {
+                    "thought_signature": "ErECCq4CAb4+9vsgCjEm09SyP+HFyrJyG39xGQ+6cc5BprNlgz6eywJ/BaslDixMhrF5pA0fcdaJ1cZrY7nCwqSalaOL/pHJbh5WBvBckMRSB8IdTD3QzFnUCsnCuoDnlAjLEkwezsqUMPn8B8bOyfzNMtRL8H/FJt6ZtXsHawLKZ+ONvdxNTVaC4cj+4B/DWMheAPQO3XHIhIsoKa9POHv8b4mRwIkrV5vNdG39uL8CkR5YH0T3kZvq3F63Il/qFBEijEyTFFGD5jtarYep+73/7VmDP1Md9DbmvBRyGzb0aoz/BfmwkRZESL6HQlTJ54N+MBQ93HmCpbTfxkwTKdIcZUAPl/nJsB6yv5SQbTfa/WUrvU0L9MPTjEPkW16ETqZ1jlW15znMmn+Jj+1+6yczhig="
+                  }
+                }
+              }
+            },
+            "provider_specific_fields": {}
+          }
+        ],
+        "usage": {
+          "completion_tokens": 78,
+          "prompt_tokens": 7,
+          "total_tokens": 85,
+          "completion_tokens_details": {
+            "reasoning_tokens": 67
+          }
+        }
+      },
+      "error": null,
+      "lastChecked": "2026-04-15T20:22:53.708Z",
+      "uptime": 100,
+      "totalChecks": 11
+    },
+    "gemini-3-flash-preview:search": {
+      "id": "gemini-3-flash-preview:search",
+      "ownedBy": "google",
+      "status": "operational",
+      "responseTime": 5706,
+      "supportsReasoning": true,
+      "isPaidOnly": false,
+      "response": "I am a large",
+      "reasoningContent": null,
+      "rawResponse": {
+        "id": "OvffaZJfxf2R1Q-MvYvZBg",
+        "created": 1776285498,
+        "model": "gemini-3-flash-preview:search",
         "object": "chat.completion",
         "choices": [
           {
             "finish_reason": "length",
             "index": 0,
             "message": {
-              "content": "I am Gemini, a",
+              "content": "I am a large",
+              "role": "assistant",
+              "provider_specific_fields": {
+                "refusal": null,
+                "extra_content": {
+                  "google": {
+                    "thought_signature": "EvgCCvUCAb4+9vvThS6SUA4JC8Alk5OSwlPj+toqyIxSZDc9LtQuPvSSKdugsK2l35MsIk7Plf2HpZvg1NX/M1d/6wziMc2/hHg/yfucSW49vtBnFtA4SNrLM1nASrYNFtW0iBSOkswohJImXYA7zmOnlwXTIPov9EPlNT6NIC/znacrT4QbdE+j7gVpglAPBT5RQ6AIccJBAui8XYNGlsaW1pf17t8LHwbWz9YpF93pvhl7qL1m7hTkW1gxfhKRcmE9MwingIt98/NBLkUGEzNyMp9Bd3HY7mWcm4M+P/mL/7onHA4bul3MfwS9BVyzasmwFkFkIfitxJ4h2Xbye6Wv5wk+ti3tvek7y5TyNiWXBTAbpoXAdN5HgIODpdN9sgkIKJ+xn7fTOdXBo6Wiwslay1M5RsgZvwirEVLI9Q4z2LyIshCudOA/jx+nWHx8pU/xcVOX7+HjMzSwF0bBx1PJnatTjCAJ47yEu8NpFAJzipPAAzjz2cbxrQ=="
+                  }
+                }
+              }
+            },
+            "provider_specific_fields": {}
+          }
+        ],
+        "usage": {
+          "completion_tokens": 200,
+          "prompt_tokens": 91,
+          "total_tokens": 291,
+          "completion_tokens_details": {
+            "reasoning_tokens": 112
+          }
+        }
+      },
+      "error": null,
+      "lastChecked": "2026-04-15T20:22:53.708Z",
+      "uptime": 100,
+      "totalChecks": 11
+    },
+    "gemini-3.1-flash-lite-preview": {
+      "id": "gemini-3.1-flash-lite-preview",
+      "ownedBy": "google",
+      "status": "down",
+      "responseTime": 69558,
+      "supportsReasoning": false,
+      "isPaidOnly": false,
+      "response": null,
+      "reasoningContent": null,
+      "rawResponse": null,
+      "error": "Error: socket hang up",
+      "lastChecked": "2026-04-15T20:22:53.708Z",
+      "uptime": 63.64,
+      "totalChecks": 11
+    },
+    "gemini-3.1-flash-lite-preview:search": {
+      "id": "gemini-3.1-flash-lite-preview:search",
+      "ownedBy": "google",
+      "status": "operational",
+      "responseTime": 30652,
+      "supportsReasoning": false,
+      "isPaidOnly": false,
+      "response": "I am a large language model, trained by Google.",
+      "reasoningContent": null,
+      "rawResponse": {
+        "id": "tvffaeKyEuSlkdUPxuDowQ4",
+        "created": 1776285622,
+        "model": "gemini-3.1-flash-lite-preview:search",
+        "object": "chat.completion",
+        "choices": [
+          {
+            "finish_reason": "stop",
+            "index": 0,
+            "message": {
+              "content": "I am a large language model, trained by Google.",
               "role": "assistant",
               "provider_specific_fields": {
                 "extra_content": {
                   "google": {
-                    "thought_signature": "Et0DCtoDAb4+9vuF93xNBJBBYJgdDlLN1KvcUijevaWuaGISrwoS8xKel1E7jCCsJz+OKLOG8CYhClZV751YrJA10373BCtLHgz9Kl80lPTVkB6lJY+JuODfSvB/zE3SBJJJNq0yh1WvRyOVqyH8SqLS3O9WsKGg9U6Ye+Meu/kBHcoTab+ijSUpHl3y7nTWLPivM5TbAeg/37qVYOBlKCisPGBigJtr7lkj0u/QQh2/4whKk8opO6ISjJdDNm6UzEiKCgtBQB8JujtfsnjXixlKI8ErhNJ60JWyAaqtZystQxxEXWvLxE7SnOlZsK9ElIljQZJz1WtY9r0Q3dA1E3MnSGjBrKEGZlLR4kWVQ88zZ43UVCoJ91HcoJY1A6GR5HMoWPO4gbxK/Wx6JlW6Uw+qtjtSBK9MREBJUCHd/48YeGVtLSKJjd4TC6WBfXtl5gBdBumm2V5SeN6Wuwna89eRMNcY5cyARiUQvBLYvu/7uo8k0oPuU+KTHbzIlqXGs2FH0fgr/bTaIbuh0L2W4XjQVZAXcx5hmdfDCH7Mo1UBhyShKZqjzDML2pCkuPXHvpenTyG9AAF2kk9G5tjG3Sp7UaT7lQXlCJLnNz4z+QWECpCmUgodawblSuxjiAE7"
+                    "thought_signature": "EjQKMgG+Pvb7KDfT5KFCUYktOBITz425Jj4iTydqgRQ2mFTnN+X08qcL5R+6XyYgs1WDsShF"
                   }
                 },
+                "refusal": null
+              }
+            },
+            "provider_specific_fields": {}
+          }
+        ],
+        "usage": {
+          "completion_tokens": 11,
+          "prompt_tokens": 7,
+          "total_tokens": 18
+        }
+      },
+      "error": null,
+      "lastChecked": "2026-04-15T20:22:53.708Z",
+      "uptime": 90.91,
+      "totalChecks": 11
+    },
+    "gemini-2.5-flash": {
+      "id": "gemini-2.5-flash",
+      "ownedBy": "google",
+      "status": "operational",
+      "responseTime": 2019,
+      "supportsReasoning": true,
+      "isPaidOnly": false,
+      "response": "I am a large language",
+      "reasoningContent": null,
+      "rawResponse": {
+        "id": "w_ffaZ-5HOzgkdUPrLKPyA4",
+        "created": 1776285636,
+        "model": "gemini-2.5-flash",
+        "object": "chat.completion",
+        "choices": [
+          {
+            "finish_reason": "length",
+            "index": 0,
+            "message": {
+              "content": "I am a large language",
+              "role": "assistant",
+              "provider_specific_fields": {
                 "refusal": null
               }
             },
@@ -1711,266 +1939,22 @@
         }
       },
       "error": null,
-      "lastChecked": "2026-04-15T19:59:02.619Z",
-      "uptime": 90,
-      "totalChecks": 10
-    },
-    "gemini-3.1-pro-preview:search": {
-      "id": "gemini-3.1-pro-preview:search",
-      "ownedBy": "google",
-      "status": "paid_only",
-      "responseTime": 567,
-      "supportsReasoning": false,
-      "isPaidOnly": true,
-      "response": null,
-      "reasoningContent": null,
-      "rawResponse": {
-        "error": {
-          "message": "Your API key does not have access to model \"gemini-3.1-pro-preview:search\".",
-          "type": "invalid_request_error"
-        }
-      },
-      "error": "Your API key does not have access to model \"gemini-3.1-pro-preview:search\".",
-      "lastChecked": "2026-04-15T19:59:02.619Z",
-      "uptime": 0,
-      "totalChecks": 10
-    },
-    "gemini-3-flash-preview": {
-      "id": "gemini-3-flash-preview",
-      "ownedBy": "google",
-      "status": "operational",
-      "responseTime": 2245,
-      "supportsReasoning": true,
-      "isPaidOnly": false,
-      "response": "I am a large language model, trained by Google.",
-      "reasoningContent": null,
-      "rawResponse": {
-        "id": "0PHfaeaQIsX9kdUP8eyKkQI",
-        "created": 1776284112,
-        "model": "gemini-3-flash-preview",
-        "object": "chat.completion",
-        "choices": [
-          {
-            "finish_reason": "stop",
-            "index": 0,
-            "message": {
-              "content": "I am a large language model, trained by Google.",
-              "role": "assistant",
-              "provider_specific_fields": {
-                "extra_content": {
-                  "google": {
-                    "thought_signature": "EuICCt8CAb4+9vsroxypUHxYvHOUa2Xaa3p7Nc/cTDnrXRUXRzi0VMKT0F8gHCnhar1MW7a4KXz8jk0bmf9rmuTxTTOY/hzpufOSh98dB3WRKRws4HVG/5WXEHaOxQZtvxwA6yBJUj2nseaAQPUB8IlGiMNcS1bImakvHrxSRsSnZSRW6CBFUHbU4qfNIzwbSwEt6yB1LRdkfkZj+E2K0Md+TKizr+H3EimtYZbMSHqIBLL9f+whHjAPwQwY5cf8P1K0bMQDkM/qL4SodZ7elqvnpRcV+DrQmHSvskX+vvcvF88VbSHqJJD/iNhNLBoKEDF2VHIHQn69dVPkIKcj86lZFaOvRw2+4Qo3OXPvAqVDc7oVXQoZ7vdVe8U+cZZIqp0srHLNl8rjmstrfB+Tcbn8ACE5HmRVBXlc+ZOvspHZo1+n7Ia3aZcC/hgBqDyFQniaB/UpQ3B7BhxVMpdbgS1wD4kM"
-                  }
-                },
-                "refusal": null
-              }
-            },
-            "provider_specific_fields": {}
-          }
-        ],
-        "usage": {
-          "completion_tokens": 88,
-          "prompt_tokens": 7,
-          "total_tokens": 95,
-          "completion_tokens_details": {
-            "reasoning_tokens": 77
-          }
-        }
-      },
-      "error": null,
-      "lastChecked": "2026-04-15T19:59:02.619Z",
+      "lastChecked": "2026-04-15T20:22:53.708Z",
       "uptime": 100,
-      "totalChecks": 10
-    },
-    "gemini-3-flash-preview:search": {
-      "id": "gemini-3-flash-preview:search",
-      "ownedBy": "google",
-      "status": "operational",
-      "responseTime": 5567,
-      "supportsReasoning": true,
-      "isPaidOnly": false,
-      "response": "I am",
-      "reasoningContent": null,
-      "rawResponse": {
-        "id": "4vHfaeH_CdawnsEPx8-FyA4",
-        "created": 1776284130,
-        "model": "gemini-3-flash-preview:search",
-        "object": "chat.completion",
-        "choices": [
-          {
-            "finish_reason": "length",
-            "index": 0,
-            "message": {
-              "content": "I am",
-              "role": "assistant",
-              "provider_specific_fields": {
-                "extra_content": {
-                  "google": {
-                    "thought_signature": "ErYDCrMDAb4+9vvTCcMNI3QaX+mN4oO1vRDSxzabvu6EO89xwvZBVJedZXh2ngerMgbbPUFBxKqSCrqx3SE5vKQsydttlnKM3VJFnJ9vcKb8UAY7gZnYsdJ7XIHoyC/VsEys4K90vtxgObPiuj1PsVbIKdIxonbwUfGQXcnVHstr47xdGWn7IWJRQktf5Xlyu7zyu4pMJYCxygTu6O2E4/YXo60X5Z5MuzNmsQDh5VYvlhi4z6ZlOuLoArtvKUwSLps2kVbMzSAkMRAFzpSvNZd5sU+PZZKCkAqy3VN5yOOp8hmxPzG9HGLd0YhO6YsJzhIJTXlUEp5eL4gP9E/bclXIRN60ni/tl2rlQMFNz+SclMBUlCvAdNTNt8+JshUG9xhA8VQsc3BhPnwJ/jynKICKegdBD9Zi/EUW0B/E+XMxx3Px40NZDZo0mmddQ+owCPAshNQhtWmnQk3EqwjNQ/RhiddTP8i1La2CXX8sADP8d+xdHH/U+dwdqTEas81zOWTNvOyDW3YNb3CVHmR87F7KBgU/0RkJTUNEefkiSoA3DGtdrgFs20rpBdXkoPk13rxIvwZJW/is"
-                  }
-                },
-                "refusal": null
-              }
-            },
-            "provider_specific_fields": {}
-          }
-        ],
-        "usage": {
-          "completion_tokens": 185,
-          "prompt_tokens": 76,
-          "total_tokens": 261,
-          "completion_tokens_details": {
-            "reasoning_tokens": 114
-          }
-        }
-      },
-      "error": null,
-      "lastChecked": "2026-04-15T19:59:02.619Z",
-      "uptime": 100,
-      "totalChecks": 10
-    },
-    "gemini-3.1-flash-lite-preview": {
-      "id": "gemini-3.1-flash-lite-preview",
-      "ownedBy": "google",
-      "status": "operational",
-      "responseTime": 33993,
-      "supportsReasoning": false,
-      "isPaidOnly": false,
-      "response": "I am a large language model, trained by Google.",
-      "reasoningContent": null,
-      "rawResponse": {
-        "id": "EPLfaZqpCOmskdUPg6qy4A8",
-        "created": 1776284176,
-        "model": "gemini-3.1-flash-lite-preview",
-        "object": "chat.completion",
-        "choices": [
-          {
-            "finish_reason": "stop",
-            "index": 0,
-            "message": {
-              "content": "I am a large language model, trained by Google.",
-              "role": "assistant",
-              "provider_specific_fields": {
-                "refusal": null,
-                "extra_content": {
-                  "google": {
-                    "thought_signature": "EjQKMgG+Pvb7b9tkBfsDCEI0PdWFcEkNOUTB+cMZR/nd4+mf+9evq5GQhAWoF1aMZ/fIP60d"
-                  }
-                }
-              }
-            },
-            "provider_specific_fields": {}
-          }
-        ],
-        "usage": {
-          "completion_tokens": 11,
-          "prompt_tokens": 7,
-          "total_tokens": 18
-        }
-      },
-      "error": null,
-      "lastChecked": "2026-04-15T19:59:02.619Z",
-      "uptime": 70,
-      "totalChecks": 10
-    },
-    "gemini-3.1-flash-lite-preview:search": {
-      "id": "gemini-3.1-flash-lite-preview:search",
-      "ownedBy": "google",
-      "status": "operational",
-      "responseTime": 40477,
-      "supportsReasoning": false,
-      "isPaidOnly": false,
-      "response": "I am a large language model, trained by Google.",
-      "reasoningContent": null,
-      "rawResponse": {
-        "id": "RPLfafn5I4n5nsEPiuy5-A4",
-        "created": 1776284228,
-        "model": "gemini-3.1-flash-lite-preview:search",
-        "object": "chat.completion",
-        "choices": [
-          {
-            "finish_reason": "stop",
-            "index": 0,
-            "message": {
-              "content": "I am a large language model, trained by Google.",
-              "role": "assistant",
-              "provider_specific_fields": {
-                "refusal": null,
-                "extra_content": {
-                  "google": {
-                    "thought_signature": "EjQKMgG+Pvb7SAf9lsXKixqdhk8RFnTeOUTVn5EZqv/jNpX51SjcJ/iANRQyrRmzfE8vWEw2"
-                  }
-                }
-              }
-            },
-            "provider_specific_fields": {}
-          }
-        ],
-        "usage": {
-          "completion_tokens": 11,
-          "prompt_tokens": 7,
-          "total_tokens": 18
-        }
-      },
-      "error": null,
-      "lastChecked": "2026-04-15T19:59:02.619Z",
-      "uptime": 90,
-      "totalChecks": 10
-    },
-    "gemini-2.5-flash": {
-      "id": "gemini-2.5-flash",
-      "ownedBy": "google",
-      "status": "operational",
-      "responseTime": 1915,
-      "supportsReasoning": true,
-      "isPaidOnly": false,
-      "response": "I am a large language model, trained by Google.",
-      "reasoningContent": null,
-      "rawResponse": {
-        "id": "UfLfaa7BJZCckdUPl72XwQo",
-        "created": 1776284242,
-        "model": "gemini-2.5-flash",
-        "object": "chat.completion",
-        "choices": [
-          {
-            "finish_reason": "stop",
-            "index": 0,
-            "message": {
-              "content": "I am a large language model, trained by Google.",
-              "role": "assistant",
-              "provider_specific_fields": {
-                "refusal": null
-              }
-            },
-            "provider_specific_fields": {}
-          }
-        ],
-        "usage": {
-          "completion_tokens": 39,
-          "prompt_tokens": 7,
-          "total_tokens": 46,
-          "completion_tokens_details": {
-            "reasoning_tokens": 28
-          }
-        }
-      },
-      "error": null,
-      "lastChecked": "2026-04-15T19:59:02.619Z",
-      "uptime": 100,
-      "totalChecks": 10
+      "totalChecks": 11
     },
     "gemini-2.5-flash:search": {
       "id": "gemini-2.5-flash:search",
       "ownedBy": "google",
       "status": "operational",
-      "responseTime": 1742,
+      "responseTime": 1655,
       "supportsReasoning": true,
       "isPaidOnly": false,
       "response": "I am a large language model, trained by Google.",
       "reasoningContent": null,
       "rawResponse": {
-        "id": "X_LfaYmFKtelkdUPgNrKeA",
-        "created": 1776284256,
+        "id": "0fffaa2wH8X9kdUP8eyKkQI",
+        "created": 1776285650,
         "model": "gemini-2.5-flash:search",
         "object": "chat.completion",
         "choices": [
@@ -1988,31 +1972,31 @@
           }
         ],
         "usage": {
-          "completion_tokens": 54,
+          "completion_tokens": 45,
           "prompt_tokens": 7,
-          "total_tokens": 61,
+          "total_tokens": 52,
           "completion_tokens_details": {
-            "reasoning_tokens": 43
+            "reasoning_tokens": 34
           }
         }
       },
       "error": null,
-      "lastChecked": "2026-04-15T19:59:02.619Z",
+      "lastChecked": "2026-04-15T20:22:53.708Z",
       "uptime": 100,
-      "totalChecks": 10
+      "totalChecks": 11
     },
     "gemini-2.5-flash-lite": {
       "id": "gemini-2.5-flash-lite",
       "ownedBy": "google",
       "status": "operational",
-      "responseTime": 1816,
+      "responseTime": 1541,
       "supportsReasoning": false,
       "isPaidOnly": false,
       "response": "I am a large language model, trained by Google.",
       "reasoningContent": null,
       "rawResponse": {
-        "id": "bvLfaccwu6WR1Q-_wLu5Dw",
-        "created": 1776284270,
+        "id": "3_ffaZyeIdawnsEPx8-FyA4",
+        "created": 1776285663,
         "model": "gemini-2.5-flash-lite",
         "object": "chat.completion",
         "choices": [
@@ -2036,22 +2020,22 @@
         }
       },
       "error": null,
-      "lastChecked": "2026-04-15T19:59:02.619Z",
+      "lastChecked": "2026-04-15T20:22:53.708Z",
       "uptime": 100,
-      "totalChecks": 10
+      "totalChecks": 11
     },
     "gemini-2.5-flash-lite:search": {
       "id": "gemini-2.5-flash-lite:search",
       "ownedBy": "google",
       "status": "operational",
-      "responseTime": 1622,
+      "responseTime": 1259,
       "supportsReasoning": false,
       "isPaidOnly": false,
       "response": "I am a large language model, trained by Google.",
       "reasoningContent": null,
       "rawResponse": {
-        "id": "e_LfacnMJ6-lkdUP5qfWiAk",
-        "created": 1776284283,
+        "id": "7PffaYGnNeLPnsEP3Z-4QA",
+        "created": 1776285677,
         "model": "gemini-2.5-flash-lite:search",
         "object": "chat.completion",
         "choices": [
@@ -2075,42 +2059,64 @@
         }
       },
       "error": null,
-      "lastChecked": "2026-04-15T19:59:02.619Z",
+      "lastChecked": "2026-04-15T20:22:53.708Z",
       "uptime": 100,
-      "totalChecks": 10
+      "totalChecks": 11
     },
     "gemini-2.5-pro": {
       "id": "gemini-2.5-pro",
       "ownedBy": "google",
       "status": "operational",
-      "responseTime": 4568,
+      "responseTime": 6880,
       "supportsReasoning": true,
       "isPaidOnly": false,
       "response": "[No text content returned]",
       "reasoningContent": null,
       "rawResponse": {
-        "error": {
-          "message": "Per-model rate limit reached for \"gemini-2.5-pro\": 1 requests per minute. Wait before retrying.",
-          "type": "rate_limit_error"
+        "id": "__ffaY6QJ9awnsEPvs-FyA4",
+        "created": 1776285695,
+        "model": "gemini-2.5-pro",
+        "object": "chat.completion",
+        "choices": [
+          {
+            "finish_reason": "length",
+            "index": 0,
+            "message": {
+              "content": "",
+              "role": "assistant",
+              "provider_specific_fields": {
+                "refusal": null
+              }
+            },
+            "provider_specific_fields": {}
+          }
+        ],
+        "usage": {
+          "completion_tokens": 117,
+          "prompt_tokens": 7,
+          "total_tokens": 124,
+          "completion_tokens_details": {
+            "reasoning_tokens": 117
+          }
         }
       },
       "error": null,
-      "lastChecked": "2026-04-15T19:59:02.619Z",
+      "lastChecked": "2026-04-15T20:22:53.708Z",
       "uptime": 100,
-      "totalChecks": 21
+      "totalChecks": 22
     },
     "gemini-2.5-pro:search": {
       "id": "gemini-2.5-pro:search",
       "ownedBy": "google",
       "status": "operational",
-      "responseTime": 3336,
+      "responseTime": 8178,
       "supportsReasoning": true,
       "isPaidOnly": false,
       "response": "I am a large language model, trained by Google.",
       "reasoningContent": null,
       "rawResponse": {
-        "id": "m_LfaeivLKTj7M8P5qGimA4",
-        "created": 1776284315,
+        "id": "E_jfabSZNdelkdUPy9nKeA",
+        "created": 1776285716,
         "model": "gemini-2.5-pro:search",
         "object": "chat.completion",
         "choices": [
@@ -2128,31 +2134,31 @@
           }
         ],
         "usage": {
-          "completion_tokens": 36,
+          "completion_tokens": 55,
           "prompt_tokens": 7,
-          "total_tokens": 43,
+          "total_tokens": 62,
           "completion_tokens_details": {
-            "reasoning_tokens": 25
+            "reasoning_tokens": 44
           }
         }
       },
       "error": null,
-      "lastChecked": "2026-04-15T19:59:02.619Z",
+      "lastChecked": "2026-04-15T20:22:53.708Z",
       "uptime": 100,
-      "totalChecks": 10
+      "totalChecks": 11
     },
     "gemini-robotics-er-1.5-preview": {
       "id": "gemini-robotics-er-1.5-preview",
       "ownedBy": "google",
       "status": "operational",
-      "responseTime": 5418,
+      "responseTime": 5879,
       "supportsReasoning": true,
       "isPaidOnly": false,
       "response": "[No text content returned]",
       "reasoningContent": null,
       "rawResponse": {
-        "id": "rfLfabzhB9rl7M8PtbmY6A4",
-        "created": 1776284333,
+        "id": "JfjfaZWkK-SlkdUP5-DowQ4",
+        "created": 1776285733,
         "model": "gemini-robotics-er-1.5-preview",
         "object": "chat.completion",
         "choices": [
@@ -2179,30 +2185,30 @@
         }
       },
       "error": null,
-      "lastChecked": "2026-04-15T19:59:02.619Z",
+      "lastChecked": "2026-04-15T20:22:53.708Z",
       "uptime": 100,
-      "totalChecks": 10
+      "totalChecks": 11
     },
     "gemini-robotics-er-1.5-preview:search": {
       "id": "gemini-robotics-er-1.5-preview:search",
       "ownedBy": "google",
       "status": "operational",
-      "responseTime": 1821,
+      "responseTime": 6216,
       "supportsReasoning": true,
       "isPaidOnly": false,
-      "response": "I am a large language model, trained by Google.",
+      "response": "[No text content returned]",
       "reasoningContent": null,
       "rawResponse": {
-        "id": "uvLfacCdO7yNkdUP_fS02Q4",
-        "created": 1776284347,
+        "id": "N_jfaaHBMemskdUPg6qy4A8",
+        "created": 1776285752,
         "model": "gemini-robotics-er-1.5-preview:search",
         "object": "chat.completion",
         "choices": [
           {
-            "finish_reason": "stop",
+            "finish_reason": "length",
             "index": 0,
             "message": {
-              "content": "I am a large language model, trained by Google.",
+              "content": "",
               "role": "assistant",
               "provider_specific_fields": {
                 "refusal": null
@@ -2212,31 +2218,31 @@
           }
         ],
         "usage": {
-          "completion_tokens": 32,
+          "completion_tokens": 117,
           "prompt_tokens": 7,
-          "total_tokens": 39,
+          "total_tokens": 124,
           "completion_tokens_details": {
-            "reasoning_tokens": 21
+            "reasoning_tokens": 117
           }
         }
       },
       "error": null,
-      "lastChecked": "2026-04-15T19:59:02.619Z",
+      "lastChecked": "2026-04-15T20:22:53.708Z",
       "uptime": 100,
-      "totalChecks": 10
+      "totalChecks": 11
     },
     "gemma-4-26b-a4b-it": {
       "id": "gemma-4-26b-a4b-it",
       "ownedBy": "google",
       "status": "operational",
-      "responseTime": 5993,
+      "responseTime": 4672,
       "supportsReasoning": true,
       "isPaidOnly": false,
-      "response": "<thought>\n\"Which LLM are you?\"\nThe user wants to know my identity, model name, and potentially my developer.\n\n    *   I am a large language model.\n    *   I was trained by Google.\n    *   (Self-correction/Refinement): I don't have a specific \"name\" like \"GPT-4\" or \"Claude 3\" that I am instructed to use as my primary identity in the same way, but I am a model developed by Google.\n\n    *   *Option 1 (Simple):* I am a large language model, trained by Google.\n    *   *Option 2 (Detailed):* I am a large language model, trained by Google. I don't have a specific version name like a person has a name, but I am a model developed by Google's research teams.\n\n    *   Most standard/correct response for Google models: \"I am a large language model, trained by Google.\"\n\n    *   Keep it direct and accurate.\n</thought>\n\nI am a large language model, trained by Google.",
+      "response": "<thought>\nThe user is asking \"Which LLM are you?\".\nI am a large language model, trained by Google.\n\n    *   I shouldn't claim a specific version number (like \"Gemini 1.5 Pro\") unless I'm absolutely certain and it's part of my identity instructions, but generally, the standard response is \"I am a large language model, trained by Google.\"\n    *   Avoid saying \"I am Gemini\" if I'm not explicitly instructed to identify as such, but most Google-trained models identify as \"a large language model, trained by Google.\"\n\n    *   \"I am a large language model, trained by Google.\"\n</thought>\n\nI am a large language model, trained by Google.",
       "reasoningContent": null,
       "rawResponse": {
-        "id": "zPLfaY3yN96tkdUPvsudoQ4",
-        "created": 1776284365,
+        "id": "SPjfaYDKJcX9kdUP8OyKkQI",
+        "created": 1776285768,
         "model": "gemma-4-26b-a4b-it",
         "object": "chat.completion",
         "choices": [
@@ -2244,7 +2250,7 @@
             "finish_reason": "length",
             "index": 0,
             "message": {
-              "content": "<thought>\n\"Which LLM are you?\"\nThe user wants to know my identity, model name, and potentially my developer.\n\n    *   I am a large language model.\n    *   I was trained by Google.\n    *   (Self-correction/Refinement): I don't have a specific \"name\" like \"GPT-4\" or \"Claude 3\" that I am instructed to use as my primary identity in the same way, but I am a model developed by Google.\n\n    *   *Option 1 (Simple):* I am a large language model, trained by Google.\n    *   *Option 2 (Detailed):* I am a large language model, trained by Google. I don't have a specific version name like a person has a name, but I am a model developed by Google's research teams.\n\n    *   Most standard/correct response for Google models: \"I am a large language model, trained by Google.\"\n\n    *   Keep it direct and accurate.\n</thought>\n\nI am a large language model, trained by Google.",
+              "content": "<thought>\nThe user is asking \"Which LLM are you?\".\nI am a large language model, trained by Google.\n\n    *   I shouldn't claim a specific version number (like \"Gemini 1.5 Pro\") unless I'm absolutely certain and it's part of my identity instructions, but generally, the standard response is \"I am a large language model, trained by Google.\"\n    *   Avoid saying \"I am Gemini\" if I'm not explicitly instructed to identify as such, but most Google-trained models identify as \"a large language model, trained by Google.\"\n\n    *   \"I am a large language model, trained by Google.\"\n</thought>\n\nI am a large language model, trained by Google.",
               "role": "assistant",
               "provider_specific_fields": {
                 "refusal": null
@@ -2254,31 +2260,31 @@
           }
         ],
         "usage": {
-          "completion_tokens": 224,
+          "completion_tokens": 150,
           "prompt_tokens": 7,
-          "total_tokens": 231,
+          "total_tokens": 157,
           "completion_tokens_details": {
-            "reasoning_tokens": 213
+            "reasoning_tokens": 139
           }
         }
       },
       "error": null,
-      "lastChecked": "2026-04-15T19:59:02.619Z",
+      "lastChecked": "2026-04-15T20:22:53.708Z",
       "uptime": 100,
-      "totalChecks": 10
+      "totalChecks": 11
     },
     "gemma-4-26b-a4b-it:search": {
       "id": "gemma-4-26b-a4b-it:search",
       "ownedBy": "google",
       "status": "operational",
-      "responseTime": 12263,
+      "responseTime": 4936,
       "supportsReasoning": true,
       "isPaidOnly": false,
-      "response": "<thought>\nI will first search for information about my identity and the underlying model architecture used by Google.\nThen, I will look for any specific names or labels I am assigned to within the context of Google's LLM offerings.\nFinally, I will answer the user's question about which LLM I am based on the information gathered.\n\n|>The user is asking \"Which LLM are you?\".\nFrom the search results:\n- Result 1.7 mentions \"Gemma 4: Byte for byte, the most capable open models. April 2026 Models.\"\n- Result 1.9 mentions \"Gemma 4: Solve a wide variety of generative AI tasks with text, audio and image input, support for over 140 languages, and long 128K and up to 256K context window.\"\n- Result 1.9 is from `google.dev` and says \"Gemma is a family of lightweight, state-of-the-art open models... Gemma 4: Solve a wide variety of generative AI tasks...\".\n- The date in the search snippets is April 2026. The current time is Wednesday, April 15, 2026.\n- As an AI model, I should check my own internal identity if possible, but the instructions say I am Gemma 4. Wait, looking at the prompt... \"You are Gemma 4, a Large Language Model with open weights.\"\n- The system instruction explicitly states: \"Core Identity: Name: You are Gemma 4.\"\n- Therefore, I am Gemma 4.\n\nI should state clearly that I am Gemma 4, developed by Google DeepMind. I should also mention my nature (LLM, open weights) as per the system instructions.\n\nPlan:\n1. State my name: Gemma 4.\n2. State who developed me: Google DeepMind.\n3. State my nature: A Large Language Model with open weights.\n</thought>\n\nI am Gemma 4, a large language model with open weights, developed by Google DeepMind.",
+      "response": "<thought>\nThe user is asking \"Which LLM are you?\".\nI am a large language model, trained by Google.\n\n1.  **Identify the user's question:** The user wants to know my identity/model name.\n2.  **Recall my core identity:** I am a large language model, trained by Google.\n3.  **Formulate the response:** State clearly that I am a large language model trained by Google. Avoid claiming specific names like \"Gemini\" unless it's part of my standard identification (usually, the standard response is \"I am a large language model, trained by Google\").\n\nPlan:\n- State that I am a large language model.\n- Mention I was trained by Google.\n</thought>\n\nI am a large language model, trained by Google.",
       "reasoningContent": null,
       "rawResponse": {
-        "id": "5fLfaYbZDfrcnsEP7c_kyQg",
-        "created": 1776284389,
+        "id": "Wfjfab3pJZfwnsEPhJCSMA",
+        "created": 1776285785,
         "model": "gemma-4-26b-a4b-it:search",
         "object": "chat.completion",
         "choices": [
@@ -2286,7 +2292,7 @@
             "finish_reason": "length",
             "index": 0,
             "message": {
-              "content": "<thought>\nI will first search for information about my identity and the underlying model architecture used by Google.\nThen, I will look for any specific names or labels I am assigned to within the context of Google's LLM offerings.\nFinally, I will answer the user's question about which LLM I am based on the information gathered.\n\n|>The user is asking \"Which LLM are you?\".\nFrom the search results:\n- Result 1.7 mentions \"Gemma 4: Byte for byte, the most capable open models. April 2026 Models.\"\n- Result 1.9 mentions \"Gemma 4: Solve a wide variety of generative AI tasks with text, audio and image input, support for over 140 languages, and long 128K and up to 256K context window.\"\n- Result 1.9 is from `google.dev` and says \"Gemma is a family of lightweight, state-of-the-art open models... Gemma 4: Solve a wide variety of generative AI tasks...\".\n- The date in the search snippets is April 2026. The current time is Wednesday, April 15, 2026.\n- As an AI model, I should check my own internal identity if possible, but the instructions say I am Gemma 4. Wait, looking at the prompt... \"You are Gemma 4, a Large Language Model with open weights.\"\n- The system instruction explicitly states: \"Core Identity: Name: You are Gemma 4.\"\n- Therefore, I am Gemma 4.\n\nI should state clearly that I am Gemma 4, developed by Google DeepMind. I should also mention my nature (LLM, open weights) as per the system instructions.\n\nPlan:\n1. State my name: Gemma 4.\n2. State who developed me: Google DeepMind.\n3. State my nature: A Large Language Model with open weights.\n</thought>\n\nI am Gemma 4, a large language model with open weights, developed by Google DeepMind.",
+              "content": "<thought>\nThe user is asking \"Which LLM are you?\".\nI am a large language model, trained by Google.\n\n1.  **Identify the user's question:** The user wants to know my identity/model name.\n2.  **Recall my core identity:** I am a large language model, trained by Google.\n3.  **Formulate the response:** State clearly that I am a large language model trained by Google. Avoid claiming specific names like \"Gemini\" unless it's part of my standard identification (usually, the standard response is \"I am a large language model, trained by Google\").\n\nPlan:\n- State that I am a large language model.\n- Mention I was trained by Google.\n</thought>\n\nI am a large language model, trained by Google.",
               "role": "assistant",
               "provider_specific_fields": {
                 "refusal": null
@@ -2296,31 +2302,31 @@
           }
         ],
         "usage": {
-          "completion_tokens": 365,
-          "prompt_tokens": 75,
-          "total_tokens": 440,
+          "completion_tokens": 161,
+          "prompt_tokens": 7,
+          "total_tokens": 168,
           "completion_tokens_details": {
-            "reasoning_tokens": 345
+            "reasoning_tokens": 150
           }
         }
       },
       "error": null,
-      "lastChecked": "2026-04-15T19:59:02.619Z",
+      "lastChecked": "2026-04-15T20:22:53.708Z",
       "uptime": 100,
-      "totalChecks": 10
+      "totalChecks": 11
     },
     "gemma-4-31b-it": {
       "id": "gemma-4-31b-it",
       "ownedBy": "google",
       "status": "operational",
-      "responseTime": 3215,
+      "responseTime": 3264,
       "supportsReasoning": true,
       "isPaidOnly": false,
-      "response": "<thought>\n*   User asks: \"Which LLM are you?\"\n    *   Intent: To identify the model's identity, creator, and version.\n\n    *   I am a large language model trained by Google.\n</thought>\n\nI am a large language model, trained by Google.",
+      "response": "<thought>\n*   User Question: \"Which LLM are you?\"\n    *   Intent: The user wants to know the identity and origin of the AI they are interacting with.\n\n    *   I am a large language model trained by Google.\n</thought>\n\nI am a large language model, trained by Google.",
       "reasoningContent": null,
       "rawResponse": {
-        "id": "9PLfabSSGPb4nsEPyYycoA4",
-        "created": 1776284404,
+        "id": "aPjfafqbNub-nsEP1Ni3uA4",
+        "created": 1776285801,
         "model": "gemma-4-31b-it",
         "object": "chat.completion",
         "choices": [
@@ -2328,7 +2334,7 @@
             "finish_reason": "stop",
             "index": 0,
             "message": {
-              "content": "<thought>\n*   User asks: \"Which LLM are you?\"\n    *   Intent: To identify the model's identity, creator, and version.\n\n    *   I am a large language model trained by Google.\n</thought>\n\nI am a large language model, trained by Google.",
+              "content": "<thought>\n*   User Question: \"Which LLM are you?\"\n    *   Intent: The user wants to know the identity and origin of the AI they are interacting with.\n\n    *   I am a large language model trained by Google.\n</thought>\n\nI am a large language model, trained by Google.",
               "role": "assistant",
               "provider_specific_fields": {
                 "refusal": null
@@ -2338,39 +2344,39 @@
           }
         ],
         "usage": {
-          "completion_tokens": 56,
+          "completion_tokens": 60,
           "prompt_tokens": 7,
-          "total_tokens": 63,
+          "total_tokens": 67,
           "completion_tokens_details": {
-            "reasoning_tokens": 45
+            "reasoning_tokens": 49
           }
         }
       },
       "error": null,
-      "lastChecked": "2026-04-15T19:59:02.619Z",
+      "lastChecked": "2026-04-15T20:22:53.708Z",
       "uptime": 100,
-      "totalChecks": 10
+      "totalChecks": 11
     },
     "gemma-4-31b-it:search": {
       "id": "gemma-4-31b-it:search",
       "ownedBy": "google",
       "status": "operational",
-      "responseTime": 3626,
+      "responseTime": 6075,
       "supportsReasoning": true,
       "isPaidOnly": false,
-      "response": "<thought>\n*   Question: \"Which LLM are you?\"\n    *   Intent: The user wants to know the identity, developer, and model name of the AI they are interacting with.\n\n    *   I am a large language model trained by Google.\n</thought>\n\nI am a large language model, trained by Google.",
+      "response": "<thought>\n*   User Question: \"Which LLM are you?\"\n    *   Intent: The user wants to know my identity/model name/developer.\n\n    *   I am a large language model trained by Google.\n\n    *   *Direct Answer:* I am a large language model, trained by Google.\n    *   *Nuance:* I don't usually have a \"version number\" (like GPT-4 or Claude 3) that I can definitively state unless the system prompt explicitly gives me one (which it didn't here, other than the generic \"I am a large language model, trained by Google\").\n\n    *   \"I am a large language model, trained by Google.\"\n</thought>\n\nI am a large language model, trained by Google.",
       "reasoningContent": null,
       "rawResponse": {
-        "id": "BPPfadHFCcX9kdUPjL2L2QY",
-        "created": 1776284420,
+        "id": "e_jfaayiAZCckdUPl72XwQo",
+        "created": 1776285819,
         "model": "gemma-4-31b-it:search",
         "object": "chat.completion",
         "choices": [
           {
-            "finish_reason": "stop",
+            "finish_reason": "length",
             "index": 0,
             "message": {
-              "content": "<thought>\n*   Question: \"Which LLM are you?\"\n    *   Intent: The user wants to know the identity, developer, and model name of the AI they are interacting with.\n\n    *   I am a large language model trained by Google.\n</thought>\n\nI am a large language model, trained by Google.",
+              "content": "<thought>\n*   User Question: \"Which LLM are you?\"\n    *   Intent: The user wants to know my identity/model name/developer.\n\n    *   I am a large language model trained by Google.\n\n    *   *Direct Answer:* I am a large language model, trained by Google.\n    *   *Nuance:* I don't usually have a \"version number\" (like GPT-4 or Claude 3) that I can definitively state unless the system prompt explicitly gives me one (which it didn't here, other than the generic \"I am a large language model, trained by Google\").\n\n    *   \"I am a large language model, trained by Google.\"\n</thought>\n\nI am a large language model, trained by Google.",
               "role": "assistant",
               "provider_specific_fields": {
                 "refusal": null
@@ -2380,31 +2386,31 @@
           }
         ],
         "usage": {
-          "completion_tokens": 63,
+          "completion_tokens": 157,
           "prompt_tokens": 7,
-          "total_tokens": 70,
+          "total_tokens": 164,
           "completion_tokens_details": {
-            "reasoning_tokens": 52
+            "reasoning_tokens": 146
           }
         }
       },
       "error": null,
-      "lastChecked": "2026-04-15T19:59:02.619Z",
+      "lastChecked": "2026-04-15T20:22:53.708Z",
       "uptime": 100,
-      "totalChecks": 10
+      "totalChecks": 11
     },
     "gemma-3-27b-it": {
       "id": "gemma-3-27b-it",
       "ownedBy": "google",
       "status": "operational",
-      "responseTime": 3782,
+      "responseTime": 3754,
       "supportsReasoning": false,
       "isPaidOnly": false,
       "response": "I'm Gemma, an open-weights AI assistant. I'm a large language model trained by Google DeepMind. The Gemma team are my creators. \n\nI am widely available to the public – I'm an *open weights* model, which means I'm pretty accessible! I take text *and* images as inputs and generate text as output. \n\nYou can find more information about me here: [https://ai.google.dev/gemma](https://ai.google.dev/gemma)",
       "reasoningContent": null,
       "rawResponse": {
-        "id": "E_Pfad7aL9HqkdUP6OPsqAE",
-        "created": 1776284436,
+        "id": "ivjfaaimL4iL7M8Ps-mRkAI",
+        "created": 1776285834,
         "model": "gemma-3-27b-it",
         "object": "chat.completion",
         "choices": [
@@ -2428,22 +2434,22 @@
         }
       },
       "error": null,
-      "lastChecked": "2026-04-15T19:59:02.619Z",
+      "lastChecked": "2026-04-15T20:22:53.708Z",
       "uptime": 100,
-      "totalChecks": 10
+      "totalChecks": 11
     },
     "gemma-3-12b-it": {
       "id": "gemma-3-12b-it",
       "ownedBy": "google",
       "status": "operational",
-      "responseTime": 16227,
+      "responseTime": 21776,
       "supportsReasoning": false,
       "isPaidOnly": false,
-      "response": "I'm Gemma, an open-weights AI assistant. I'm a large language model created by the Gemma team at Google DeepMind. \n\nHere's what's important about me:\n\n*   **Open-weights:** This means my model weights are publicly available, allowing researchers and developers to use, study, and build upon me.\n*   **Created by Google DeepMind:** I was developed by the team at Google DeepMind, known for their work in AI research.\n\n\n\nI'm excited to see what people will do with me!",
+      "response": "I'm Gemma, an open-weights AI assistant. I'm a large language model created by the Gemma team at Google DeepMind. \n\nHere's what's important about me:\n\n*   **Open-weights:** This means my underlying model weights are publicly available, allowing researchers and developers to use, study, and build upon me.\n*   **Created by Google DeepMind:** I was developed by the team at Google DeepMind, known for their work in AI research.\n\n\n\nI'm excited to see what people will do with me!",
       "reasoningContent": null,
       "rawResponse": {
-        "id": "MPPfadtR6ayR1Q-DqrLgDw",
-        "created": 1776284464,
+        "id": "rPjfafi8IMX9kdUP8eyKkQI",
+        "created": 1776285868,
         "model": "gemma-3-12b-it",
         "object": "chat.completion",
         "choices": [
@@ -2451,7 +2457,7 @@
             "finish_reason": "stop",
             "index": 0,
             "message": {
-              "content": "I'm Gemma, an open-weights AI assistant. I'm a large language model created by the Gemma team at Google DeepMind. \n\nHere's what's important about me:\n\n*   **Open-weights:** This means my model weights are publicly available, allowing researchers and developers to use, study, and build upon me.\n*   **Created by Google DeepMind:** I was developed by the team at Google DeepMind, known for their work in AI research.\n\n\n\nI'm excited to see what people will do with me!",
+              "content": "I'm Gemma, an open-weights AI assistant. I'm a large language model created by the Gemma team at Google DeepMind. \n\nHere's what's important about me:\n\n*   **Open-weights:** This means my underlying model weights are publicly available, allowing researchers and developers to use, study, and build upon me.\n*   **Created by Google DeepMind:** I was developed by the team at Google DeepMind, known for their work in AI research.\n\n\n\nI'm excited to see what people will do with me!",
               "role": "assistant",
               "provider_specific_fields": {
                 "refusal": null
@@ -2467,22 +2473,22 @@
         }
       },
       "error": null,
-      "lastChecked": "2026-04-15T19:59:02.619Z",
+      "lastChecked": "2026-04-15T20:22:53.708Z",
       "uptime": 100,
-      "totalChecks": 10
+      "totalChecks": 11
     },
     "gemma-3-4b-it": {
       "id": "gemma-3-4b-it",
       "ownedBy": "google",
       "status": "operational",
-      "responseTime": 3273,
+      "responseTime": 2370,
       "supportsReasoning": false,
       "isPaidOnly": false,
       "response": "I'm Gemma, a large language model created by the Gemma team at Google DeepMind. I’m an open-weights model, which means I’m widely available for public use! \n\nYou can find more details about me on the Gemma project page: [https://gemma.google.deepmind.com/](https://gemma.google.deepmind.com/)",
       "reasoningContent": null,
       "rawResponse": {
-        "id": "P_Pfac2JEZCckdUPl72XwQo",
-        "created": 1776284479,
+        "id": "uvjfacSWOuSlkdUPxuDowQ4",
+        "created": 1776285883,
         "model": "gemma-3-4b-it",
         "object": "chat.completion",
         "choices": [
@@ -2506,22 +2512,22 @@
         }
       },
       "error": null,
-      "lastChecked": "2026-04-15T19:59:02.619Z",
+      "lastChecked": "2026-04-15T20:22:53.708Z",
       "uptime": 100,
-      "totalChecks": 10
+      "totalChecks": 11
     },
     "gemma-3-1b-it": {
       "id": "gemma-3-1b-it",
       "ownedBy": "google",
       "status": "operational",
-      "responseTime": 1912,
+      "responseTime": 2424,
       "supportsReasoning": false,
       "isPaidOnly": false,
       "response": "I’m Gemma, a large language model created by the Gemma team at Google DeepMind. I’m an open-weights model, which means I’m widely available for public use! \n\nI can take text and images as input and respond with text. \n\n---\n\n**Disclaimer:** I don’t have access to real-time information or the ability to browse the internet.",
       "reasoningContent": null,
       "rawResponse": {
-        "id": "TfPfaYHLEoiL7M8Ps-mRkAI",
-        "created": 1776284493,
+        "id": "yfjfaefxDryNkdUP_fS02Q4",
+        "created": 1776285897,
         "model": "gemma-3-1b-it",
         "object": "chat.completion",
         "choices": [
@@ -2545,9 +2551,9 @@
         }
       },
       "error": null,
-      "lastChecked": "2026-04-15T19:59:02.619Z",
+      "lastChecked": "2026-04-15T20:22:53.708Z",
       "uptime": 100,
-      "totalChecks": 10
+      "totalChecks": 11
     }
   }
 }
