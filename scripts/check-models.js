@@ -18,6 +18,15 @@ const httpsAgent = new https.Agent({ keepAlive: false });
 
 const MAX_HISTORY_ENTRIES = 288; // 24h at 5-min intervals
 const DELAY_BETWEEN_MODELS_MS = 12000; // 12s between each model (stays safely under burst limit + 5 RPM global)
+const LIMIT_PROBE_INTERVAL_RUNS = Math.max(1, parseInt(process.env.LIMIT_PROBE_INTERVAL_RUNS || '72', 10));
+const LIMIT_PROBE_MAX_MODELS = Math.max(1, parseInt(process.env.LIMIT_PROBE_MAX_MODELS || '2', 10));
+const LIMIT_PROBE_MAX_OUTPUT_TOKENS = Math.max(256, parseInt(process.env.LIMIT_PROBE_MAX_OUTPUT_TOKENS || '65536', 10));
+// Keep legacy LIMIT_PROBE_MAX_PROMPT_WORDS as fallback for backward compatibility.
+const LIMIT_PROBE_MAX_PROMPT_WORD_COUNT = Math.max(1024, parseInt(process.env.LIMIT_PROBE_MAX_PROMPT_WORD_COUNT || process.env.LIMIT_PROBE_MAX_PROMPT_WORDS || '262144', 10));
+const LIMIT_PROBE_PROMPT_TIMEOUT_MS = 180000; // prompt-size probes need more time for large payload validation
+const LIMIT_PROBE_PROMPT_CHUNK_WORDS = 8192; // keep per-chunk string allocations bounded during large prompt construction
+const FORCE_LIMIT_PROBE = String(process.env.FORCE_LIMIT_PROBE || '').toLowerCase() === 'true';
+const MAX_API_ERROR_LENGTH = 300;
 
 // Non-LLM models to exclude (image generation, video generation, slides, deep-research)
 const EXCLUDED_MODELS = new Set([
@@ -110,6 +119,133 @@ function rawRequest(url, options, bodyStr) {
     if (bodyStr) req.write(bodyStr);
     req.end();
   });
+}
+
+function getApiErrorMessage(body, status) {
+  if (body?.error?.message) return body.error.message;
+  if (body?.message && typeof body.message === 'string') return body.message;
+  if (body?.error && typeof body.error === 'string') return body.error;
+  return `HTTP ${status}`;
+}
+
+async function isAcceptedChatRequest(modelId, params, timeout = 120000) {
+  const url = `${API_BASE}/v1/chat/completions`;
+  const startedAt = Date.now();
+  const res = await rawRequest(url, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'Connection': 'close',
+      'Authorization': `Bearer ${API_KEY}`,
+      ...(PROXY_TOKEN ? { 'x-proxy-token': PROXY_TOKEN } : {})
+    },
+    timeout
+  }, JSON.stringify({ model: modelId, stream: false, ...params }));
+
+  const elapsed = Date.now() - startedAt;
+  const contentType = res.headers['content-type'] || '';
+  if (!contentType.includes('application/json')) {
+    return {
+      ok: false,
+      status: res.status,
+      elapsed,
+      error: `HTTP ${res.status}: non-JSON response`
+    };
+  }
+
+  let body;
+  try {
+    body = JSON.parse(res.body);
+  } catch {
+    return {
+      ok: false,
+      status: res.status,
+      elapsed,
+      error: `HTTP ${res.status}: invalid JSON`
+    };
+  }
+
+  if (res.status >= 400 || body?.error) {
+    return {
+      ok: false,
+      status: res.status,
+      elapsed,
+      error: getApiErrorMessage(body, res.status).slice(0, MAX_API_ERROR_LENGTH)
+    };
+  }
+
+  return { ok: true, status: res.status, elapsed, error: null };
+}
+
+async function findAcceptedUpperBound(checkFn, min, max) {
+  let low = min;
+  let high = max;
+  let best = null;
+  let failure = null;
+
+  while (low <= high) {
+    const mid = Math.floor((low + high) / 2);
+    const result = await checkFn(mid);
+    if (result.ok) {
+      best = mid;
+      low = mid + 1;
+    } else {
+      failure = { value: mid, status: result.status, error: result.error };
+      high = mid - 1;
+    }
+  }
+
+  return { best, failure };
+}
+
+async function probeModelLimits(modelId) {
+  const testedAt = new Date().toISOString();
+  console.log(`    ↳ Limit probe: output max <= ${LIMIT_PROBE_MAX_OUTPUT_TOKENS}, prompt words <= ${LIMIT_PROBE_MAX_PROMPT_WORD_COUNT}`);
+  const promptPrefix = 'Repeat OK once.\n\n';
+  const promptCache = new Map();
+  const buildWordProbePrompt = (wordCount) => {
+    const parts = [promptPrefix];
+    let remaining = wordCount;
+    while (remaining > 0) {
+      const size = Math.min(LIMIT_PROBE_PROMPT_CHUNK_WORDS, remaining);
+      // Use "x " as minimal filler to maximize prompt length without adding semantic overhead.
+      parts.push('x '.repeat(size));
+      remaining -= size;
+    }
+    return parts.join('');
+  };
+  const getPromptForWords = (wordCount) => {
+    if (!promptCache.has(wordCount)) {
+      promptCache.set(wordCount, buildWordProbePrompt(wordCount));
+    }
+    return promptCache.get(wordCount);
+  };
+
+  const outputProbe = await findAcceptedUpperBound(
+    (maxTokens) => isAcceptedChatRequest(modelId, {
+      messages: [{ role: 'user', content: 'Reply with exactly: OK' }],
+      max_tokens: maxTokens
+    }),
+    1,
+    LIMIT_PROBE_MAX_OUTPUT_TOKENS
+  );
+
+  const promptProbe = await findAcceptedUpperBound(
+    (wordCount) => isAcceptedChatRequest(modelId, {
+      messages: [{ role: 'user', content: getPromptForWords(wordCount) }],
+      max_tokens: 1
+    }, LIMIT_PROBE_PROMPT_TIMEOUT_MS),
+    128,
+    LIMIT_PROBE_MAX_PROMPT_WORD_COUNT
+  );
+
+  return {
+    testedAt,
+    maxAcceptedOutputTokens: outputProbe.best,
+    outputProbeFailure: outputProbe.failure,
+    maxAcceptedPromptWords: promptProbe.best,
+    promptProbeFailure: promptProbe.failure
+  };
 }
 
 /**
@@ -301,6 +437,8 @@ async function main() {
   const models = await fetchModels();
   console.log(`Found ${models.length} LLM models (excluded ${EXCLUDED_MODELS.size} non-LLM models)`);
   console.log(`Run #${runCount}`);
+  const shouldRunLimitProbe = FORCE_LIMIT_PROBE || runCount % LIMIT_PROBE_INTERVAL_RUNS === 0;
+  console.log(`Limit probe: ${shouldRunLimitProbe ? 'enabled' : 'skipped'} (interval=${LIMIT_PROBE_INTERVAL_RUNS}, force=${FORCE_LIMIT_PROBE})`);
 
   // Build test queue
   const testQueue = models.map(m => ({
@@ -395,6 +533,7 @@ async function main() {
 
   // Merge results with existing status data
   const updatedModels = {};
+  let probedCount = 0;
   for (const model of models) {
     const id = model.id;
     const prev = statusData.models?.[id];
@@ -412,8 +551,19 @@ async function main() {
         reasoningContent: results[id].reasoningContent || null,
         rawResponse: results[id].rawResponse || null,
         error: results[id].error,
-        lastChecked: now
+        lastChecked: now,
+        limitProbe: prev?.limitProbe || null
       };
+
+      if (
+        shouldRunLimitProbe &&
+        probedCount < LIMIT_PROBE_MAX_MODELS &&
+        results[id].status === 'operational'
+      ) {
+        console.log(`  🔬 Probing limits for ${id}...`);
+        updatedModels[id].limitProbe = await probeModelLimits(id);
+        probedCount++;
+      }
     } else {
       updatedModels[id] = prev || {
         id,
@@ -424,7 +574,8 @@ async function main() {
         isPaidOnly: false,
         response: null,
         error: null,
-        lastChecked: null
+        lastChecked: null,
+        limitProbe: null
       };
     }
   }
@@ -471,6 +622,12 @@ async function main() {
     lastRun: now,
     runCount,
     totalModels: models.length,
+    limitProbe: {
+      enabled: shouldRunLimitProbe,
+      intervalRuns: LIMIT_PROBE_INTERVAL_RUNS,
+      maxModels: LIMIT_PROBE_MAX_MODELS,
+      probedModels: probedCount
+    },
     models: updatedModels
   };
 
