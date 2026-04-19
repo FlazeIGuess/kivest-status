@@ -21,8 +21,12 @@ const DELAY_BETWEEN_MODELS_MS = 12000; // 12s between each model (stays safely u
 const LIMIT_PROBE_INTERVAL_RUNS = Math.max(1, parseInt(process.env.LIMIT_PROBE_INTERVAL_RUNS || '72', 10));
 const LIMIT_PROBE_MAX_MODELS = Math.max(1, parseInt(process.env.LIMIT_PROBE_MAX_MODELS || '2', 10));
 const LIMIT_PROBE_MAX_OUTPUT_TOKENS = Math.max(256, parseInt(process.env.LIMIT_PROBE_MAX_OUTPUT_TOKENS || '65536', 10));
-const LIMIT_PROBE_MAX_PROMPT_WORDS = Math.max(1024, parseInt(process.env.LIMIT_PROBE_MAX_PROMPT_WORDS || '262144', 10));
+// Keep legacy LIMIT_PROBE_MAX_PROMPT_WORDS as fallback for backward compatibility.
+const LIMIT_PROBE_MAX_PROMPT_WORD_COUNT = Math.max(1024, parseInt(process.env.LIMIT_PROBE_MAX_PROMPT_WORD_COUNT || process.env.LIMIT_PROBE_MAX_PROMPT_WORDS || '262144', 10));
+const LIMIT_PROBE_PROMPT_TIMEOUT_MS = 180000; // prompt-size probes need more time for large payload validation
+const LIMIT_PROBE_PROMPT_CHUNK_WORDS = 8192; // keep per-chunk string allocations bounded during large prompt construction
 const FORCE_LIMIT_PROBE = String(process.env.FORCE_LIMIT_PROBE || '').toLowerCase() === 'true';
+const MAX_API_ERROR_LENGTH = 300;
 
 // Non-LLM models to exclude (image generation, video generation, slides, deep-research)
 const EXCLUDED_MODELS = new Set([
@@ -166,7 +170,7 @@ async function isAcceptedChatRequest(modelId, params, timeout = 120000) {
       ok: false,
       status: res.status,
       elapsed,
-      error: getApiErrorMessage(body, res.status).slice(0, 300)
+      error: getApiErrorMessage(body, res.status).slice(0, MAX_API_ERROR_LENGTH)
     };
   }
 
@@ -195,8 +199,27 @@ async function findAcceptedUpperBound(checkFn, min, max) {
 }
 
 async function probeModelLimits(modelId) {
-  const startedAt = new Date().toISOString();
-  console.log(`    ↳ Limit probe: output max <= ${LIMIT_PROBE_MAX_OUTPUT_TOKENS}, prompt words <= ${LIMIT_PROBE_MAX_PROMPT_WORDS}`);
+  const testedAt = new Date().toISOString();
+  console.log(`    ↳ Limit probe: output max <= ${LIMIT_PROBE_MAX_OUTPUT_TOKENS}, prompt words <= ${LIMIT_PROBE_MAX_PROMPT_WORD_COUNT}`);
+  const promptPrefix = 'Repeat OK once.\n\n';
+  const promptCache = new Map();
+  const buildWordProbePrompt = (wordCount) => {
+    const parts = [promptPrefix];
+    let remaining = wordCount;
+    while (remaining > 0) {
+      const size = Math.min(LIMIT_PROBE_PROMPT_CHUNK_WORDS, remaining);
+      // Use "x " as minimal filler to maximize prompt length without adding semantic overhead.
+      parts.push('x '.repeat(size));
+      remaining -= size;
+    }
+    return parts.join('');
+  };
+  const getPromptForWords = (wordCount) => {
+    if (!promptCache.has(wordCount)) {
+      promptCache.set(wordCount, buildWordProbePrompt(wordCount));
+    }
+    return promptCache.get(wordCount);
+  };
 
   const outputProbe = await findAcceptedUpperBound(
     (maxTokens) => isAcceptedChatRequest(modelId, {
@@ -209,15 +232,15 @@ async function probeModelLimits(modelId) {
 
   const promptProbe = await findAcceptedUpperBound(
     (wordCount) => isAcceptedChatRequest(modelId, {
-      messages: [{ role: 'user', content: `Repeat OK once.\n\n${'x '.repeat(wordCount)}` }],
+      messages: [{ role: 'user', content: getPromptForWords(wordCount) }],
       max_tokens: 1
-    }, 180000),
+    }, LIMIT_PROBE_PROMPT_TIMEOUT_MS),
     128,
-    LIMIT_PROBE_MAX_PROMPT_WORDS
+    LIMIT_PROBE_MAX_PROMPT_WORD_COUNT
   );
 
   return {
-    testedAt: startedAt,
+    testedAt,
     maxAcceptedOutputTokens: outputProbe.best,
     outputProbeFailure: outputProbe.failure,
     maxAcceptedPromptWords: promptProbe.best,
