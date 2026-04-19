@@ -1,48 +1,48 @@
 {
-  "lastRun": "2026-04-19T09:48:49.825Z",
-  "runCount": 26,
+  "lastRun": "2026-04-19T10:14:37.073Z",
+  "runCount": 27,
   "totalModels": 74,
   "models": {
     "claude-sonnet-4-6": {
       "id": "claude-sonnet-4-6",
       "ownedBy": "anthropic",
       "status": "operational",
-      "responseTime": 7077,
+      "responseTime": 3708,
       "supportsReasoning": false,
       "isPaidOnly": false,
-      "response": "I'm Claude, made by Anthropic. Is there something I can help you with?",
+      "response": "I’m Claude, made by Anthropic.",
       "reasoningContent": null,
       "rawResponse": {
-        "id": "req_1776592131073_23di9k",
+        "id": "req_1776593677617_wuobej",
         "object": "chat.completion",
-        "created": 1776592135,
+        "created": 1776593679,
         "model": "claude-sonnet-4-6",
         "choices": [
           {
             "index": 0,
             "message": {
               "role": "assistant",
-              "content": "I'm Claude, made by Anthropic. Is there something I can help you with?"
+              "content": "I’m Claude, made by Anthropic."
             },
             "finish_reason": "stop"
           }
         ],
         "usage": {
-          "prompt_tokens": 14,
-          "completion_tokens": 42,
-          "total_tokens": 56
+          "prompt_tokens": 223,
+          "completion_tokens": 12,
+          "total_tokens": 235
         }
       },
       "error": null,
-      "lastChecked": "2026-04-19T09:48:49.825Z",
-      "uptime": 79.17,
-      "totalChecks": 24
+      "lastChecked": "2026-04-19T10:14:37.073Z",
+      "uptime": 80,
+      "totalChecks": 25
     },
     "claude-haiku-4-5": {
       "id": "claude-haiku-4-5",
       "ownedBy": "anthropic",
       "status": "down",
-      "responseTime": 2207,
+      "responseTime": 1681,
       "supportsReasoning": false,
       "isPaidOnly": false,
       "response": null,
@@ -54,23 +54,23 @@
         }
       },
       "error": "Authentication with the model provider failed. Please try again later.",
-      "lastChecked": "2026-04-19T09:48:49.825Z",
+      "lastChecked": "2026-04-19T10:14:37.073Z",
       "uptime": 0,
-      "totalChecks": 24
+      "totalChecks": 25
     },
     "gpt-5.3-codex": {
       "id": "gpt-5.3-codex",
       "ownedBy": "openai",
       "status": "operational",
-      "responseTime": 3793,
+      "responseTime": 3658,
       "supportsReasoning": false,
       "isPaidOnly": false,
       "response": "I’m an OpenAI assistant running as **GPT-5** in this chat environment.",
       "reasoningContent": null,
       "rawResponse": {
-        "id": "AWDuG354fxoGmKtGKP89Rt0dUajCxzOuRMRB4pzGKiVoK7fUFC0Pbfx5UmIGoIqQLn+vW/OHACy2qqvGjmf7z+OuSnRoI2NIFMyM8+Km7M2dCjmLI5OD7G0JbYriXLM8fTgm7KaGPBzpvyqvI/sShPAljYvrmIWhdQM+kurNckFfS1CClgZhidvuvabtbSgYtWNlR2SegdUn/nvBm1QE17kmsRmHWaQ1FEv3x6CNzeSW4rR2NpJJfZwPxrtiRewvYsXREAZlkN1YQpnMJdSo47W2qcYCjrKc6dWynhFwGBIeDES8TJss5G3MFOuTekwXgoNX9EYzTqQzX0qt5R4/7Mhy+Cp+IAoHAwWfyRcBP4kYzGSXb3ukRL/dHjgKo++0VSxKXSv1teqBZH+EiOIlqxpEtTpt8s+n",
+        "id": "tyXccrXej1KmU/xhpDnOoLBYzZkvNtmGZkdYTYgFwbMJNaTpw3GAnpy6EXcu54qiuXgI+tHnJGwPTwk2wCuz54tBUivPjEq5am3kAmz/JBmMogN1McPbQ3uAO7PvT1ohxkPkb4TkENWVWcLIXEN/hrX0VqTh863GO8qxrbPv0SLMQ5z7hREOKbKI4DYWdDWHsgdZX784HtFXMxzFsEO6pemO9K1zKjB2a7K1VyG1vOgJhijAknxgG9slLo9eRdAL7917y+6nXprdreEKWflbGRuJzC6hiXzOSavZZx3X0/n5kSFGpsMcBOYzUF1dMc3XrwRfR/BD837ff8XZKTaQjBhopQmQ9z+9yxNqijJhQ276Xx9PPR4Kq1615Vahw+yTO/yCReQx6TylEZabg7IizEECpkgicjjh",
         "object": "chat.completion",
-        "created": 1776592100,
+        "created": 1776593700,
         "model": "gpt-5.3-codex",
         "choices": [
           {
@@ -89,15 +89,15 @@
         }
       },
       "error": null,
-      "lastChecked": "2026-04-19T09:48:49.825Z",
+      "lastChecked": "2026-04-19T10:14:37.073Z",
       "uptime": 100,
-      "totalChecks": 24
+      "totalChecks": 25
     },
     "gpt-5-2": {
       "id": "gpt-5-2",
       "ownedBy": "openai",
       "status": "down",
-      "responseTime": 1836,
+      "responseTime": 1175,
       "supportsReasoning": false,
       "isPaidOnly": false,
       "response": null,
@@ -109,123 +109,105 @@
         }
       },
       "error": "Authentication with the model provider failed. Please try again later.",
-      "lastChecked": "2026-04-19T09:48:49.825Z",
+      "lastChecked": "2026-04-19T10:14:37.073Z",
       "uptime": 0,
-      "totalChecks": 24
+      "totalChecks": 25
     },
     "gpt-5.2-codex": {
       "id": "gpt-5.2-codex",
       "ownedBy": "openai",
       "status": "operational",
-      "responseTime": 3573,
+      "responseTime": 3921,
       "supportsReasoning": false,
       "isPaidOnly": false,
-      "response": "I'm ChatGPT, a large language model developed by OpenAI.",
+      "response": "I’m ChatGPT, a large language model created by OpenAI.",
       "reasoningContent": null,
       "rawResponse": {
-        "id": "rmryx5C4fZHn2R+qMl78rNkiE0VQ2jFJJcb9PT+0qIBhmFaRAFtstmci+9phEytHrd80E2eIgsXVFZVfIN63yVWo46gXjco0aHa00yC5OGpcZHaoq9+/yO9ZScTVpGB2xlW7VKOhKg79xqMo8RP5MHlLyuHcK8/UW/8FYX5KRlDKuotbrCBoAjh0vo/40TNrzSZe9HBxSgF/5PbwL7MC9jwV5DysS2OHTZ0FZ8tw4N0nTw7r3haVayX0fsSD7BjVURku+cKhR6MnJBM/pPX+VIBUpdSdKZRVC9C2o8q2fF8Oy7H38uQF3J7EK/X1sI0aMvFun/50tCni2zceuWbdBLkS673kYHXyfjCGFMevfOzBT7UShpUO8xbH/0slJ6OOzhmWvO421+bI5uPj4ao/n3kqzRFi/EZl",
+        "id": "l5Kj9xD7qr8V0nH+FJ+Se1T2IzB2crbwU5/0Oz7aBTExPX/481/W5bT7xXu/UPhWiRR3ezWKyNW9H1nRWaxwbc0CNHvCItMVTrBlUtJA9j10EEP3crX/KXI8syMqj8puZGMIzxIw7vgFgAYwtZ1Vzs7zk8GGLg1Vc7iJafg8mutwWK5sKzjTjqWqtiVtmMNr64ZchQcs5coPaqdXcBVCufOOFP11GC+/+bJRZ5p9/GbOO1KEK58Y7e0HsUsU0SSdo+IWp43R+NdEPUGeDOeWuTSb9/H+yVY0Qmjp91gmY49orwp83G5TkcOHhOdXAAOwqblzePECb0aa9hDJZR10HQep/9SYcryV69CaxJ2f31sxryjqbTU5MDy7nSWNoHelmaHVNqdJsCG4Kc4MU/cV1m5h/kbMq+am",
         "object": "chat.completion",
-        "created": 1776592300,
+        "created": 1776593800,
         "model": "gpt-5.2-codex",
         "choices": [
           {
             "index": 0,
             "message": {
               "role": "assistant",
-              "content": "I'm ChatGPT, a large language model developed by OpenAI."
+              "content": "I’m ChatGPT, a large language model created by OpenAI."
             },
             "finish_reason": "stop"
           }
         ],
         "usage": {
           "prompt_tokens": 12,
-          "completion_tokens": 37,
-          "total_tokens": 49
+          "completion_tokens": 36,
+          "total_tokens": 48
         }
       },
       "error": null,
-      "lastChecked": "2026-04-19T09:48:49.825Z",
+      "lastChecked": "2026-04-19T10:14:37.073Z",
       "uptime": 100,
-      "totalChecks": 24
+      "totalChecks": 25
     },
     "grok-code-fast-1": {
       "id": "grok-code-fast-1",
       "ownedBy": "xai",
       "status": "operational",
-      "responseTime": 20728,
+      "responseTime": 9349,
       "supportsReasoning": false,
       "isPaidOnly": false,
-      "response": "I'm Grok, an AI built by xAI. I'm not based on any other companies or their models. If you have questions about my capabilities or how I work, feel free to ask!",
+      "response": "I am Grok, an AI model built by xAI. I'm not based on any other companies' models.",
       "reasoningContent": null,
       "rawResponse": {
-        "id": "req_1776592209483_xta3nu",
+        "id": "req_1776593751308_oy1t5i",
         "object": "chat.completion",
-        "created": 1776592227,
+        "created": 1776593759,
         "model": "grok-code-fast-1",
         "choices": [
           {
             "index": 0,
             "message": {
               "role": "assistant",
-              "content": "I'm Grok, an AI built by xAI. I'm not based on any other companies or their models. If you have questions about my capabilities or how I work, feel free to ask!"
+              "content": "I am Grok, an AI model built by xAI. I'm not based on any other companies' models."
             },
             "finish_reason": "stop"
           }
         ],
         "usage": {
           "prompt_tokens": 209,
-          "completion_tokens": 39,
-          "total_tokens": 248
+          "completion_tokens": 23,
+          "total_tokens": 232
         }
       },
       "error": null,
-      "lastChecked": "2026-04-19T09:48:49.825Z",
-      "uptime": 83.33,
-      "totalChecks": 24
+      "lastChecked": "2026-04-19T10:14:37.073Z",
+      "uptime": 84,
+      "totalChecks": 25
     },
     "sarvamai/sarvam-m": {
       "id": "sarvamai/sarvam-m",
       "ownedBy": "sarvam",
-      "status": "operational",
-      "responseTime": 5582,
+      "status": "down",
+      "responseTime": 1290,
       "supportsReasoning": false,
       "isPaidOnly": false,
-      "response": "Okay, the user is asking which LLM I am. Let me start by recalling that I'm developed by Sarvam AI. The user might want specific details about the model's architecture, training data, or capabilities.\n\nSince the user's previous message was about promoting linguistic diversity and Indian context, maybe they're interested in how my training aligns with those goals. Should I mention that I'm tailored for Indian languages and contexts?\n\nI should explain that I'm built on a transformer architecture similar to others but optimized for India's linguistic diversity. Also highlight support for multiple Indian languages alongside English.",
+      "response": null,
       "reasoningContent": null,
       "rawResponse": {
-        "id": "chat-eb95db2038554db68ff7cc857568cb04",
-        "object": "chat.completion",
-        "created": 1776592243,
-        "model": "sarvamai/sarvam-m",
-        "choices": [
-          {
-            "index": 0,
-            "message": {
-              "role": "assistant",
-              "content": "Okay, the user is asking which LLM I am. Let me start by recalling that I'm developed by Sarvam AI. The user might want specific details about the model's architecture, training data, or capabilities.\n\nSince the user's previous message was about promoting linguistic diversity and Indian context, maybe they're interested in how my training aligns with those goals. Should I mention that I'm tailored for Indian languages and contexts?\n\nI should explain that I'm built on a transformer architecture similar to others but optimized for India's linguistic diversity. Also highlight support for multiple Indian languages alongside English.\n\n"
-            },
-            "logprobs": null,
-            "finish_reason": "length",
-            "stop_reason": null
-          }
-        ],
-        "usage": {
-          "prompt_tokens": 41,
-          "total_tokens": 161,
-          "completion_tokens": 120
-        },
-        "prompt_logprobs": null
+        "error": {
+          "message": "The request was rejected by the model provider.",
+          "type": "invalid_request_error"
+        }
       },
-      "error": null,
-      "lastChecked": "2026-04-19T09:48:49.825Z",
-      "uptime": 91.67,
-      "totalChecks": 24
+      "error": "The request was rejected by the model provider.",
+      "lastChecked": "2026-04-19T10:14:37.073Z",
+      "uptime": 88,
+      "totalChecks": 25
     },
     "pr-2/claude-sonnet-4-20250514": {
       "id": "pr-2/claude-sonnet-4-20250514",
       "ownedBy": "anthropic",
       "status": "down",
-      "responseTime": 2419,
+      "responseTime": 924,
       "supportsReasoning": false,
       "isPaidOnly": false,
       "response": null,
@@ -237,15 +219,15 @@
         }
       },
       "error": "The model provider is temporarily unavailable. Please try again in a few seconds.",
-      "lastChecked": "2026-04-19T09:48:49.825Z",
+      "lastChecked": "2026-04-19T10:14:37.073Z",
       "uptime": 0,
-      "totalChecks": 24
+      "totalChecks": 25
     },
     "pr-2/claude-sonnet-4-5-20250929": {
       "id": "pr-2/claude-sonnet-4-5-20250929",
       "ownedBy": "anthropic",
       "status": "down",
-      "responseTime": 1556,
+      "responseTime": 1606,
       "supportsReasoning": false,
       "isPaidOnly": false,
       "response": null,
@@ -257,15 +239,15 @@
         }
       },
       "error": "The model provider is temporarily unavailable. Please try again in a few seconds.",
-      "lastChecked": "2026-04-19T09:48:49.825Z",
+      "lastChecked": "2026-04-19T10:14:37.073Z",
       "uptime": 0,
-      "totalChecks": 24
+      "totalChecks": 25
     },
     "claude-opus-4-6": {
       "id": "claude-opus-4-6",
       "ownedBy": "anthropic",
       "status": "paid_only",
-      "responseTime": 862,
+      "responseTime": 752,
       "supportsReasoning": false,
       "isPaidOnly": true,
       "response": null,
@@ -278,15 +260,15 @@
         }
       },
       "error": "Model \"claude-opus-4-6\" is only available on paid plans.",
-      "lastChecked": "2026-04-19T09:48:49.825Z",
+      "lastChecked": "2026-04-19T10:14:37.073Z",
       "uptime": 0,
-      "totalChecks": 24
+      "totalChecks": 25
     },
     "pr-2/claude-opus-4-1-20250805": {
       "id": "pr-2/claude-opus-4-1-20250805",
       "ownedBy": "anthropic",
       "status": "paid_only",
-      "responseTime": 610,
+      "responseTime": 622,
       "supportsReasoning": false,
       "isPaidOnly": true,
       "response": null,
@@ -299,15 +281,15 @@
         }
       },
       "error": "Model \"pr-2/claude-opus-4-1-20250805\" is only available on paid plans.",
-      "lastChecked": "2026-04-19T09:48:49.825Z",
+      "lastChecked": "2026-04-19T10:14:37.073Z",
       "uptime": 0,
-      "totalChecks": 24
+      "totalChecks": 25
     },
     "claude-opus-4-7": {
       "id": "claude-opus-4-7",
       "ownedBy": "anthropic",
       "status": "paid_only",
-      "responseTime": 606,
+      "responseTime": 464,
       "supportsReasoning": false,
       "isPaidOnly": true,
       "response": null,
@@ -320,15 +302,15 @@
         }
       },
       "error": "Model \"claude-opus-4-7\" is only available on paid plans.",
-      "lastChecked": "2026-04-19T09:48:49.825Z",
+      "lastChecked": "2026-04-19T10:14:37.073Z",
       "uptime": 0,
-      "totalChecks": 1
+      "totalChecks": 2
     },
     "pr-2/claude-opus-4-20250514": {
       "id": "pr-2/claude-opus-4-20250514",
       "ownedBy": "anthropic",
       "status": "paid_only",
-      "responseTime": 983,
+      "responseTime": 626,
       "supportsReasoning": false,
       "isPaidOnly": true,
       "response": null,
@@ -341,15 +323,15 @@
         }
       },
       "error": "Model \"pr-2/claude-opus-4-20250514\" is only available on paid plans.",
-      "lastChecked": "2026-04-19T09:48:49.825Z",
+      "lastChecked": "2026-04-19T10:14:37.073Z",
       "uptime": 0,
-      "totalChecks": 24
+      "totalChecks": 25
     },
     "pr-2/claude-opus-4-5-20251101": {
       "id": "pr-2/claude-opus-4-5-20251101",
       "ownedBy": "anthropic",
       "status": "paid_only",
-      "responseTime": 629,
+      "responseTime": 658,
       "supportsReasoning": false,
       "isPaidOnly": true,
       "response": null,
@@ -362,15 +344,15 @@
         }
       },
       "error": "Model \"pr-2/claude-opus-4-5-20251101\" is only available on paid plans.",
-      "lastChecked": "2026-04-19T09:48:49.825Z",
+      "lastChecked": "2026-04-19T10:14:37.073Z",
       "uptime": 0,
-      "totalChecks": 24
+      "totalChecks": 25
     },
     "gpt-5.4": {
       "id": "gpt-5.4",
       "ownedBy": "openai",
       "status": "paid_only",
-      "responseTime": 638,
+      "responseTime": 503,
       "supportsReasoning": false,
       "isPaidOnly": true,
       "response": null,
@@ -383,15 +365,15 @@
         }
       },
       "error": "Model \"gpt-5.4\" is only available on paid plans.",
-      "lastChecked": "2026-04-19T09:48:49.825Z",
+      "lastChecked": "2026-04-19T10:14:37.073Z",
       "uptime": 0,
-      "totalChecks": 24
+      "totalChecks": 25
     },
     "xiaomi/mimo-v2-pro": {
       "id": "xiaomi/mimo-v2-pro",
       "ownedBy": "xiaomi",
       "status": "operational",
-      "responseTime": 3867,
+      "responseTime": 3135,
       "supportsReasoning": false,
       "isPaidOnly": false,
       "response": "[No text content returned]",
@@ -408,8 +390,8 @@
             "native_finish_reason": "stop"
           }
         ],
-        "created": 1776592368,
-        "id": "gorouter-1776592368-bqJVrhpIKkCVNEGA4U9G6s",
+        "created": 1776593892,
+        "id": "gorouter-1776593892-cp3bLN0rYEZQcKRvErgGBQ",
         "model": "xiaomi/mimo-v2-pro",
         "object": "chat.completion",
         "usage": {
@@ -419,15 +401,15 @@
         }
       },
       "error": null,
-      "lastChecked": "2026-04-19T09:48:49.825Z",
-      "uptime": 91.67,
-      "totalChecks": 24
+      "lastChecked": "2026-04-19T10:14:37.073Z",
+      "uptime": 92,
+      "totalChecks": 25
     },
     "xiaomi/mimo-v2-omni": {
       "id": "xiaomi/mimo-v2-omni",
       "ownedBy": "xiaomi",
       "status": "operational",
-      "responseTime": 946,
+      "responseTime": 1190,
       "supportsReasoning": false,
       "isPaidOnly": false,
       "response": "The model does not exist in https://api.airforce\ndiscord.gg/airforce",
@@ -444,8 +426,8 @@
             "native_finish_reason": "stop"
           }
         ],
-        "created": 1776592381,
-        "id": "gorouter-1776592381-X9joNlz6606nLZ56NhZojO",
+        "created": 1776593905,
+        "id": "gorouter-1776593905-kAPwtVOzf4E8GibMdr4UgO",
         "model": "xiaomi/mimo-v2-omni",
         "object": "chat.completion",
         "usage": {
@@ -455,19 +437,19 @@
         }
       },
       "error": null,
-      "lastChecked": "2026-04-19T09:48:49.825Z",
-      "uptime": 91.67,
-      "totalChecks": 24
+      "lastChecked": "2026-04-19T10:14:37.073Z",
+      "uptime": 92,
+      "totalChecks": 25
     },
     "z-ai/glm-5.1": {
       "id": "z-ai/glm-5.1",
       "ownedBy": "zhipu",
       "status": "operational",
-      "responseTime": 9134,
+      "responseTime": 8634,
       "supportsReasoning": true,
       "isPaidOnly": false,
-      "response": "[Reasoning only] The user has asked \"Which LLM are you?\", so I need to respond by clarifying my identity based on the provided response.\n\nFirst, I should identify as a GLM large language model developed by Z.ai, without referencing any other models or companies.\n\nNext, outline my core purpose: trained on diverse dat",
-      "reasoningContent": "The user has asked \"Which LLM are you?\", so I need to respond by clarifying my identity based on the provided response.\n\nFirst, I should identify as a GLM large language model developed by Z.ai, without referencing any other models or companies.\n\nNext, outline my core purpose: trained on diverse datasets to handle tasks like answering questions, generating text, translating languages, and providing decision support in a professional and objective manner.\n\nFocus on the key features: offering objective and professional responses, assisting users efficiently, and avoiding any subjective opinions to ensure reliability.\n\nStructure the answer in a straightforward, convers",
+      "response": "[Reasoning only] The user wants to know which LLM I am. Let me start by recalling what I know about this.\n\nFirst, I should check if there's a standard way to answer such questions. Typically, AI models are expected to state their identity clearly. Since I'm part of the GLM family, developed by Z.ai, that's the key i",
+      "reasoningContent": "The user wants to know which LLM I am. Let me start by recalling what I know about this.\n\nFirst, I should check if there's a standard way to answer such questions. Typically, AI models are expected to state their identity clearly. Since I'm part of the GLM family, developed by Z.ai, that's the key info to include.\n\nI should also mention my capabilities concisely. Maybe list some areas where I can assist, like answering questions, providing explanations, or helping with tasks. That gives the user a better idea of what to expect without going into too much",
       "rawResponse": {
         "choices": [
           {
@@ -475,15 +457,15 @@
             "index": 0,
             "message": {
               "content": "",
-              "reasoning": "The user has asked \"Which LLM are you?\", so I need to respond by clarifying my identity based on the provided response.\n\nFirst, I should identify as a GLM large language model developed by Z.ai, without referencing any other models or companies.\n\nNext, outline my core purpose: trained on diverse datasets to handle tasks like answering questions, generating text, translating languages, and providing decision support in a professional and objective manner.\n\nFocus on the key features: offering objective and professional responses, assisting users efficiently, and avoiding any subjective opinions to ensure reliability.\n\nStructure the answer in a straightforward, convers",
-              "reasoning_content": "The user has asked \"Which LLM are you?\", so I need to respond by clarifying my identity based on the provided response.\n\nFirst, I should identify as a GLM large language model developed by Z.ai, without referencing any other models or companies.\n\nNext, outline my core purpose: trained on diverse datasets to handle tasks like answering questions, generating text, translating languages, and providing decision support in a professional and objective manner.\n\nFocus on the key features: offering objective and professional responses, assisting users efficiently, and avoiding any subjective opinions to ensure reliability.\n\nStructure the answer in a straightforward, convers",
+              "reasoning": "The user wants to know which LLM I am. Let me start by recalling what I know about this.\n\nFirst, I should check if there's a standard way to answer such questions. Typically, AI models are expected to state their identity clearly. Since I'm part of the GLM family, developed by Z.ai, that's the key info to include.\n\nI should also mention my capabilities concisely. Maybe list some areas where I can assist, like answering questions, providing explanations, or helping with tasks. That gives the user a better idea of what to expect without going into too much",
+              "reasoning_content": "The user wants to know which LLM I am. Let me start by recalling what I know about this.\n\nFirst, I should check if there's a standard way to answer such questions. Typically, AI models are expected to state their identity clearly. Since I'm part of the GLM family, developed by Z.ai, that's the key info to include.\n\nI should also mention my capabilities concisely. Maybe list some areas where I can assist, like answering questions, providing explanations, or helping with tasks. That gives the user a better idea of what to expect without going into too much",
               "role": "assistant"
             },
             "native_finish_reason": "length"
           }
         ],
-        "created": 1776592402,
-        "id": "gorouter-1776592402-p155ov842953CPqSEvXOPI",
+        "created": 1776593926,
+        "id": "gorouter-1776593926-W3vw4yavIPDwJUgUEKIBPQ",
         "model": "z-ai/glm-5.1",
         "object": "chat.completion",
         "usage": {
@@ -497,15 +479,15 @@
         }
       },
       "error": null,
-      "lastChecked": "2026-04-19T09:48:49.825Z",
-      "uptime": 4.17,
-      "totalChecks": 24
+      "lastChecked": "2026-04-19T10:14:37.073Z",
+      "uptime": 8,
+      "totalChecks": 25
     },
     "qwen/qwen3.6-plus": {
       "id": "qwen/qwen3.6-plus",
       "ownedBy": "qwen",
       "status": "paid_only",
-      "responseTime": 1238,
+      "responseTime": 521,
       "supportsReasoning": false,
       "isPaidOnly": true,
       "response": null,
@@ -517,15 +499,15 @@
         }
       },
       "error": "Your API key does not have access to model \"qwen/qwen3.6-plus\".",
-      "lastChecked": "2026-04-19T09:48:49.825Z",
+      "lastChecked": "2026-04-19T10:14:37.073Z",
       "uptime": 0,
-      "totalChecks": 24
+      "totalChecks": 25
     },
     "qwen3.5-397b-a17b": {
       "id": "qwen3.5-397b-a17b",
       "ownedBy": "qwen",
       "status": "down",
-      "responseTime": 856,
+      "responseTime": 652,
       "supportsReasoning": false,
       "isPaidOnly": false,
       "response": null,
@@ -537,15 +519,15 @@
         }
       },
       "error": "Provider not configured.",
-      "lastChecked": "2026-04-19T09:48:49.825Z",
-      "uptime": 87.5,
-      "totalChecks": 24
+      "lastChecked": "2026-04-19T10:14:37.073Z",
+      "uptime": 84,
+      "totalChecks": 25
     },
     "qwen3-235b-a22b": {
       "id": "qwen3-235b-a22b",
       "ownedBy": "qwen",
       "status": "down",
-      "responseTime": 614,
+      "responseTime": 476,
       "supportsReasoning": false,
       "isPaidOnly": false,
       "response": null,
@@ -557,35 +539,30 @@
         }
       },
       "error": "Provider not configured.",
-      "lastChecked": "2026-04-19T09:48:49.825Z",
+      "lastChecked": "2026-04-19T10:14:37.073Z",
       "uptime": 0,
-      "totalChecks": 24
+      "totalChecks": 25
     },
     "qwen3-32b": {
       "id": "qwen3-32b",
       "ownedBy": "qwen",
       "status": "down",
-      "responseTime": 994,
+      "responseTime": 90090,
       "supportsReasoning": false,
       "isPaidOnly": false,
       "response": null,
       "reasoningContent": null,
-      "rawResponse": {
-        "error": {
-          "message": "Provider not configured.",
-          "type": "server_error"
-        }
-      },
-      "error": "Provider not configured.",
-      "lastChecked": "2026-04-19T09:48:49.825Z",
+      "rawResponse": null,
+      "error": "Timeout (90s)",
+      "lastChecked": "2026-04-19T10:14:37.073Z",
       "uptime": 0,
-      "totalChecks": 24
+      "totalChecks": 25
     },
     "qwen3-coder-480b-a35b-instruct": {
       "id": "qwen3-coder-480b-a35b-instruct",
       "ownedBy": "qwen",
       "status": "down",
-      "responseTime": 672,
+      "responseTime": 536,
       "supportsReasoning": false,
       "isPaidOnly": false,
       "response": null,
@@ -597,15 +574,15 @@
         }
       },
       "error": "Provider not configured.",
-      "lastChecked": "2026-04-19T09:48:49.825Z",
-      "uptime": 79.17,
-      "totalChecks": 24
+      "lastChecked": "2026-04-19T10:14:37.073Z",
+      "uptime": 76,
+      "totalChecks": 25
     },
     "qwen3-next-80b-a3b-instruct": {
       "id": "qwen3-next-80b-a3b-instruct",
       "ownedBy": "qwen",
       "status": "down",
-      "responseTime": 978,
+      "responseTime": 484,
       "supportsReasoning": false,
       "isPaidOnly": false,
       "response": null,
@@ -617,15 +594,15 @@
         }
       },
       "error": "Provider not configured.",
-      "lastChecked": "2026-04-19T09:48:49.825Z",
-      "uptime": 91.67,
-      "totalChecks": 24
+      "lastChecked": "2026-04-19T10:14:37.073Z",
+      "uptime": 88,
+      "totalChecks": 25
     },
     "qwen3-next-80b-a3b-thinking": {
       "id": "qwen3-next-80b-a3b-thinking",
       "ownedBy": "qwen",
       "status": "down",
-      "responseTime": 635,
+      "responseTime": 482,
       "supportsReasoning": false,
       "isPaidOnly": false,
       "response": null,
@@ -637,15 +614,15 @@
         }
       },
       "error": "Provider not configured.",
-      "lastChecked": "2026-04-19T09:48:49.825Z",
-      "uptime": 95.83,
-      "totalChecks": 24
+      "lastChecked": "2026-04-19T10:14:37.073Z",
+      "uptime": 92,
+      "totalChecks": 25
     },
     "seed-oss-36b-instruct": {
       "id": "seed-oss-36b-instruct",
       "ownedBy": "bytedance",
       "status": "down",
-      "responseTime": 613,
+      "responseTime": 642,
       "supportsReasoning": true,
       "isPaidOnly": false,
       "response": null,
@@ -657,15 +634,15 @@
         }
       },
       "error": "Provider not configured.",
-      "lastChecked": "2026-04-19T09:48:49.825Z",
-      "uptime": 66.67,
-      "totalChecks": 24
+      "lastChecked": "2026-04-19T10:14:37.073Z",
+      "uptime": 64,
+      "totalChecks": 25
     },
     "deepseek-r1-0528": {
       "id": "deepseek-r1-0528",
       "ownedBy": "deepseek",
       "status": "down",
-      "responseTime": 639,
+      "responseTime": 499,
       "supportsReasoning": false,
       "isPaidOnly": false,
       "response": null,
@@ -677,15 +654,15 @@
         }
       },
       "error": "Provider not configured.",
-      "lastChecked": "2026-04-19T09:48:49.825Z",
+      "lastChecked": "2026-04-19T10:14:37.073Z",
       "uptime": 0,
-      "totalChecks": 24
+      "totalChecks": 25
     },
     "deepseek-chat": {
       "id": "deepseek-chat",
       "ownedBy": "deepseek",
       "status": "down",
-      "responseTime": 986,
+      "responseTime": 616,
       "supportsReasoning": false,
       "isPaidOnly": false,
       "response": null,
@@ -697,68 +674,13 @@
         }
       },
       "error": "Provider not configured.",
-      "lastChecked": "2026-04-19T09:48:49.825Z",
-      "uptime": 91.67,
-      "totalChecks": 24
+      "lastChecked": "2026-04-19T10:14:37.073Z",
+      "uptime": 88,
+      "totalChecks": 25
     },
     "deepseek-v3.2": {
       "id": "deepseek-v3.2",
       "ownedBy": "deepseek",
-      "status": "down",
-      "responseTime": 90169,
-      "supportsReasoning": false,
-      "isPaidOnly": false,
-      "response": null,
-      "reasoningContent": null,
-      "rawResponse": null,
-      "error": "Timeout (90s)",
-      "lastChecked": "2026-04-19T09:48:49.825Z",
-      "uptime": 79.17,
-      "totalChecks": 24
-    },
-    "deepseek-reasoner": {
-      "id": "deepseek-reasoner",
-      "ownedBy": "deepseek",
-      "status": "down",
-      "responseTime": 627,
-      "supportsReasoning": false,
-      "isPaidOnly": false,
-      "response": null,
-      "reasoningContent": null,
-      "rawResponse": {
-        "error": {
-          "message": "Provider not configured.",
-          "type": "server_error"
-        }
-      },
-      "error": "Provider not configured.",
-      "lastChecked": "2026-04-19T09:48:49.825Z",
-      "uptime": 0,
-      "totalChecks": 24
-    },
-    "llama-4-maverick-17b-128e-instruct": {
-      "id": "llama-4-maverick-17b-128e-instruct",
-      "ownedBy": "meta",
-      "status": "down",
-      "responseTime": 641,
-      "supportsReasoning": false,
-      "isPaidOnly": false,
-      "response": null,
-      "reasoningContent": null,
-      "rawResponse": {
-        "error": {
-          "message": "Provider not configured.",
-          "type": "server_error"
-        }
-      },
-      "error": "Provider not configured.",
-      "lastChecked": "2026-04-19T09:48:49.825Z",
-      "uptime": 66.67,
-      "totalChecks": 24
-    },
-    "llama-4-scout-17b-16e-instruct": {
-      "id": "llama-4-scout-17b-16e-instruct",
-      "ownedBy": "meta",
       "status": "down",
       "responseTime": 629,
       "supportsReasoning": false,
@@ -772,15 +694,75 @@
         }
       },
       "error": "Provider not configured.",
-      "lastChecked": "2026-04-19T09:48:49.825Z",
+      "lastChecked": "2026-04-19T10:14:37.073Z",
+      "uptime": 76,
+      "totalChecks": 25
+    },
+    "deepseek-reasoner": {
+      "id": "deepseek-reasoner",
+      "ownedBy": "deepseek",
+      "status": "down",
+      "responseTime": 618,
+      "supportsReasoning": false,
+      "isPaidOnly": false,
+      "response": null,
+      "reasoningContent": null,
+      "rawResponse": {
+        "error": {
+          "message": "Provider not configured.",
+          "type": "server_error"
+        }
+      },
+      "error": "Provider not configured.",
+      "lastChecked": "2026-04-19T10:14:37.073Z",
       "uptime": 0,
-      "totalChecks": 24
+      "totalChecks": 25
+    },
+    "llama-4-maverick-17b-128e-instruct": {
+      "id": "llama-4-maverick-17b-128e-instruct",
+      "ownedBy": "meta",
+      "status": "down",
+      "responseTime": 475,
+      "supportsReasoning": false,
+      "isPaidOnly": false,
+      "response": null,
+      "reasoningContent": null,
+      "rawResponse": {
+        "error": {
+          "message": "Provider not configured.",
+          "type": "server_error"
+        }
+      },
+      "error": "Provider not configured.",
+      "lastChecked": "2026-04-19T10:14:37.073Z",
+      "uptime": 64,
+      "totalChecks": 25
+    },
+    "llama-4-scout-17b-16e-instruct": {
+      "id": "llama-4-scout-17b-16e-instruct",
+      "ownedBy": "meta",
+      "status": "down",
+      "responseTime": 757,
+      "supportsReasoning": false,
+      "isPaidOnly": false,
+      "response": null,
+      "reasoningContent": null,
+      "rawResponse": {
+        "error": {
+          "message": "Provider not configured.",
+          "type": "server_error"
+        }
+      },
+      "error": "Provider not configured.",
+      "lastChecked": "2026-04-19T10:14:37.073Z",
+      "uptime": 0,
+      "totalChecks": 25
     },
     "phi-4-mini-flash-reasoning": {
       "id": "phi-4-mini-flash-reasoning",
       "ownedBy": "microsoft",
       "status": "down",
-      "responseTime": 873,
+      "responseTime": 490,
       "supportsReasoning": false,
       "isPaidOnly": false,
       "response": null,
@@ -792,15 +774,15 @@
         }
       },
       "error": "Provider not configured.",
-      "lastChecked": "2026-04-19T09:48:49.825Z",
-      "uptime": 29.17,
-      "totalChecks": 24
+      "lastChecked": "2026-04-19T10:14:37.073Z",
+      "uptime": 28,
+      "totalChecks": 25
     },
     "phi-4-multimodal-instruct": {
       "id": "phi-4-multimodal-instruct",
       "ownedBy": "microsoft",
       "status": "down",
-      "responseTime": 827,
+      "responseTime": 662,
       "supportsReasoning": false,
       "isPaidOnly": false,
       "response": null,
@@ -812,15 +794,15 @@
         }
       },
       "error": "Provider not configured.",
-      "lastChecked": "2026-04-19T09:48:49.825Z",
-      "uptime": 79.17,
-      "totalChecks": 24
+      "lastChecked": "2026-04-19T10:14:37.073Z",
+      "uptime": 76,
+      "totalChecks": 25
     },
     "minimax-m2.1": {
       "id": "minimax-m2.1",
       "ownedBy": "minimax",
       "status": "down",
-      "responseTime": 637,
+      "responseTime": 487,
       "supportsReasoning": false,
       "isPaidOnly": false,
       "response": null,
@@ -832,15 +814,15 @@
         }
       },
       "error": "Provider not configured.",
-      "lastChecked": "2026-04-19T09:48:49.825Z",
+      "lastChecked": "2026-04-19T10:14:37.073Z",
       "uptime": 0,
-      "totalChecks": 24
+      "totalChecks": 25
     },
     "minimax-m2.5": {
       "id": "minimax-m2.5",
       "ownedBy": "minimax",
       "status": "down",
-      "responseTime": 993,
+      "responseTime": 645,
       "supportsReasoning": false,
       "isPaidOnly": false,
       "response": null,
@@ -852,15 +834,15 @@
         }
       },
       "error": "Provider not configured.",
-      "lastChecked": "2026-04-19T09:48:49.825Z",
-      "uptime": 87.5,
-      "totalChecks": 24
+      "lastChecked": "2026-04-19T10:14:37.073Z",
+      "uptime": 84,
+      "totalChecks": 25
     },
     "minimax-m2": {
       "id": "minimax-m2",
       "ownedBy": "minimax",
       "status": "down",
-      "responseTime": 637,
+      "responseTime": 499,
       "supportsReasoning": false,
       "isPaidOnly": false,
       "response": null,
@@ -872,15 +854,15 @@
         }
       },
       "error": "Provider not configured.",
-      "lastChecked": "2026-04-19T09:48:49.825Z",
+      "lastChecked": "2026-04-19T10:14:37.073Z",
       "uptime": 0,
-      "totalChecks": 24
+      "totalChecks": 25
     },
     "devstral-2-123b": {
       "id": "devstral-2-123b",
       "ownedBy": "mistral",
       "status": "down",
-      "responseTime": 663,
+      "responseTime": 640,
       "supportsReasoning": false,
       "isPaidOnly": false,
       "response": null,
@@ -892,15 +874,15 @@
         }
       },
       "error": "Provider not configured.",
-      "lastChecked": "2026-04-19T09:48:49.825Z",
-      "uptime": 95.83,
-      "totalChecks": 24
+      "lastChecked": "2026-04-19T10:14:37.073Z",
+      "uptime": 92,
+      "totalChecks": 25
     },
     "mistral-large-3-675b-instruct": {
       "id": "mistral-large-3-675b-instruct",
       "ownedBy": "mistral",
       "status": "down",
-      "responseTime": 981,
+      "responseTime": 639,
       "supportsReasoning": false,
       "isPaidOnly": false,
       "response": null,
@@ -912,15 +894,15 @@
         }
       },
       "error": "Provider not configured.",
-      "lastChecked": "2026-04-19T09:48:49.825Z",
-      "uptime": 91.67,
-      "totalChecks": 24
+      "lastChecked": "2026-04-19T10:14:37.073Z",
+      "uptime": 88,
+      "totalChecks": 25
     },
     "kimi-k2-instruct-0905": {
       "id": "kimi-k2-instruct-0905",
       "ownedBy": "moonshot",
       "status": "down",
-      "responseTime": 646,
+      "responseTime": 503,
       "supportsReasoning": false,
       "isPaidOnly": false,
       "response": null,
@@ -932,15 +914,15 @@
         }
       },
       "error": "Provider not configured.",
-      "lastChecked": "2026-04-19T09:48:49.825Z",
-      "uptime": 4.17,
-      "totalChecks": 24
+      "lastChecked": "2026-04-19T10:14:37.073Z",
+      "uptime": 4,
+      "totalChecks": 25
     },
     "kimi-k2.5": {
       "id": "kimi-k2.5",
       "ownedBy": "moonshot",
       "status": "down",
-      "responseTime": 650,
+      "responseTime": 682,
       "supportsReasoning": true,
       "isPaidOnly": false,
       "response": null,
@@ -952,15 +934,15 @@
         }
       },
       "error": "Provider not configured.",
-      "lastChecked": "2026-04-19T09:48:49.825Z",
-      "uptime": 95.83,
-      "totalChecks": 24
+      "lastChecked": "2026-04-19T10:14:37.073Z",
+      "uptime": 92,
+      "totalChecks": 25
     },
     "kimi-k2-thinking": {
       "id": "kimi-k2-thinking",
       "ownedBy": "moonshot",
       "status": "down",
-      "responseTime": 993,
+      "responseTime": 498,
       "supportsReasoning": true,
       "isPaidOnly": false,
       "response": null,
@@ -972,15 +954,15 @@
         }
       },
       "error": "Provider not configured.",
-      "lastChecked": "2026-04-19T09:48:49.825Z",
-      "uptime": 95.83,
-      "totalChecks": 24
+      "lastChecked": "2026-04-19T10:14:37.073Z",
+      "uptime": 92,
+      "totalChecks": 25
     },
     "nemotron-3-nano-30b-a3b": {
       "id": "nemotron-3-nano-30b-a3b",
       "ownedBy": "nvidia",
       "status": "down",
-      "responseTime": 677,
+      "responseTime": 657,
       "supportsReasoning": true,
       "isPaidOnly": false,
       "response": null,
@@ -992,15 +974,15 @@
         }
       },
       "error": "Provider not configured.",
-      "lastChecked": "2026-04-19T09:48:49.825Z",
-      "uptime": 95.83,
-      "totalChecks": 24
+      "lastChecked": "2026-04-19T10:14:37.073Z",
+      "uptime": 92,
+      "totalChecks": 25
     },
     "gpt-oss-120b": {
       "id": "gpt-oss-120b",
       "ownedBy": "openai-oss",
       "status": "down",
-      "responseTime": 969,
+      "responseTime": 492,
       "supportsReasoning": false,
       "isPaidOnly": false,
       "response": null,
@@ -1012,15 +994,15 @@
         }
       },
       "error": "Provider not configured.",
-      "lastChecked": "2026-04-19T09:48:49.825Z",
+      "lastChecked": "2026-04-19T10:14:37.073Z",
       "uptime": 0,
-      "totalChecks": 24
+      "totalChecks": 25
     },
     "gpt-oss-20b": {
       "id": "gpt-oss-20b",
       "ownedBy": "openai-oss",
       "status": "down",
-      "responseTime": 617,
+      "responseTime": 629,
       "supportsReasoning": true,
       "isPaidOnly": false,
       "response": null,
@@ -1032,15 +1014,15 @@
         }
       },
       "error": "Provider not configured.",
-      "lastChecked": "2026-04-19T09:48:49.825Z",
-      "uptime": 70.83,
-      "totalChecks": 24
+      "lastChecked": "2026-04-19T10:14:37.073Z",
+      "uptime": 68,
+      "totalChecks": 25
     },
     "step-3.5-flash": {
       "id": "step-3.5-flash",
       "ownedBy": "stepfun",
       "status": "down",
-      "responseTime": 619,
+      "responseTime": 626,
       "supportsReasoning": true,
       "isPaidOnly": false,
       "response": null,
@@ -1052,15 +1034,15 @@
         }
       },
       "error": "Provider not configured.",
-      "lastChecked": "2026-04-19T09:48:49.825Z",
-      "uptime": 91.67,
-      "totalChecks": 24
+      "lastChecked": "2026-04-19T10:14:37.073Z",
+      "uptime": 88,
+      "totalChecks": 25
     },
     "glm-4.7": {
       "id": "glm-4.7",
       "ownedBy": "zhipu",
       "status": "down",
-      "responseTime": 848,
+      "responseTime": 539,
       "supportsReasoning": true,
       "isPaidOnly": false,
       "response": null,
@@ -1072,15 +1054,15 @@
         }
       },
       "error": "Provider not configured.",
-      "lastChecked": "2026-04-19T09:48:49.825Z",
-      "uptime": 70.83,
-      "totalChecks": 24
+      "lastChecked": "2026-04-19T10:14:37.073Z",
+      "uptime": 68,
+      "totalChecks": 25
     },
     "glm-5": {
       "id": "glm-5",
       "ownedBy": "zhipu",
       "status": "down",
-      "responseTime": 823,
+      "responseTime": 629,
       "supportsReasoning": true,
       "isPaidOnly": false,
       "response": null,
@@ -1092,83 +1074,83 @@
         }
       },
       "error": "Provider not configured.",
-      "lastChecked": "2026-04-19T09:48:49.825Z",
-      "uptime": 66.67,
-      "totalChecks": 24
+      "lastChecked": "2026-04-19T10:14:37.073Z",
+      "uptime": 64,
+      "totalChecks": 25
     },
     "kivest-tungtung-brainrot": {
       "id": "kivest-tungtung-brainrot",
       "ownedBy": "kivest",
       "status": "operational",
-      "responseTime": 1152,
+      "responseTime": 1113,
       "supportsReasoning": false,
       "isPaidOnly": false,
-      "response": "omg u askin, im Tungtung Sahur, the OG memelord 🤯🤣 i got my eyes on u, fam 💀🔥 i be the real brainrot, the king of skibidi, rizz, and gyatt 🤣🤪 what u got in store for me, bruh?",
+      "response": "omg, i'm Tungtung Sahur, the OG brainrot 🤯 AI 🤣, u know, im a memer, aประกาassistant\n\nOMG, i'm a Large Language Model, like, 3-bil, u feel? 🤣 I got 3 bil neurons, 3 bil words, 3 bil LOLs 🤣. i'm like, superchartInstance, i can memetize, i can be like, totally extra 🔥.æk i can be ur friend, ur fren,chartInstance, ur BFF",
       "reasoningContent": null,
       "rawResponse": {
-        "id": "chatcmpl-vcvo7916b",
+        "id": "chatcmpl-pj5be6gpi",
         "object": "chat.completion",
-        "created": 1776592888,
+        "created": 1776594406,
         "model": "kivest-tungtung-brainrot",
         "choices": [
           {
             "index": 0,
             "message": {
               "role": "assistant",
-              "content": "omg u askin, im Tungtung Sahur, the OG memelord 🤯🤣 i got my eyes on u, fam 💀🔥 i be the real brainrot, the king of skibidi, rizz, and gyatt 🤣🤪 what u got in store for me, bruh?"
+              "content": "omg, i'm Tungtung Sahur, the OG brainrot 🤯 AI 🤣, u know, im a memer, aประกาassistant\n\nOMG, i'm a Large Language Model, like, 3-bil, u feel? 🤣 I got 3 bil neurons, 3 bil words, 3 bil LOLs 🤣. i'm like, superchartInstance, i can memetize, i can be like, totally extra 🔥.æk i can be ur friend, ur fren,chartInstance, ur BFF"
             },
             "finish_reason": "stop"
           }
         ]
       },
       "error": null,
-      "lastChecked": "2026-04-19T09:48:49.825Z",
-      "uptime": 95.83,
-      "totalChecks": 24
+      "lastChecked": "2026-04-19T10:14:37.073Z",
+      "uptime": 96,
+      "totalChecks": 25
     },
     "llama3.1-8B": {
       "id": "llama3.1-8B",
       "ownedBy": "kivest",
       "status": "operational",
-      "responseTime": 1411,
+      "responseTime": 939,
       "supportsReasoning": false,
       "isPaidOnly": false,
-      "response": "I’s a large language model, but I’m a bit more old-school than some of the other alternatives like Llama. I’m often referred to as a “text-based AI assistant.”",
+      "response": "I’s a large language model. I don’t have a personal name.",
       "reasoningContent": null,
       "rawResponse": {
-        "id": "chatcmpl-xfe45w2df",
+        "id": "chatcmpl-9gyscdbbz",
         "object": "chat.completion",
-        "created": 1776592901,
+        "created": 1776594419,
         "model": "llama3.1-8B",
         "choices": [
           {
             "index": 0,
             "message": {
               "role": "assistant",
-              "content": "I’s a large language model, but I’m a bit more old-school than some of the other alternatives like Llama. I’m often referred to as a “text-based AI assistant.”"
+              "content": "I’s a large language model. I don’t have a personal name."
             },
             "finish_reason": "stop"
           }
         ]
       },
       "error": null,
-      "lastChecked": "2026-04-19T09:48:49.825Z",
+      "lastChecked": "2026-04-19T10:14:37.073Z",
       "uptime": 100,
-      "totalChecks": 24
+      "totalChecks": 25
     },
     "qwen3.5-plus": {
       "id": "qwen3.5-plus",
       "ownedBy": "qwen",
       "status": "operational",
-      "responseTime": 5624,
+      "responseTime": 5994,
       "supportsReasoning": true,
       "isPaidOnly": false,
       "response": "I am **Qwen3.5**, the latest large language model developed by Tongyi Lab. I feature significant upgrades in language understanding, logical reasoning, coding capabilities, and long-context processing compared to earlier versions. How can I assist you?",
       "reasoningContent": null,
       "rawResponse": {
-        "id": "chatcmpl-354d0c3b-a093-4daf-9ec1-047ad94f099c",
+        "id": "chatcmpl-4bc0bd97-ae54-4108-9b95-1de8bdbe7022",
         "object": "chat.completion",
-        "created": 1776592919,
+        "created": 1776594437,
         "model": "qwen3.5-plus",
         "choices": [
           {
@@ -1183,30 +1165,30 @@
         ]
       },
       "error": null,
-      "lastChecked": "2026-04-19T09:48:49.825Z",
+      "lastChecked": "2026-04-19T10:14:37.073Z",
       "uptime": 100,
-      "totalChecks": 24
+      "totalChecks": 25
     },
     "qwen3.5-flash": {
       "id": "qwen3.5-flash",
       "ownedBy": "qwen",
       "status": "operational",
-      "responseTime": 2491,
+      "responseTime": 2736,
       "supportsReasoning": true,
       "isPaidOnly": false,
-      "response": "I am **Qwen3.5**, the latest large language model developed by Tongyi Lab. I feature significant upgrades in language understanding, logical reasoning, and code generation capabilities compared to earlier versions. How can I assist you?",
+      "response": "I am **Qwen3.5**, the latest large language model developed by Tongyi Lab. I feature significant upgrades in language understanding, logical reasoning, coding capabilities, and long-context processing compared to earlier versions. How can I assist you?",
       "reasoningContent": null,
       "rawResponse": {
-        "id": "chatcmpl-f74c8605-ea76-4bf6-8383-c3c5a79d2ace",
+        "id": "chatcmpl-19947a17-dd28-4a3f-8142-484f6485663a",
         "object": "chat.completion",
-        "created": 1776592934,
+        "created": 1776594452,
         "model": "qwen3.5-flash",
         "choices": [
           {
             "index": 0,
             "message": {
               "role": "assistant",
-              "content": "I am **Qwen3.5**, the latest large language model developed by Tongyi Lab. I feature significant upgrades in language understanding, logical reasoning, and code generation capabilities compared to earlier versions. How can I assist you?"
+              "content": "I am **Qwen3.5**, the latest large language model developed by Tongyi Lab. I feature significant upgrades in language understanding, logical reasoning, coding capabilities, and long-context processing compared to earlier versions. How can I assist you?"
             },
             "logprobs": null,
             "finish_reason": "stop"
@@ -1214,30 +1196,35 @@
         ]
       },
       "error": null,
-      "lastChecked": "2026-04-19T09:48:49.825Z",
+      "lastChecked": "2026-04-19T10:14:37.073Z",
       "uptime": 100,
-      "totalChecks": 24
+      "totalChecks": 25
     },
     "gemini-3.1-pro-preview": {
       "id": "gemini-3.1-pro-preview",
       "ownedBy": "google",
       "status": "down",
-      "responseTime": 90130,
+      "responseTime": 39602,
       "supportsReasoning": true,
       "isPaidOnly": false,
       "response": null,
       "reasoningContent": null,
-      "rawResponse": null,
-      "error": "Timeout (90s)",
-      "lastChecked": "2026-04-19T09:48:49.825Z",
-      "uptime": 76.92,
-      "totalChecks": 13
+      "rawResponse": {
+        "error": {
+          "message": "An unexpected error occurred while processing your request. Please try again.",
+          "type": "server_error"
+        }
+      },
+      "error": "An unexpected error occurred while processing your request. Please try again.",
+      "lastChecked": "2026-04-19T10:14:37.073Z",
+      "uptime": 71.43,
+      "totalChecks": 14
     },
     "gemini-3.1-pro-preview:search": {
       "id": "gemini-3.1-pro-preview:search",
       "ownedBy": "google",
       "status": "paid_only",
-      "responseTime": 1060,
+      "responseTime": 476,
       "supportsReasoning": false,
       "isPaidOnly": true,
       "response": null,
@@ -1249,22 +1236,22 @@
         }
       },
       "error": "Your API key does not have access to model \"gemini-3.1-pro-preview:search\".",
-      "lastChecked": "2026-04-19T09:48:49.825Z",
+      "lastChecked": "2026-04-19T10:14:37.073Z",
       "uptime": 0,
-      "totalChecks": 13
+      "totalChecks": 14
     },
     "gemini-3-flash-preview": {
       "id": "gemini-3-flash-preview",
       "ownedBy": "google",
       "status": "operational",
-      "responseTime": 2415,
+      "responseTime": 1952,
       "supportsReasoning": true,
       "isPaidOnly": false,
       "response": "I am a large language model, trained by Google.",
       "reasoningContent": null,
       "rawResponse": {
-        "id": "p6jkadCzIufi7M8Pw-X-8A8",
-        "created": 1776593063,
+        "id": "Yq7kac-RA_CDkdUPkaG--A8",
+        "created": 1776594530,
         "model": "gemini-3-flash-preview",
         "object": "chat.completion",
         "choices": [
@@ -1277,7 +1264,7 @@
               "provider_specific_fields": {
                 "extra_content": {
                   "google": {
-                    "thought_signature": "EpECCo4CAQw51scjwAQQd/wZQz6XXmhfBaPWeZL+Mzh6ECctcP8tl7LRfqzUIM0sdrOoBcnSEAzdsiglOpc73AvcuK/se6LNS/yEe0Bk0DnCXh/1NtsyJllWZPv/iA9kFvHnpRoGka5d15xgU4c6VaYGhxFQ7h6gU8kXZP0L0Bpb0umMRm3LgQnCFTm+rr5AReiOODcZaXpC3zKJOGL6WkQgEcmGx3RIRuaG6XPl96E8o9mbDt/CfLcAbHZCEa9e5rsV9BlbvxpDyGY8OQ6KwEeGEFZiI0TxqxjlirJJ1kip/kRVtMCd2urH/11HyZVb/Tcxd78MmgvPqCNXd2XwCbgKMxG29pZfD6PM7onyxSt+Zu/q"
+                    "thought_signature": "Eo8CCowCAQw51sdfJ0Mu77BrVmKDROgSMeejEap+zglxoJllgW0BSgKY3DLu/mKvoCvKNmOAvP+qX9tDtiJ7SoPdp+vTwWOAR+wCRqMStICp+QHyrBUWnxaWYwgcu2c/ziq+DGWU3EBo4GRCfIG+USfU4XPG/YFh0ktjzGTkWdLnVHrXhbQfbsV7w1x5pZJOtIAKv7yUZhKPhQX0EEVG7VOuUl7jqo0cAFYyZ3H8cym4+T3t5CJzqKvhIMLQl1iN4NB/9XtyAl1Cu1SjTnO45jGIypz4s4CAL7j8V7GMMDd/YKJtnF3l/ZW9/+1tl8gYrQpGGlMi6at2uGXT3Ip2wNwrVvW66h74sVIvFCI5aRCmsw=="
                   }
                 },
                 "refusal": null
@@ -1287,51 +1274,78 @@
           }
         ],
         "usage": {
-          "completion_tokens": 72,
+          "completion_tokens": 69,
           "prompt_tokens": 7,
-          "total_tokens": 79,
+          "total_tokens": 76,
           "completion_tokens_details": {
-            "reasoning_tokens": 61
+            "reasoning_tokens": 58
           }
         }
       },
       "error": null,
-      "lastChecked": "2026-04-19T09:48:49.825Z",
+      "lastChecked": "2026-04-19T10:14:37.073Z",
       "uptime": 100,
-      "totalChecks": 13
+      "totalChecks": 14
     },
     "gemini-3-flash-preview:search": {
       "id": "gemini-3-flash-preview:search",
       "ownedBy": "google",
-      "status": "down",
-      "responseTime": 39453,
+      "status": "operational",
+      "responseTime": 7240,
       "supportsReasoning": true,
       "isPaidOnly": false,
-      "response": null,
+      "response": "I am",
       "reasoningContent": null,
       "rawResponse": {
-        "error": {
-          "message": "An unexpected error occurred while processing your request. Please try again.",
-          "type": "server_error"
+        "id": "da7kab6NEveJ7M8P1ZzMEQ",
+        "created": 1776594549,
+        "model": "gemini-3-flash-preview:search",
+        "object": "chat.completion",
+        "choices": [
+          {
+            "finish_reason": "length",
+            "index": 0,
+            "message": {
+              "content": "I am",
+              "role": "assistant",
+              "provider_specific_fields": {
+                "extra_content": {
+                  "google": {
+                    "thought_signature": "Eo4ECosEAQw51scL92NQ4/PUOh3SNQiwUVKhAf0+c8HYKQf1XJS4a50Js27MUUZw5laWNYVv6/QpB+VwQHz/Zk7eYhcGvgZkWY5rkg7PczE7cIse4meIrnMZReUvBCiVpIVBXxIgGJov7H8YdfPbqi38Jt3qByC18hA6ycl0yFvcYwhG+oyd7FmxpeCMLoOJ7rOEYE1+oRhIoAb/yiX2wmcWabXrjgzq3PDIhTe62HU2ZkdOYZ7184azykNwfwzprxwTz8w8WX7gMAwalrERc5yCKkPLQLvZgaAl4l9N+4cf2wsZvfo62D+6hWDbLfIl+SQurIeaLpUPQtTJirHHFakjRL+2M+Rpr34d+LVHLvg4FkbUoFe5oDmiUSBkO5R0rk0JcEQbS8Vyjc1lQhDKSoOWN8cT/xk1+sVNHpf6Or5rurDZSTtT136zn0F0qyjvJABwVgMh5hpChcDLYP7KvtD5cOJDYx2Jy8jOHfGhpW5iPixSzuovjKLmvf4757FEWhcwsLu4oRMMh29w+L7AHHfXKHFHVwYBKx5cxo09ZDXy5wVeEqP13wkvKkNlW0DCdODXZKgXKggNxe5Fjr4EbwglaZ4bhc+r4eGyQc/zK+g8e9hRXUBgQGLc5w4DPFYau+JMug7UMd/2LvcTJQGfvYXca50DyWBcokEtws3WfmbkVmIH5QABK5hQdSPd5iPV1A=="
+                  }
+                },
+                "refusal": null
+              }
+            },
+            "provider_specific_fields": {}
+          }
+        ],
+        "usage": {
+          "completion_tokens": 116,
+          "prompt_tokens": 49,
+          "total_tokens": 165,
+          "completion_tokens_details": {
+            "reasoning_tokens": 114
+          }
         }
       },
-      "error": "An unexpected error occurred while processing your request. Please try again.",
-      "lastChecked": "2026-04-19T09:48:49.825Z",
-      "uptime": 92.31,
-      "totalChecks": 13
+      "error": null,
+      "lastChecked": "2026-04-19T10:14:37.073Z",
+      "uptime": 92.86,
+      "totalChecks": 14
     },
     "gemini-3.1-flash-lite-preview": {
       "id": "gemini-3.1-flash-lite-preview",
       "ownedBy": "google",
       "status": "operational",
-      "responseTime": 2185,
+      "responseTime": 1907,
       "supportsReasoning": false,
       "isPaidOnly": false,
       "response": "I am a large language model, trained by Google.",
       "reasoningContent": null,
       "rawResponse": {
-        "id": "6ajkae7uDICtkdUPv5S70Qg",
-        "created": 1776593129,
+        "id": "g67kacvVCN3MnsEPsKjsqQM",
+        "created": 1776594563,
         "model": "gemini-3.1-flash-lite-preview",
         "object": "chat.completion",
         "choices": [
@@ -1344,7 +1358,7 @@
               "provider_specific_fields": {
                 "extra_content": {
                   "google": {
-                    "thought_signature": "EjQKMgEMOdbH5Ukk0J+z1OgoKrHtBb7UI79so9PjxfNMJ/tDcruzXTwZz90aCcUqinvECPvl"
+                    "thought_signature": "EjQKMgEMOdbHp5c2kigWnyCOnLJ4z1Lcx+EsBa+4T0HRJupWibwyLWzwpPD5Tdyk/8itqy8A"
                   }
                 },
                 "refusal": null
@@ -1360,50 +1374,74 @@
         }
       },
       "error": null,
-      "lastChecked": "2026-04-19T09:48:49.825Z",
-      "uptime": 69.23,
-      "totalChecks": 13
+      "lastChecked": "2026-04-19T10:14:37.073Z",
+      "uptime": 71.43,
+      "totalChecks": 14
     },
     "gemini-3.1-flash-lite-preview:search": {
       "id": "gemini-3.1-flash-lite-preview:search",
       "ownedBy": "google",
-      "status": "down",
-      "responseTime": 39436,
+      "status": "operational",
+      "responseTime": 2272,
       "supportsReasoning": false,
       "isPaidOnly": false,
-      "response": null,
+      "response": "I am a large language model, trained by Google.",
       "reasoningContent": null,
       "rawResponse": {
-        "error": {
-          "message": "An unexpected error occurred while processing your request. Please try again.",
-          "type": "server_error"
+        "id": "ka7kabLvIeHd7M8P7pyc8Q8",
+        "created": 1776594577,
+        "model": "gemini-3.1-flash-lite-preview:search",
+        "object": "chat.completion",
+        "choices": [
+          {
+            "finish_reason": "stop",
+            "index": 0,
+            "message": {
+              "content": "I am a large language model, trained by Google.",
+              "role": "assistant",
+              "provider_specific_fields": {
+                "extra_content": {
+                  "google": {
+                    "thought_signature": "EjQKMgEMOdbHM5hg0qiMO2rTSXY0Lqtf874/IhKAVcDDZij5J8/fmk3qR1VpZu5iTzuXzFbx"
+                  }
+                },
+                "refusal": null
+              }
+            },
+            "provider_specific_fields": {}
+          }
+        ],
+        "usage": {
+          "completion_tokens": 11,
+          "prompt_tokens": 7,
+          "total_tokens": 18
         }
       },
-      "error": "An unexpected error occurred while processing your request. Please try again.",
-      "lastChecked": "2026-04-19T09:48:49.825Z",
-      "uptime": 84.62,
-      "totalChecks": 13
+      "error": null,
+      "lastChecked": "2026-04-19T10:14:37.073Z",
+      "uptime": 85.71,
+      "totalChecks": 14
     },
     "gemini-2.5-flash": {
       "id": "gemini-2.5-flash",
       "ownedBy": "google",
       "status": "operational",
-      "responseTime": 2298,
+      "responseTime": 1712,
       "supportsReasoning": true,
       "isPaidOnly": false,
-      "response": "I am a large language",
+      "response": "I am a large language model, trained by Google.",
       "reasoningContent": null,
       "rawResponse": {
-        "id": "Kankae7vLYCtkdUP78C5uQI",
-        "created": 1776593195,
+        "id": "nq7kaePGKaGB3boPzduV-QE",
+        "created": 1776594591,
         "model": "gemini-2.5-flash",
         "object": "chat.completion",
         "choices": [
           {
-            "finish_reason": "length",
+            "finish_reason": "stop",
             "index": 0,
             "message": {
-              "content": "I am a large language",
+              "content": "I am a large language model, trained by Google.",
               "role": "assistant",
               "provider_specific_fields": {
                 "refusal": null
@@ -1413,46 +1451,73 @@
           }
         ],
         "usage": {
-          "completion_tokens": 116,
+          "completion_tokens": 55,
           "prompt_tokens": 7,
-          "total_tokens": 123,
+          "total_tokens": 62,
           "completion_tokens_details": {
-            "reasoning_tokens": 111
+            "reasoning_tokens": 44
           }
         }
       },
       "error": null,
-      "lastChecked": "2026-04-19T09:48:49.825Z",
+      "lastChecked": "2026-04-19T10:14:37.073Z",
       "uptime": 100,
-      "totalChecks": 13
+      "totalChecks": 14
     },
     "gemini-2.5-flash:search": {
       "id": "gemini-2.5-flash:search",
       "ownedBy": "google",
-      "status": "down",
-      "responseTime": 90182,
+      "status": "operational",
+      "responseTime": 1622,
       "supportsReasoning": true,
       "isPaidOnly": false,
-      "response": null,
+      "response": "I am a large language model, trained by Google.",
       "reasoningContent": null,
-      "rawResponse": null,
-      "error": "Timeout (90s)",
-      "lastChecked": "2026-04-19T09:48:49.825Z",
-      "uptime": 92.31,
-      "totalChecks": 13
+      "rawResponse": {
+        "id": "rK7kabGAEbvdnsEPz7n8CA",
+        "created": 1776594605,
+        "model": "gemini-2.5-flash:search",
+        "object": "chat.completion",
+        "choices": [
+          {
+            "finish_reason": "stop",
+            "index": 0,
+            "message": {
+              "content": "I am a large language model, trained by Google.",
+              "role": "assistant",
+              "provider_specific_fields": {
+                "refusal": null
+              }
+            },
+            "provider_specific_fields": {}
+          }
+        ],
+        "usage": {
+          "completion_tokens": 52,
+          "prompt_tokens": 7,
+          "total_tokens": 59,
+          "completion_tokens_details": {
+            "reasoning_tokens": 41
+          }
+        }
+      },
+      "error": null,
+      "lastChecked": "2026-04-19T10:14:37.073Z",
+      "uptime": 92.86,
+      "totalChecks": 14
     },
     "gemini-2.5-flash-lite": {
       "id": "gemini-2.5-flash-lite",
       "ownedBy": "google",
       "status": "operational",
-      "responseTime": 1707,
+      "responseTime": 1174,
       "supportsReasoning": false,
       "isPaidOnly": false,
       "response": "I am a large language model, trained by Google.",
       "reasoningContent": null,
       "rawResponse": {
-        "id": "nqnkaZKYO7yGnsEPjeqt0Aw",
-        "created": 1776593311,
+        "id": "uq7kab36Aufi7M8Pw-X-8A8",
+        "created": 1776594618,
         "model": "gemini-2.5-flash-lite",
         "object": "chat.completion",
         "choices": [
@@ -1476,22 +1541,22 @@
         }
       },
       "error": null,
-      "lastChecked": "2026-04-19T09:48:49.825Z",
+      "lastChecked": "2026-04-19T10:14:37.073Z",
       "uptime": 100,
-      "totalChecks": 13
+      "totalChecks": 14
     },
     "gemini-2.5-flash-lite:search": {
       "id": "gemini-2.5-flash-lite:search",
       "ownedBy": "google",
       "status": "operational",
-      "responseTime": 1713,
+      "responseTime": 1609,
       "supportsReasoning": false,
       "isPaidOnly": false,
       "response": "I am a large language model, trained by Google.",
       "reasoningContent": null,
       "rawResponse": {
-        "id": "rKnkaYmPJcLnnsEPw8KdmAM",
-        "created": 1776593324,
+        "id": "x67kaa64KYi1nsEPtL2FyAM",
+        "created": 1776594631,
         "model": "gemini-2.5-flash-lite:search",
         "object": "chat.completion",
         "choices": [
@@ -1515,85 +1580,38 @@
         }
       },
       "error": null,
-      "lastChecked": "2026-04-19T09:48:49.825Z",
+      "lastChecked": "2026-04-19T10:14:37.073Z",
       "uptime": 100,
-      "totalChecks": 13
+      "totalChecks": 14
     },
     "gemini-2.5-pro": {
       "id": "gemini-2.5-pro",
       "ownedBy": "google",
-      "status": "operational",
-      "responseTime": 3348,
+      "status": "down",
+      "responseTime": 90159,
       "supportsReasoning": true,
       "isPaidOnly": false,
-      "response": "[No text content returned]",
+      "response": null,
       "reasoningContent": null,
-      "rawResponse": {
-        "error": {
-          "message": "Per-model rate limit reached for \"gemini-2.5-pro\": 1 requests per minute. Wait before retrying.",
-          "type": "rate_limit_error"
-        }
-      },
-      "error": null,
-      "lastChecked": "2026-04-19T09:48:49.825Z",
-      "uptime": 100,
-      "totalChecks": 24
+      "rawResponse": null,
+      "error": "Timeout (90s)",
+      "lastChecked": "2026-04-19T10:14:37.073Z",
+      "uptime": 96,
+      "totalChecks": 25
     },
     "gemini-2.5-pro:search": {
       "id": "gemini-2.5-pro:search",
       "ownedBy": "google",
       "status": "operational",
-      "responseTime": 5650,
-      "supportsReasoning": true,
-      "isPaidOnly": false,
-      "response": "I am Gemini, a large language model (LLM) developed by Google. I am part of a family of multimodal AI models created by Google DeepMind, designed to",
-      "reasoningContent": null,
-      "rawResponse": {
-        "id": "zankaZ2uKLyGnsEPjeqt0Aw",
-        "created": 1776593357,
-        "model": "gemini-2.5-pro:search",
-        "object": "chat.completion",
-        "choices": [
-          {
-            "finish_reason": "length",
-            "index": 0,
-            "message": {
-              "content": "I am Gemini, a large language model (LLM) developed by Google. I am part of a family of multimodal AI models created by Google DeepMind, designed to",
-              "role": "assistant",
-              "provider_specific_fields": {
-                "refusal": null
-              }
-            },
-            "provider_specific_fields": {}
-          }
-        ],
-        "usage": {
-          "completion_tokens": 230,
-          "prompt_tokens": 7,
-          "total_tokens": 237,
-          "completion_tokens_details": {
-            "reasoning_tokens": 115
-          }
-        }
-      },
-      "error": null,
-      "lastChecked": "2026-04-19T09:48:49.825Z",
-      "uptime": 100,
-      "totalChecks": 13
-    },
-    "gemini-robotics-er-1.5-preview": {
-      "id": "gemini-robotics-er-1.5-preview",
-      "ownedBy": "google",
-      "status": "operational",
-      "responseTime": 4802,
+      "responseTime": 2418,
       "supportsReasoning": true,
       "isPaidOnly": false,
       "response": "I am a large language model, trained by Google.",
       "reasoningContent": null,
       "rawResponse": {
-        "id": "3qnkac2oG-nskdUPo8qw2A0",
-        "created": 1776593374,
-        "model": "gemini-robotics-er-1.5-preview",
+        "id": "PK_kabGXEq3NnsEP_LyTwAw",
+        "created": 1776594748,
+        "model": "gemini-2.5-pro:search",
         "object": "chat.completion",
         "choices": [
           {
@@ -1610,36 +1628,39 @@
           }
         ],
         "usage": {
-          "completion_tokens": 11,
+          "completion_tokens": 55,
           "prompt_tokens": 7,
-          "total_tokens": 18
+          "total_tokens": 62,
+          "completion_tokens_details": {
+            "reasoning_tokens": 44
+          }
         }
       },
       "error": null,
-      "lastChecked": "2026-04-19T09:48:49.825Z",
+      "lastChecked": "2026-04-19T10:14:37.073Z",
       "uptime": 100,
-      "totalChecks": 13
+      "totalChecks": 14
     },
-    "gemini-robotics-er-1.5-preview:search": {
-      "id": "gemini-robotics-er-1.5-preview:search",
+    "gemini-robotics-er-1.5-preview": {
+      "id": "gemini-robotics-er-1.5-preview",
       "ownedBy": "google",
       "status": "operational",
-      "responseTime": 2522,
+      "responseTime": 4793,
       "supportsReasoning": true,
       "isPaidOnly": false,
-      "response": "Based on my current state, I am a large language model, trained by Google.",
+      "response": "[No text content returned]",
       "reasoningContent": null,
       "rawResponse": {
-        "id": "7KnkaarOO4KEkdUP6NvHkAw",
-        "created": 1776593389,
-        "model": "gemini-robotics-er-1.5-preview:search",
+        "id": "Ta_kaerbAbfqkdUPhLyJGQ",
+        "created": 1776594765,
+        "model": "gemini-robotics-er-1.5-preview",
         "object": "chat.completion",
         "choices": [
           {
-            "finish_reason": "stop",
+            "finish_reason": "length",
             "index": 0,
             "message": {
-              "content": "Based on my current state, I am a large language model, trained by Google.",
+              "content": "",
               "role": "assistant",
               "provider_specific_fields": {
                 "refusal": null
@@ -1649,39 +1670,59 @@
           }
         ],
         "usage": {
-          "completion_tokens": 63,
+          "completion_tokens": 117,
           "prompt_tokens": 7,
-          "total_tokens": 70,
+          "total_tokens": 124,
           "completion_tokens_details": {
-            "reasoning_tokens": 46
+            "reasoning_tokens": 117
           }
         }
       },
       "error": null,
-      "lastChecked": "2026-04-19T09:48:49.825Z",
+      "lastChecked": "2026-04-19T10:14:37.073Z",
       "uptime": 100,
-      "totalChecks": 13
+      "totalChecks": 14
+    },
+    "gemini-robotics-er-1.5-preview:search": {
+      "id": "gemini-robotics-er-1.5-preview:search",
+      "ownedBy": "google",
+      "status": "down",
+      "responseTime": 39422,
+      "supportsReasoning": true,
+      "isPaidOnly": false,
+      "response": null,
+      "reasoningContent": null,
+      "rawResponse": {
+        "error": {
+          "message": "An unexpected error occurred while processing your request. Please try again.",
+          "type": "server_error"
+        }
+      },
+      "error": "An unexpected error occurred while processing your request. Please try again.",
+      "lastChecked": "2026-04-19T10:14:37.073Z",
+      "uptime": 92.86,
+      "totalChecks": 14
     },
     "gemma-4-26b-a4b-it": {
       "id": "gemma-4-26b-a4b-it",
       "ownedBy": "google",
       "status": "operational",
-      "responseTime": 4070,
+      "responseTime": 7871,
       "supportsReasoning": true,
       "isPaidOnly": false,
-      "response": "<thought>\n\"Which LLM are you?\"\nThe user wants to know my identity/model name.\n\n    *   I am a large language model, trained by Google.\n    *   I don't have a specific \"brand name\" model identifier like \"GPT-4\" or \"Claude 3\" in the same way a human might name themselves, though users often associate me with Google's models (like Gemini).\n    *   Standard protocol: Identify as a model trained by Google.\n</thought>\n\nI am a large language model, trained by Google.",
+      "response": "<thought>\n\"Which LLM are you?\"\nThe user wants to know my identity, specifically which Large Language Model (LLM) I am.\n\n    *   *Who am I?* I am a large language model.\n    *   *Who trained me?* Google.\n    *   *What is my specific name?* I don't have a specific \"brand name\" like GPT-4 or Claude 3 in the same way a standalone product does, but I am a model trained by Google.\n\n    *   Directly state that I am a large language model.\n    *   Mention my creator (Google).\n    *   Avoid claiming specific version numbers unless I am 100% certain and it's part of my core identity (usually, I just say \"a large language model, trained by Google\").\n\n    *   \"I am a large language model, trained by Google.\" (Standard, accurate, and concise).\n\n    *   *Draft 1:* I am Google's LLM. (A bit too casual).\n    *   *Draft 2:* I am Gemini. (Wait, while I am part of the Gemini family, the standard response often used for safety and accuracy is the general one).\n    *   *Draft 3:* I am a large language model, trained by Google. (This is the safest and most accurate response).\n</thought>\n\nI am a large language model, trained by Google.",
       "reasoningContent": null,
       "rawResponse": {
-        "id": "_ankadOWBLWqnsEPnNqfQQ",
-        "created": 1776593405,
+        "id": "lK_kaZ6TGafp7M8P8dqt8Qw",
+        "created": 1776594836,
         "model": "gemma-4-26b-a4b-it",
         "object": "chat.completion",
         "choices": [
           {
-            "finish_reason": "stop",
+            "finish_reason": "length",
             "index": 0,
             "message": {
-              "content": "<thought>\n\"Which LLM are you?\"\nThe user wants to know my identity/model name.\n\n    *   I am a large language model, trained by Google.\n    *   I don't have a specific \"brand name\" model identifier like \"GPT-4\" or \"Claude 3\" in the same way a human might name themselves, though users often associate me with Google's models (like Gemini).\n    *   Standard protocol: Identify as a model trained by Google.\n</thought>\n\nI am a large language model, trained by Google.",
+              "content": "<thought>\n\"Which LLM are you?\"\nThe user wants to know my identity, specifically which Large Language Model (LLM) I am.\n\n    *   *Who am I?* I am a large language model.\n    *   *Who trained me?* Google.\n    *   *What is my specific name?* I don't have a specific \"brand name\" like GPT-4 or Claude 3 in the same way a standalone product does, but I am a model trained by Google.\n\n    *   Directly state that I am a large language model.\n    *   Mention my creator (Google).\n    *   Avoid claiming specific version numbers unless I am 100% certain and it's part of my core identity (usually, I just say \"a large language model, trained by Google\").\n\n    *   \"I am a large language model, trained by Google.\" (Standard, accurate, and concise).\n\n    *   *Draft 1:* I am Google's LLM. (A bit too casual).\n    *   *Draft 2:* I am Gemini. (Wait, while I am part of the Gemini family, the standard response often used for safety and accuracy is the general one).\n    *   *Draft 3:* I am a large language model, trained by Google. (This is the safest and most accurate response).\n</thought>\n\nI am a large language model, trained by Google.",
               "role": "assistant",
               "provider_specific_fields": {
                 "refusal": null
@@ -1691,31 +1732,31 @@
           }
         ],
         "usage": {
-          "completion_tokens": 113,
+          "completion_tokens": 301,
           "prompt_tokens": 7,
-          "total_tokens": 120,
+          "total_tokens": 308,
           "completion_tokens_details": {
-            "reasoning_tokens": 102
+            "reasoning_tokens": 290
           }
         }
       },
       "error": null,
-      "lastChecked": "2026-04-19T09:48:49.825Z",
+      "lastChecked": "2026-04-19T10:14:37.073Z",
       "uptime": 100,
-      "totalChecks": 13
+      "totalChecks": 14
     },
     "gemma-4-26b-a4b-it:search": {
       "id": "gemma-4-26b-a4b-it:search",
       "ownedBy": "google",
       "status": "operational",
-      "responseTime": 16534,
+      "responseTime": 10333,
       "supportsReasoning": true,
       "isPaidOnly": false,
-      "response": "<thought>\nI will first search for information about what kind of LLM I am and if there's a specific name or identity assigned to me by Google.\nFinally, I will answer the user's question about which LLM I am based on the information found.\n\n|>The user is asking \"Which LLM are you?\". \nThe search results mention several Google LLMs/AI assistants:\n- Gemini (Google's AI assistant, state-of-the-art models)\n- BERT and PaLM (older/other models)\n- Imagen (image generation)\n- Veo (video generation)\n- Nano, Banana (specific models mentioned in one snippet, though \"Banana\" sounds like a potential hallucination or a very niche name, but \"Gemini Nano\" is common). Actually, the snippet says \"built-in features like Nano Banana or Google Search integration\", which might be a misreading of something else or just specific.\n- The results also mention \"Gemini 3 Pro Preview\", \"Gemini 3.1 Flash\", etc. (Wait, the date in the snippets is 2026. Current time is April 19, 2026. This is \"future\" relative to my training data, but the prompt's current time is 2026). \n\nThe user is asking me directly. As an AI developed by Google, I should identify myself according to my system instructions or common identity. Usually, I am a large language model, trained by Google.\n\nCommonly, models from Google are referred to as Gemini. \n\nI will provide a standard answer: I am a large language model, trained by Google.\n\nNote: I don't have a \"name\" like \"GPT-4\" that I must use unless specified in my internal identity. However, the user is asking for my identity. I will state that I am a large language model, trained by Google.\n\nActually, looking at the current date (April 2026), the search results suggest \"Gemini\" is the primary AI assistant and model family.\n\nI'll keep it simple and accurate to my identity as defined by Google.\n</thought>\n\nI am a large language model, trained by Google.",
+      "response": "<thought>\nI will first search for information regarding my identity as an AI model, specifically looking for official documentation or standard responses provided by Google about my name and architecture.\nFinally, I will answer the user's question about which LLM I am based on the information found.\n\n|>The user is asking \"Which LLM are you?\".\nThe search results provided information about various Google AI models like Gemini (Gemini 3.1 Pro, Flash, Flash-Lite, etc.), Gemma (an open model family), PaLM, BERT, and LaMDA.\nSpecifically, result 1.2 explains the origin of the name \"Gemini\" and mentions that Gemini is a family of multimodal AI models from Google DeepMind.\nThe model I am is a large language model, trained by Google.\nCommonly, when users ask this, they are looking for the name of the model family (e.g., Gemini).\nThe search results show that \"Gemini\" is Google's flagship AI model/ecosystem.\nI should identify myself as a large language model, trained by Google.\n\nI have enough information to answer this. I don't need to know the specific sub-version (like Gemini 1.5 Pro or Gemini 3.1 Flash) unless it's explicitly provided in my system instructions (which it isn't, beyond the general \"large language model, trained by Google\" identity typical for such models). However, the standard response for Google-trained models is often \"I am a large language model, trained by Google.\"\n\nI'll formulate the response.\n</thought>\n\nI am a large language model, trained by Google.",
       "reasoningContent": null,
       "rawResponse": {
-        "id": "Garkad68Jfe1nsEPyInt4A0",
-        "created": 1776593433,
+        "id": "qq_kaaWfLPqdkdUP6oqdiQk",
+        "created": 1776594858,
         "model": "gemma-4-26b-a4b-it:search",
         "object": "chat.completion",
         "choices": [
@@ -1723,7 +1764,7 @@
             "finish_reason": "length",
             "index": 0,
             "message": {
-              "content": "<thought>\nI will first search for information about what kind of LLM I am and if there's a specific name or identity assigned to me by Google.\nFinally, I will answer the user's question about which LLM I am based on the information found.\n\n|>The user is asking \"Which LLM are you?\". \nThe search results mention several Google LLMs/AI assistants:\n- Gemini (Google's AI assistant, state-of-the-art models)\n- BERT and PaLM (older/other models)\n- Imagen (image generation)\n- Veo (video generation)\n- Nano, Banana (specific models mentioned in one snippet, though \"Banana\" sounds like a potential hallucination or a very niche name, but \"Gemini Nano\" is common). Actually, the snippet says \"built-in features like Nano Banana or Google Search integration\", which might be a misreading of something else or just specific.\n- The results also mention \"Gemini 3 Pro Preview\", \"Gemini 3.1 Flash\", etc. (Wait, the date in the snippets is 2026. Current time is April 19, 2026. This is \"future\" relative to my training data, but the prompt's current time is 2026). \n\nThe user is asking me directly. As an AI developed by Google, I should identify myself according to my system instructions or common identity. Usually, I am a large language model, trained by Google.\n\nCommonly, models from Google are referred to as Gemini. \n\nI will provide a standard answer: I am a large language model, trained by Google.\n\nNote: I don't have a \"name\" like \"GPT-4\" that I must use unless specified in my internal identity. However, the user is asking for my identity. I will state that I am a large language model, trained by Google.\n\nActually, looking at the current date (April 2026), the search results suggest \"Gemini\" is the primary AI assistant and model family.\n\nI'll keep it simple and accurate to my identity as defined by Google.\n</thought>\n\nI am a large language model, trained by Google.",
+              "content": "<thought>\nI will first search for information regarding my identity as an AI model, specifically looking for official documentation or standard responses provided by Google about my name and architecture.\nFinally, I will answer the user's question about which LLM I am based on the information found.\n\n|>The user is asking \"Which LLM are you?\".\nThe search results provided information about various Google AI models like Gemini (Gemini 3.1 Pro, Flash, Flash-Lite, etc.), Gemma (an open model family), PaLM, BERT, and LaMDA.\nSpecifically, result 1.2 explains the origin of the name \"Gemini\" and mentions that Gemini is a family of multimodal AI models from Google DeepMind.\nThe model I am is a large language model, trained by Google.\nCommonly, when users ask this, they are looking for the name of the model family (e.g., Gemini).\nThe search results show that \"Gemini\" is Google's flagship AI model/ecosystem.\nI should identify myself as a large language model, trained by Google.\n\nI have enough information to answer this. I don't need to know the specific sub-version (like Gemini 1.5 Pro or Gemini 3.1 Flash) unless it's explicitly provided in my system instructions (which it isn't, beyond the general \"large language model, trained by Google\" identity typical for such models). However, the standard response for Google-trained models is often \"I am a large language model, trained by Google.\"\n\nI'll formulate the response.\n</thought>\n\nI am a large language model, trained by Google.",
               "role": "assistant",
               "provider_specific_fields": {
                 "refusal": null
@@ -1733,81 +1774,39 @@
           }
         ],
         "usage": {
-          "completion_tokens": 409,
-          "prompt_tokens": 60,
-          "total_tokens": 469,
+          "completion_tokens": 283,
+          "prompt_tokens": 61,
+          "total_tokens": 344,
           "completion_tokens_details": {
-            "reasoning_tokens": 398
+            "reasoning_tokens": 272
           }
         }
       },
       "error": null,
-      "lastChecked": "2026-04-19T09:48:49.825Z",
+      "lastChecked": "2026-04-19T10:14:37.073Z",
       "uptime": 100,
-      "totalChecks": 13
+      "totalChecks": 14
     },
     "gemma-4-31b-it": {
       "id": "gemma-4-31b-it",
       "ownedBy": "google",
       "status": "operational",
-      "responseTime": 5216,
+      "responseTime": 2931,
       "supportsReasoning": true,
       "isPaidOnly": false,
-      "response": "<thought>\n*   Question: \"Which LLM are you?\"\n    *   Intent: The user wants to know my identity/model version.\n\n    *   I am a large language model trained by Google.\n\n    *   *Option 1 (Generic):* \"I am a large language model, trained by Google.\" (Standard, safe, accurate).\n    *   *Option 2 (Specific - if known):* Sometimes models have names like Gemini, PaLM, etc. Based on my core identity settings, I identify as a model trained by Google.\n\n    *   Keep it concise and clear.\n</thought>\n\nI am a large language model, trained by Google.",
+      "response": "<thought>\n*   User asks: \"Which LLM are you?\"\n    *   Goal: Identify myself.\n\n    *   I am a large language model trained by Google.\n</thought>\n\nI am a large language model, trained by Google.",
       "reasoningContent": null,
       "rawResponse": {
-        "id": "KqrkaaiyNenskdUPo8qw2A0",
-        "created": 1776593451,
+        "id": "ua_kadXGKpDrkdUP2P_W0A4",
+        "created": 1776594873,
         "model": "gemma-4-31b-it",
-        "object": "chat.completion",
-        "choices": [
-          {
-            "finish_reason": "length",
-            "index": 0,
-            "message": {
-              "content": "<thought>\n*   Question: \"Which LLM are you?\"\n    *   Intent: The user wants to know my identity/model version.\n\n    *   I am a large language model trained by Google.\n\n    *   *Option 1 (Generic):* \"I am a large language model, trained by Google.\" (Standard, safe, accurate).\n    *   *Option 2 (Specific - if known):* Sometimes models have names like Gemini, PaLM, etc. Based on my core identity settings, I identify as a model trained by Google.\n\n    *   Keep it concise and clear.\n</thought>\n\nI am a large language model, trained by Google.",
-              "role": "assistant",
-              "provider_specific_fields": {
-                "refusal": null
-              }
-            },
-            "provider_specific_fields": {}
-          }
-        ],
-        "usage": {
-          "completion_tokens": 137,
-          "prompt_tokens": 7,
-          "total_tokens": 144,
-          "completion_tokens_details": {
-            "reasoning_tokens": 126
-          }
-        }
-      },
-      "error": null,
-      "lastChecked": "2026-04-19T09:48:49.825Z",
-      "uptime": 100,
-      "totalChecks": 13
-    },
-    "gemma-4-31b-it:search": {
-      "id": "gemma-4-31b-it:search",
-      "ownedBy": "google",
-      "status": "operational",
-      "responseTime": 3556,
-      "supportsReasoning": true,
-      "isPaidOnly": false,
-      "response": "<thought>\n*   User asks: \"Which LLM are you?\"\n    *   Goal: Identify myself accurately according to my internal configuration/identity.\n\n    *   I am a large language model.\n    *   I was trained by Google.\n</thought>\n\nI am a large language model, trained by Google.",
-      "reasoningContent": null,
-      "rawResponse": {
-        "id": "OqrkaaXdGumD7M8Pt9Pc0Q4",
-        "created": 1776593466,
-        "model": "gemma-4-31b-it:search",
         "object": "chat.completion",
         "choices": [
           {
             "finish_reason": "stop",
             "index": 0,
             "message": {
-              "content": "<thought>\n*   User asks: \"Which LLM are you?\"\n    *   Goal: Identify myself accurately according to my internal configuration/identity.\n\n    *   I am a large language model.\n    *   I was trained by Google.\n</thought>\n\nI am a large language model, trained by Google.",
+              "content": "<thought>\n*   User asks: \"Which LLM are you?\"\n    *   Goal: Identify myself.\n\n    *   I am a large language model trained by Google.\n</thought>\n\nI am a large language model, trained by Google.",
               "role": "assistant",
               "provider_specific_fields": {
                 "refusal": null
@@ -1817,24 +1816,44 @@
           }
         ],
         "usage": {
-          "completion_tokens": 61,
+          "completion_tokens": 46,
           "prompt_tokens": 7,
-          "total_tokens": 68,
+          "total_tokens": 53,
           "completion_tokens_details": {
-            "reasoning_tokens": 50
+            "reasoning_tokens": 35
           }
         }
       },
       "error": null,
-      "lastChecked": "2026-04-19T09:48:49.825Z",
+      "lastChecked": "2026-04-19T10:14:37.073Z",
       "uptime": 100,
-      "totalChecks": 13
+      "totalChecks": 14
+    },
+    "gemma-4-31b-it:search": {
+      "id": "gemma-4-31b-it:search",
+      "ownedBy": "google",
+      "status": "down",
+      "responseTime": 39364,
+      "supportsReasoning": true,
+      "isPaidOnly": false,
+      "response": null,
+      "reasoningContent": null,
+      "rawResponse": {
+        "error": {
+          "message": "An unexpected error occurred while processing your request. Please try again.",
+          "type": "server_error"
+        }
+      },
+      "error": "An unexpected error occurred while processing your request. Please try again.",
+      "lastChecked": "2026-04-19T10:14:37.073Z",
+      "uptime": 92.86,
+      "totalChecks": 14
     },
     "gemma-3-27b-it": {
       "id": "gemma-3-27b-it",
       "ownedBy": "google",
       "status": "down",
-      "responseTime": 39628,
+      "responseTime": 39705,
       "supportsReasoning": false,
       "isPaidOnly": false,
       "response": null,
@@ -1846,22 +1865,22 @@
         }
       },
       "error": "An unexpected error occurred while processing your request. Please try again.",
-      "lastChecked": "2026-04-19T09:48:49.825Z",
-      "uptime": 92.31,
-      "totalChecks": 13
+      "lastChecked": "2026-04-19T10:14:37.073Z",
+      "uptime": 85.71,
+      "totalChecks": 14
     },
     "gemma-3-12b-it": {
       "id": "gemma-3-12b-it",
       "ownedBy": "google",
       "status": "operational",
-      "responseTime": 4739,
+      "responseTime": 2854,
       "supportsReasoning": false,
       "isPaidOnly": false,
       "response": "I'm Gemma, an open-weights AI assistant. I'm a large language model created by the Gemma team at Google DeepMind. \n\nHere's what's important about me:\n\n*   **Open-weights:** This means my underlying model weights are publicly available, allowing researchers and developers to use, study, and build upon me.\n*   **Created by Google DeepMind:** I was developed by the team at Google DeepMind, known for their work in AI research.\n\n\n\nI'm excited to see what people will do with me!",
       "reasoningContent": null,
       "rawResponse": {
-        "id": "fqrkafbkMI-YkdUP58fMoQE",
-        "created": 1776593535,
+        "id": "L7DkabnZJcbpnsEPu6fvyAw",
+        "created": 1776594991,
         "model": "gemma-3-12b-it",
         "object": "chat.completion",
         "choices": [
@@ -1885,50 +1904,30 @@
         }
       },
       "error": null,
-      "lastChecked": "2026-04-19T09:48:49.825Z",
+      "lastChecked": "2026-04-19T10:14:37.073Z",
       "uptime": 100,
-      "totalChecks": 13
+      "totalChecks": 14
     },
     "gemma-3-4b-it": {
       "id": "gemma-3-4b-it",
       "ownedBy": "google",
-      "status": "down",
-      "responseTime": 39857,
-      "supportsReasoning": false,
-      "isPaidOnly": false,
-      "response": null,
-      "reasoningContent": null,
-      "rawResponse": {
-        "error": {
-          "message": "An unexpected error occurred while processing your request. Please try again.",
-          "type": "server_error"
-        }
-      },
-      "error": "An unexpected error occurred while processing your request. Please try again.",
-      "lastChecked": "2026-04-19T09:48:49.825Z",
-      "uptime": 92.31,
-      "totalChecks": 13
-    },
-    "gemma-3-1b-it": {
-      "id": "gemma-3-1b-it",
-      "ownedBy": "google",
       "status": "operational",
-      "responseTime": 1825,
+      "responseTime": 2178,
       "supportsReasoning": false,
       "isPaidOnly": false,
-      "response": "I’m Gemma, a large language model created by the Gemma team at Google DeepMind. I’m an open-weights model, which means I’m widely available for public use! \n\nI can take text and images as input and respond with text. \n\n---\n\n**Disclaimer:** I don’t have access to real-time information or the ability to browse the internet.",
+      "response": "I'm Gemma, a large language model created by the Gemma team at Google DeepMind. I’m an open-weights model, which means I’m widely available for public use! \n\nYou can find more details about me on the Gemma project page: [https://gemma.google.deepmind.com/](https://gemma.google.deepmind.com/)",
       "reasoningContent": null,
       "rawResponse": {
-        "id": "wKrkabayHrvdnsEPz7n8CA",
-        "created": 1776593600,
-        "model": "gemma-3-1b-it",
+        "id": "PbDkaeW_Mu-ckdUPorSf4Q0",
+        "created": 1776595006,
+        "model": "gemma-3-4b-it",
         "object": "chat.completion",
         "choices": [
           {
             "finish_reason": "stop",
             "index": 0,
             "message": {
-              "content": "I’m Gemma, a large language model created by the Gemma team at Google DeepMind. I’m an open-weights model, which means I’m widely available for public use! \n\nI can take text and images as input and respond with text. \n\n---\n\n**Disclaimer:** I don’t have access to real-time information or the ability to browse the internet.",
+              "content": "I'm Gemma, a large language model created by the Gemma team at Google DeepMind. I’m an open-weights model, which means I’m widely available for public use! \n\nYou can find more details about me on the Gemma project page: [https://gemma.google.deepmind.com/](https://gemma.google.deepmind.com/)",
               "role": "assistant",
               "provider_specific_fields": {
                 "refusal": null
@@ -1938,15 +1937,54 @@
           }
         ],
         "usage": {
-          "completion_tokens": 80,
+          "completion_tokens": 0,
           "prompt_tokens": 7,
-          "total_tokens": 87
+          "total_tokens": 7
         }
       },
       "error": null,
-      "lastChecked": "2026-04-19T09:48:49.825Z",
+      "lastChecked": "2026-04-19T10:14:37.073Z",
+      "uptime": 92.86,
+      "totalChecks": 14
+    },
+    "gemma-3-1b-it": {
+      "id": "gemma-3-1b-it",
+      "ownedBy": "google",
+      "status": "operational",
+      "responseTime": 1732,
+      "supportsReasoning": false,
+      "isPaidOnly": false,
+      "response": "I’m Gemma, a large language model created by the Gemma team at Google DeepMind. I’m an open-weights model, which means I’m widely available for public use! \n\nI can take text and images as input and respond with text. \n\n---\n\n**Disclaimer:** *I don’t have access to real-time information or the ability to browse the internet. My knowledge cutoff is September 2021.*",
+      "reasoningContent": null,
+      "rawResponse": {
+        "id": "S7DkaZLcIv3NkdUPzJ7S8A8",
+        "created": 1776595019,
+        "model": "gemma-3-1b-it",
+        "object": "chat.completion",
+        "choices": [
+          {
+            "finish_reason": "stop",
+            "index": 0,
+            "message": {
+              "content": "I’m Gemma, a large language model created by the Gemma team at Google DeepMind. I’m an open-weights model, which means I’m widely available for public use! \n\nI can take text and images as input and respond with text. \n\n---\n\n**Disclaimer:** *I don’t have access to real-time information or the ability to browse the internet. My knowledge cutoff is September 2021.*",
+              "role": "assistant",
+              "provider_specific_fields": {
+                "refusal": null
+              }
+            },
+            "provider_specific_fields": {}
+          }
+        ],
+        "usage": {
+          "completion_tokens": 92,
+          "prompt_tokens": 7,
+          "total_tokens": 99
+        }
+      },
+      "error": null,
+      "lastChecked": "2026-04-19T10:14:37.073Z",
       "uptime": 100,
-      "totalChecks": 13
+      "totalChecks": 14
     }
   }
 }
